@@ -1,19 +1,9 @@
 # WSL — World Stats Live
 
-Live world stats, in plain English. Live world numbers.
+Next.js 15 app · 250 countries live from restcountries.com · population, capital, region, languages, currencies · basePath `/mstravel/wsl` · port **19011** · accent #10b981.
 
-## Run
+Routes: `/`, `/countries`, `/countries/[cca3]` + shared FAD `/apps`, `/videos`, `/github`, `/prompts`, `/scroller`.
 
-```
-npm install
-npm run dev    # http://localhost:13011
-```
+Live API: `/api/countries`, `/api/countries/[cca3]` (restcountries.com, no key needed) + shared.
 
-## Structure
-
-- `/` — claude.ai-style home with categories + 6 feature tiles
-- `/about` — long-form story, anchor links per feature
-- `/contact` — LinkedIn / email / GitHub
-- `legacy/` — the previous v2 codebase, archived
-
-Registered in `~/APPS/apps-registry.json` (id `wsl`, port 13011).
+Previous codebase preserved under [`2022/`](./2022).
