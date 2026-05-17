@@ -1,0 +1,18 @@
+node_modules
+dist
+build
+.cache
+.turbo
+.next
+coverage
+bun.lockb
+pnpm-lock.yaml
+
+# ignore local env and Git files
+.git
+.gitignore
+.dockerignore
+
+# OS and debug junk
+npm-debug.log*
+.DS_Store
