@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Bell, Bookmark, Moon, Search, Settings, Sun } from "lucide-react";
+import { Bell, Bookmark, LogIn, Moon, Search, Settings, Sun } from "lucide-react";
 
-export function Header() {
+type Props = {
+  onSearch?: () => void;
+  onCustomize?: () => void;
+};
+
+export function Header({ onSearch, onCustomize }: Props) {
   const [now, setNow] = useState<number | null>(null);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
@@ -54,8 +59,14 @@ export function Header() {
       <div className="hd-clock mono">{timeLabel}</div>
       <div className="hd-search">
         <Search size={14} className="ico" />
-        <input className="input" placeholder="Search countries, cities, indicators…" readOnly />
-        <span className="kbd">⌘ K</span>
+        <input
+          className="input"
+          placeholder="Search countries, cities, indicators… Ctrl+S"
+          onClick={onSearch}
+          onFocus={onSearch}
+          readOnly
+        />
+        <span className="kbd">Ctrl+S</span>
       </div>
       <div className="hd-actions">
         <button
@@ -68,8 +79,11 @@ export function Header() {
           {isDark ? <Sun size={13} /> : <Moon size={13} />}
           <span className="theme-toggle-label">{isDark ? "Light" : "Dark"}</span>
         </button>
-        <button className="btn btn-ghost btn-sm" type="button">
+        <button className="btn btn-ghost btn-sm" type="button" onClick={onCustomize}>
           <Settings size={13} /> Customize
+        </button>
+        <button className="btn btn-ghost btn-sm" type="button">
+          <LogIn size={13} /> Login
         </button>
         <button className="btn btn-ghost btn-icon" title="Notifications" type="button">
           <Bell size={14} />

@@ -1,0 +1,633 @@
+// data.js — World Stats Live seed data.
+// All numbers are realistic order-of-magnitude estimates for a demo.
+// Sources cited in the footer About strip.
+
+// Per-second rates that drive the live tickers.
+// Population: ~140M births and ~60M deaths per year worldwide.
+const SEC_PER_YEAR = 365.25 * 24 * 3600;
+
+window.WSL_DATA = {
+  /* ============================================================
+     Tickers — base values + per-second rates
+     Anchored to 2026-05-20T00:00:00Z so ticking continues from a known point.
+     ============================================================ */
+  epoch: Date.UTC(2026, 4, 20, 0, 0, 0),
+  tickers: [
+    {
+      id: 'population', label: 'World population',
+      icon: 'Users', accent: 'core',
+      base: 8_152_300_000, rate: 80 / SEC_PER_YEAR * 1_000_000, // ~2.5/s net
+      fmt: 'int', sub: 'net growth · live',
+      delta: '+227,123 today',
+    },
+    {
+      id: 'births', label: 'Births today',
+      icon: 'Heart', accent: 'lists',
+      base: 0, rate: 4.3, // ~140M/year ≈ 4.3/s
+      fmt: 'int', sub: 'since 00:00 UTC',
+      delta: '+4.3/sec avg',
+    },
+    {
+      id: 'deaths', label: 'Deaths today',
+      icon: 'Activity', accent: 'context',
+      base: 0, rate: 1.86,
+      fmt: 'int', sub: 'since 00:00 UTC',
+      delta: '+1.86/sec avg',
+    },
+    {
+      id: 'flights', label: 'Flights in the air',
+      icon: 'Plane', accent: 'bo',
+      base: 13_402, rate: 0, oscillate: { amp: 280, period: 240 },
+      fmt: 'int', sub: 'commercial · ADS-B',
+      delta: '127k flights today',
+    },
+    {
+      id: 'co2', label: 'CO₂ emitted today',
+      icon: 'Cloud', accent: 'lists',
+      base: 0, rate: 36_800_000_000 / SEC_PER_YEAR, // tons/year → t/s
+      fmt: 'tonnes', sub: 'fossil + cement',
+      delta: '+36.8 Gt/yr trajectory', deltaDown: true,
+    },
+    {
+      id: 'energy', label: 'Energy consumed today',
+      icon: 'Zap', accent: 'travel',
+      base: 0, rate: 180_000 / 86400 * 1000, // ~180 PWh/year scaled → kWh/s roughly
+      fmt: 'kwh', sub: 'all sources · TWh equiv.',
+      delta: '+1.4% YoY',
+    },
+    {
+      id: 'tourism', label: 'Spent on tourism today',
+      icon: 'Compass', accent: 'lists',
+      base: 0, rate: 1_700_000_000_000 / SEC_PER_YEAR, // $1.7T/yr → $/s
+      fmt: 'usd', sub: 'global, ex-domestic',
+      delta: '+12% vs 2024',
+    },
+    {
+      id: 'hotels', label: 'Hotel bookings today',
+      icon: 'Hotel', accent: 'core',
+      base: 0, rate: 5_400_000 / 86400, // ~5.4M bookings/day
+      fmt: 'int', sub: 'aggregated OTAs',
+      delta: 'live · Booking + Agoda + Expedia',
+    },
+    {
+      id: 'internet', label: 'Internet users online',
+      icon: 'Globe', accent: 'bo',
+      base: 5_440_000_000, rate: 12, oscillate: { amp: 18_000_000, period: 86400 },
+      fmt: 'int', sub: 'concurrent · IPv6+v4',
+      delta: '+5,200/sec new users',
+    },
+    {
+      id: 'data', label: 'Data created today',
+      icon: 'Cpu', accent: 'context',
+      base: 0, rate: 402_000_000_000_000 / 86400, // 402 EB/day → bytes/s
+      fmt: 'bytes', sub: 'global · IoT + cloud',
+      delta: '+402 EB/day',
+    },
+    {
+      id: 'forest', label: 'Forest area lost today',
+      icon: 'Trees', accent: 'travel',
+      base: 0, rate: 10_000_000 / 365 / 86400 * 10000, // ~10M ha/yr in m²
+      fmt: 'sqm', sub: 'gross tree-cover loss',
+      delta: '-10M ha/yr', deltaDown: true,
+    },
+    {
+      id: 'species', label: 'Species lost today',
+      icon: 'Heart', accent: 'context',
+      base: 0, rate: 0.00185, // ~150-200/day ÷ 86400 ≈ 0.00185
+      fmt: 'int2', sub: 'IUCN extinction rate',
+      delta: '~150/day', deltaDown: true,
+    },
+  ],
+
+  /* ============================================================
+     Currencies & GDP — for tickers strip
+     ============================================================ */
+  currencies: [
+    { code: 'EUR/USD', val: 1.0834, ch: +0.0021, pct: +0.19 },
+    { code: 'GBP/USD', val: 1.2716, ch: -0.0014, pct: -0.11 },
+    { code: 'USD/JPY', val: 156.42, ch: +0.32, pct: +0.21 },
+    { code: 'USD/MAD', val: 9.881,  ch: -0.012, pct: -0.12 },
+    { code: 'BTC/USD', val: 71_204, ch: +1_204, pct: +1.72 },
+    { code: 'WTI Oil', val: 78.42,  ch: -0.41,  pct: -0.52 },
+    { code: 'Gold',    val: 2_413,  ch: +6.20,  pct: +0.26 },
+    { code: 'S&P 500', val: 5_318,  ch: +12.40, pct: +0.23 },
+  ],
+
+  /* ============================================================
+     Map dots — major cities with live activity
+     Coords are normalized 0-100 for an equirectangular dot map.
+     ============================================================ */
+  cities: [
+    { id: 'london',   name: 'London',     country: 'UK',     x: 47.0, y: 28.0, pop: 9.5,   accent: 'core',    metric: '184k flights/day' },
+    { id: 'nyc',      name: 'New York',   country: 'US',     x: 26.5, y: 33.5, pop: 18.9,  accent: 'bo',      metric: '$2.1B GDP today' },
+    { id: 'tokyo',    name: 'Tokyo',      country: 'JP',     x: 84.5, y: 36.5, pop: 37.4,  accent: 'lists',   metric: '13.9M commuters' },
+    { id: 'paris',    name: 'Paris',      country: 'FR',     x: 48.3, y: 30.0, pop: 11.0,  accent: 'lists',   metric: '+42k tourists today' },
+    { id: 'mumbai',   name: 'Mumbai',     country: 'IN',     x: 65.0, y: 47.0, pop: 20.7,  accent: 'context', metric: '+1,420 births/h' },
+    { id: 'shanghai', name: 'Shanghai',   country: 'CN',     x: 80.5, y: 41.0, pop: 28.5,  accent: 'core',    metric: '422k shipments' },
+    { id: 'lagos',    name: 'Lagos',      country: 'NG',     x: 47.5, y: 53.0, pop: 15.4,  accent: 'travel',  metric: '+3.2% YoY growth' },
+    { id: 'saopaulo', name: 'São Paulo',  country: 'BR',     x: 33.0, y: 64.0, pop: 22.4,  accent: 'travel',  metric: '+812k flights/yr' },
+    { id: 'dubai',    name: 'Dubai',      country: 'AE',     x: 60.5, y: 44.0, pop: 3.6,   accent: 'core',    metric: '189k flights/wk' },
+    { id: 'sydney',   name: 'Sydney',     country: 'AU',     x: 90.0, y: 74.0, pop: 5.3,   accent: 'bo',      metric: '+18k tourists today' },
+    { id: 'cairo',    name: 'Cairo',      country: 'EG',     x: 56.5, y: 42.0, pop: 22.0,  accent: 'lists',   metric: '+2.1M visitors/yr' },
+    { id: 'mexico',   name: 'Mexico City',country: 'MX',     x: 21.5, y: 49.0, pop: 22.1,  accent: 'context', metric: '+98k flights/day' },
+    { id: 'jakarta',  name: 'Jakarta',    country: 'ID',     x: 78.0, y: 60.0, pop: 11.3,  accent: 'travel',  metric: '+5.4% urban growth' },
+    { id: 'moscow',   name: 'Moscow',     country: 'RU',     x: 58.0, y: 25.0, pop: 12.6,  accent: 'core',    metric: '+0.4% pop YoY' },
+    { id: 'marrakech',name: 'Marrakech',  country: 'MA',     x: 45.5, y: 42.5, pop: 1.4,   accent: 'lists',   metric: '+19% bookings YoY' },
+    { id: 'fes',      name: 'Fès',        country: 'MA',     x: 46.5, y: 41.0, pop: 1.2,   accent: 'lists',   metric: 'UNESCO heritage' },
+    { id: 'casablanca',name:'Casablanca', country: 'MA',     x: 45.0, y: 41.5, pop: 3.7,   accent: 'lists',   metric: '+34% flights YoY' },
+    { id: 'singapore',name: 'Singapore',  country: 'SG',     x: 76.5, y: 56.0, pop: 5.9,   accent: 'bo',      metric: '$432B trade/yr' },
+    { id: 'istanbul', name: 'Istanbul',   country: 'TR',     x: 54.5, y: 33.0, pop: 15.6,  accent: 'context', metric: '+71M tourists/yr' },
+    { id: 'bangkok',  name: 'Bangkok',    country: 'TH',     x: 74.5, y: 50.0, pop: 10.5,  accent: 'travel',  metric: '+22M tourists/yr' },
+  ],
+
+  /* ============================================================
+     Top countries lists — visited, fastest growing, GDP, etc.
+     ============================================================ */
+  topVisited: [
+    { rank: 1,  name: 'France',     flag: '🇫🇷', v: 100.0, raw: '100.0M' },
+    { rank: 2,  name: 'Spain',      flag: '🇪🇸', v: 83.7,  raw: '83.7M' },
+    { rank: 3,  name: 'United States', flag: '🇺🇸', v: 66.5, raw: '66.5M' },
+    { rank: 4,  name: 'Italy',      flag: '🇮🇹', v: 57.3,  raw: '57.3M' },
+    { rank: 5,  name: 'Turkey',     flag: '🇹🇷', v: 56.7,  raw: '56.7M' },
+    { rank: 6,  name: 'Mexico',     flag: '🇲🇽', v: 42.2,  raw: '42.2M' },
+    { rank: 7,  name: 'Germany',    flag: '🇩🇪', v: 34.8,  raw: '34.8M' },
+    { rank: 8,  name: 'Thailand',   flag: '🇹🇭', v: 28.1,  raw: '28.1M' },
+    { rank: 9,  name: 'UK',         flag: '🇬🇧', v: 30.7,  raw: '30.7M' },
+    { rank:10,  name: 'Morocco',    flag: '🇲🇦', v: 17.4,  raw: '17.4M', highlight: true },
+  ],
+  fastestGrowing: [
+    { rank: 1,  name: 'Saudi Arabia', flag: '🇸🇦', v: 65, raw: '+65%' },
+    { rank: 2,  name: 'Albania',      flag: '🇦🇱', v: 56, raw: '+56%' },
+    { rank: 3,  name: 'Morocco',      flag: '🇲🇦', v: 41, raw: '+41%', highlight: true },
+    { rank: 4,  name: 'El Salvador',  flag: '🇸🇻', v: 39, raw: '+39%' },
+    { rank: 5,  name: 'Serbia',       flag: '🇷🇸', v: 36, raw: '+36%' },
+    { rank: 6,  name: 'Tanzania',     flag: '🇹🇿', v: 31, raw: '+31%' },
+    { rank: 7,  name: 'Qatar',        flag: '🇶🇦', v: 28, raw: '+28%' },
+    { rank: 8,  name: 'Japan',        flag: '🇯🇵', v: 25, raw: '+25%' },
+  ],
+  largestGdp: [
+    { rank: 1, name: 'United States', flag: '🇺🇸', v: 100, raw: '$28.8T' },
+    { rank: 2, name: 'China',         flag: '🇨🇳', v: 64,  raw: '$18.5T' },
+    { rank: 3, name: 'Germany',       flag: '🇩🇪', v: 17,  raw: '$4.6T' },
+    { rank: 4, name: 'Japan',         flag: '🇯🇵', v: 15,  raw: '$4.4T' },
+    { rank: 5, name: 'India',         flag: '🇮🇳', v: 14,  raw: '$4.1T' },
+    { rank: 6, name: 'United Kingdom',flag: '🇬🇧', v: 12,  raw: '$3.6T' },
+    { rank: 7, name: 'France',        flag: '🇫🇷', v: 11,  raw: '$3.1T' },
+    { rank: 8, name: 'Italy',         flag: '🇮🇹', v: 9,   raw: '$2.3T' },
+  ],
+
+  /* ============================================================
+     Countries — detail data
+     ============================================================ */
+  countries: [
+    { id: 'morocco', name: 'Morocco', flag: '🇲🇦', region: 'North Africa', code: 'MA',
+      pop: 37_840_000, gdp: '$148.4B', visitors: '17.4M', growth: '+41%', up: true,
+      capital: 'Rabat', currency: 'MAD', langs: 'Arabic, Berber, French',
+      blurb: 'Atlantic and Mediterranean coastlines, the High Atlas mountains, the Sahara, and four imperial cities. The fastest-growing tourist destination in North Africa.',
+      featured: true, accent: 'lists',
+      cities: ['Marrakech', 'Fès', 'Casablanca', 'Chefchaouen', 'Essaouira'] },
+    { id: 'japan', name: 'Japan', flag: '🇯🇵', region: 'East Asia', code: 'JP',
+      pop: 125_360_000, gdp: '$4.4T', visitors: '25.0M', growth: '+47%', up: true,
+      capital: 'Tokyo', currency: 'JPY', langs: 'Japanese',
+      blurb: 'Archipelago of 14,000+ islands. Mt. Fuji, bullet trains, neon megacities and Zen temples. Record-breaking tourism in 2024–25.',
+      accent: 'bo' },
+    { id: 'france', name: 'France', flag: '🇫🇷', region: 'Western Europe', code: 'FR',
+      pop: 67_970_000, gdp: '$3.1T', visitors: '100.0M', growth: '+12%', up: true,
+      capital: 'Paris', currency: 'EUR', langs: 'French',
+      blurb: 'World\'s most-visited country. From the Riviera to Mont Blanc to the Loire châteaux. Hosted the 2024 Olympics.',
+      accent: 'core' },
+    { id: 'iceland', name: 'Iceland', flag: '🇮🇸', region: 'Northern Europe', code: 'IS',
+      pop: 393_000, gdp: '$31B', visitors: '2.2M', growth: '+19%', up: true,
+      capital: 'Reykjavík', currency: 'ISK', langs: 'Icelandic',
+      blurb: 'Volcanic landscapes, glaciers, geysers, and the aurora borealis. 75% of energy is geothermal or hydro.',
+      accent: 'context' },
+    { id: 'thailand', name: 'Thailand', flag: '🇹🇭', region: 'Southeast Asia', code: 'TH',
+      pop: 71_700_000, gdp: '$520B', visitors: '28.1M', growth: '+33%', up: true,
+      capital: 'Bangkok', currency: 'THB', langs: 'Thai',
+      blurb: 'Tropical beaches, royal palaces, ancient ruins and ornate temples. Bangkok is the world\'s most-visited city.',
+      accent: 'travel' },
+    { id: 'portugal', name: 'Portugal', flag: '🇵🇹', region: 'Western Europe', code: 'PT',
+      pop: 10_330_000, gdp: '$303B', visitors: '26.5M', growth: '+28%', up: true,
+      capital: 'Lisbon', currency: 'EUR', langs: 'Portuguese',
+      blurb: 'Azulejos, port wine, the Algarve, and Europe\'s fastest-warming property market.',
+      accent: 'lists' },
+    { id: 'turkey', name: 'Turkey', flag: '🇹🇷', region: 'Western Asia', code: 'TR',
+      pop: 85_280_000, gdp: '$1.1T', visitors: '56.7M', growth: '+24%', up: true,
+      capital: 'Ankara', currency: 'TRY', langs: 'Turkish',
+      blurb: 'Bridge between continents. Istanbul, Cappadocia hot-air balloons, the Aegean coast, and Hellenistic ruins.',
+      accent: 'core' },
+    { id: 'mexico', name: 'Mexico', flag: '🇲🇽', region: 'North America', code: 'MX',
+      pop: 128_900_000, gdp: '$1.85T', visitors: '42.2M', growth: '+18%', up: true,
+      capital: 'Mexico City', currency: 'MXN', langs: 'Spanish',
+      blurb: 'Aztec and Maya heritage, two oceans, the Yucatán cenotes, and the world\'s 2nd-largest English-speaking expat scene.',
+      accent: 'bo' },
+    { id: 'norway', name: 'Norway', flag: '🇳🇴', region: 'Northern Europe', code: 'NO',
+      pop: 5_500_000, gdp: '$580B', visitors: '6.6M', growth: '+9%', up: true,
+      capital: 'Oslo', currency: 'NOK', langs: 'Norwegian',
+      blurb: 'Fjords, midnight sun, and the world\'s highest EV adoption (>92% of new cars).',
+      accent: 'context' },
+    { id: 'kenya', name: 'Kenya', flag: '🇰🇪', region: 'East Africa', code: 'KE',
+      pop: 55_120_000, gdp: '$118B', visitors: '2.1M', growth: '+21%', up: true,
+      capital: 'Nairobi', currency: 'KES', langs: 'Swahili, English',
+      blurb: 'The Great Migration, Maasai Mara, Mount Kenya, and a booming fintech hub in Nairobi.',
+      accent: 'travel' },
+    { id: 'peru', name: 'Peru', flag: '🇵🇪', region: 'South America', code: 'PE',
+      pop: 34_350_000, gdp: '$268B', visitors: '3.3M', growth: '+15%', up: true,
+      capital: 'Lima', currency: 'PEN', langs: 'Spanish, Quechua',
+      blurb: 'Machu Picchu, the Amazon, the Atacama and a culinary scene that swept the World\'s 50 Best.',
+      accent: 'lists' },
+    { id: 'vietnam', name: 'Vietnam', flag: '🇻🇳', region: 'Southeast Asia', code: 'VN',
+      pop: 99_460_000, gdp: '$430B', visitors: '12.6M', growth: '+38%', up: true,
+      capital: 'Hanoi', currency: 'VND', langs: 'Vietnamese',
+      blurb: 'Ha Long Bay, 3,000km of coastline, and the world\'s fastest-growing middle class.',
+      accent: 'travel' },
+  ],
+
+  /* ============================================================
+     All countries — placeholder directory (UN member states + observers)
+     Each entry: { name, flag, code, region }
+     Countries that exist in `countries` above get rich detail pages;
+     the rest render as "coming soon" placeholder cards.
+     ============================================================ */
+  allCountries: [
+    // North Africa
+    { name: 'Morocco',          flag: '🇲🇦', code: 'MA', region: 'North Africa' },
+    { name: 'Algeria',          flag: '🇩🇿', code: 'DZ', region: 'North Africa' },
+    { name: 'Tunisia',          flag: '🇹🇳', code: 'TN', region: 'North Africa' },
+    { name: 'Libya',            flag: '🇱🇾', code: 'LY', region: 'North Africa' },
+    { name: 'Egypt',            flag: '🇪🇬', code: 'EG', region: 'North Africa' },
+    { name: 'Sudan',            flag: '🇸🇩', code: 'SD', region: 'North Africa' },
+    // West Africa
+    { name: 'Nigeria',          flag: '🇳🇬', code: 'NG', region: 'West Africa' },
+    { name: 'Ghana',            flag: '🇬🇭', code: 'GH', region: 'West Africa' },
+    { name: 'Senegal',          flag: '🇸🇳', code: 'SN', region: 'West Africa' },
+    { name: 'Ivory Coast',      flag: '🇨🇮', code: 'CI', region: 'West Africa' },
+    { name: 'Mali',             flag: '🇲🇱', code: 'ML', region: 'West Africa' },
+    { name: 'Burkina Faso',     flag: '🇧🇫', code: 'BF', region: 'West Africa' },
+    { name: 'Niger',            flag: '🇳🇪', code: 'NE', region: 'West Africa' },
+    { name: 'Mauritania',       flag: '🇲🇷', code: 'MR', region: 'West Africa' },
+    { name: 'Guinea',           flag: '🇬🇳', code: 'GN', region: 'West Africa' },
+    { name: 'Sierra Leone',     flag: '🇸🇱', code: 'SL', region: 'West Africa' },
+    { name: 'Liberia',          flag: '🇱🇷', code: 'LR', region: 'West Africa' },
+    { name: 'Togo',             flag: '🇹🇬', code: 'TG', region: 'West Africa' },
+    { name: 'Benin',            flag: '🇧🇯', code: 'BJ', region: 'West Africa' },
+    { name: 'Gambia',           flag: '🇬🇲', code: 'GM', region: 'West Africa' },
+    { name: 'Guinea-Bissau',    flag: '🇬🇼', code: 'GW', region: 'West Africa' },
+    { name: 'Cape Verde',       flag: '🇨🇻', code: 'CV', region: 'West Africa' },
+    // East Africa
+    { name: 'Kenya',            flag: '🇰🇪', code: 'KE', region: 'East Africa' },
+    { name: 'Ethiopia',         flag: '🇪🇹', code: 'ET', region: 'East Africa' },
+    { name: 'Tanzania',         flag: '🇹🇿', code: 'TZ', region: 'East Africa' },
+    { name: 'Uganda',           flag: '🇺🇬', code: 'UG', region: 'East Africa' },
+    { name: 'Rwanda',           flag: '🇷🇼', code: 'RW', region: 'East Africa' },
+    { name: 'Burundi',          flag: '🇧🇮', code: 'BI', region: 'East Africa' },
+    { name: 'South Sudan',      flag: '🇸🇸', code: 'SS', region: 'East Africa' },
+    { name: 'Somalia',          flag: '🇸🇴', code: 'SO', region: 'East Africa' },
+    { name: 'Djibouti',         flag: '🇩🇯', code: 'DJ', region: 'East Africa' },
+    { name: 'Eritrea',          flag: '🇪🇷', code: 'ER', region: 'East Africa' },
+    { name: 'Madagascar',       flag: '🇲🇬', code: 'MG', region: 'East Africa' },
+    { name: 'Mauritius',        flag: '🇲🇺', code: 'MU', region: 'East Africa' },
+    { name: 'Seychelles',       flag: '🇸🇨', code: 'SC', region: 'East Africa' },
+    { name: 'Comoros',          flag: '🇰🇲', code: 'KM', region: 'East Africa' },
+    // Central Africa
+    { name: 'Cameroon',         flag: '🇨🇲', code: 'CM', region: 'Central Africa' },
+    { name: 'DR Congo',         flag: '🇨🇩', code: 'CD', region: 'Central Africa' },
+    { name: 'Congo',            flag: '🇨🇬', code: 'CG', region: 'Central Africa' },
+    { name: 'Gabon',            flag: '🇬🇦', code: 'GA', region: 'Central Africa' },
+    { name: 'Central African Rep.', flag: '🇨🇫', code: 'CF', region: 'Central Africa' },
+    { name: 'Chad',             flag: '🇹🇩', code: 'TD', region: 'Central Africa' },
+    { name: 'Equatorial Guinea',flag: '🇬🇶', code: 'GQ', region: 'Central Africa' },
+    { name: 'São Tomé & Príncipe', flag: '🇸🇹', code: 'ST', region: 'Central Africa' },
+    // Southern Africa
+    { name: 'South Africa',     flag: '🇿🇦', code: 'ZA', region: 'Southern Africa' },
+    { name: 'Zimbabwe',         flag: '🇿🇼', code: 'ZW', region: 'Southern Africa' },
+    { name: 'Zambia',           flag: '🇿🇲', code: 'ZM', region: 'Southern Africa' },
+    { name: 'Mozambique',       flag: '🇲🇿', code: 'MZ', region: 'Southern Africa' },
+    { name: 'Angola',           flag: '🇦🇴', code: 'AO', region: 'Southern Africa' },
+    { name: 'Namibia',          flag: '🇳🇦', code: 'NA', region: 'Southern Africa' },
+    { name: 'Botswana',         flag: '🇧🇼', code: 'BW', region: 'Southern Africa' },
+    { name: 'Malawi',           flag: '🇲🇼', code: 'MW', region: 'Southern Africa' },
+    { name: 'Lesotho',          flag: '🇱🇸', code: 'LS', region: 'Southern Africa' },
+    { name: 'Eswatini',         flag: '🇸🇿', code: 'SZ', region: 'Southern Africa' },
+    // Western Europe
+    { name: 'France',           flag: '🇫🇷', code: 'FR', region: 'Western Europe' },
+    { name: 'Germany',          flag: '🇩🇪', code: 'DE', region: 'Western Europe' },
+    { name: 'United Kingdom',   flag: '🇬🇧', code: 'GB', region: 'Western Europe' },
+    { name: 'Ireland',          flag: '🇮🇪', code: 'IE', region: 'Western Europe' },
+    { name: 'Netherlands',      flag: '🇳🇱', code: 'NL', region: 'Western Europe' },
+    { name: 'Belgium',          flag: '🇧🇪', code: 'BE', region: 'Western Europe' },
+    { name: 'Luxembourg',       flag: '🇱🇺', code: 'LU', region: 'Western Europe' },
+    { name: 'Switzerland',      flag: '🇨🇭', code: 'CH', region: 'Western Europe' },
+    { name: 'Austria',          flag: '🇦🇹', code: 'AT', region: 'Western Europe' },
+    { name: 'Liechtenstein',    flag: '🇱🇮', code: 'LI', region: 'Western Europe' },
+    { name: 'Monaco',           flag: '🇲🇨', code: 'MC', region: 'Western Europe' },
+    { name: 'Spain',            flag: '🇪🇸', code: 'ES', region: 'Western Europe' },
+    { name: 'Portugal',         flag: '🇵🇹', code: 'PT', region: 'Western Europe' },
+    { name: 'Andorra',          flag: '🇦🇩', code: 'AD', region: 'Western Europe' },
+    // Southern Europe
+    { name: 'Italy',            flag: '🇮🇹', code: 'IT', region: 'Southern Europe' },
+    { name: 'Greece',           flag: '🇬🇷', code: 'GR', region: 'Southern Europe' },
+    { name: 'Malta',            flag: '🇲🇹', code: 'MT', region: 'Southern Europe' },
+    { name: 'Cyprus',           flag: '🇨🇾', code: 'CY', region: 'Southern Europe' },
+    { name: 'San Marino',       flag: '🇸🇲', code: 'SM', region: 'Southern Europe' },
+    { name: 'Vatican City',     flag: '🇻🇦', code: 'VA', region: 'Southern Europe' },
+    // Northern Europe
+    { name: 'Iceland',          flag: '🇮🇸', code: 'IS', region: 'Northern Europe' },
+    { name: 'Norway',           flag: '🇳🇴', code: 'NO', region: 'Northern Europe' },
+    { name: 'Sweden',           flag: '🇸🇪', code: 'SE', region: 'Northern Europe' },
+    { name: 'Denmark',          flag: '🇩🇰', code: 'DK', region: 'Northern Europe' },
+    { name: 'Finland',          flag: '🇫🇮', code: 'FI', region: 'Northern Europe' },
+    { name: 'Estonia',          flag: '🇪🇪', code: 'EE', region: 'Northern Europe' },
+    { name: 'Latvia',           flag: '🇱🇻', code: 'LV', region: 'Northern Europe' },
+    { name: 'Lithuania',        flag: '🇱🇹', code: 'LT', region: 'Northern Europe' },
+    // Eastern Europe
+    { name: 'Poland',           flag: '🇵🇱', code: 'PL', region: 'Eastern Europe' },
+    { name: 'Czechia',          flag: '🇨🇿', code: 'CZ', region: 'Eastern Europe' },
+    { name: 'Slovakia',         flag: '🇸🇰', code: 'SK', region: 'Eastern Europe' },
+    { name: 'Hungary',          flag: '🇭🇺', code: 'HU', region: 'Eastern Europe' },
+    { name: 'Romania',          flag: '🇷🇴', code: 'RO', region: 'Eastern Europe' },
+    { name: 'Bulgaria',         flag: '🇧🇬', code: 'BG', region: 'Eastern Europe' },
+    { name: 'Moldova',          flag: '🇲🇩', code: 'MD', region: 'Eastern Europe' },
+    { name: 'Ukraine',          flag: '🇺🇦', code: 'UA', region: 'Eastern Europe' },
+    { name: 'Belarus',          flag: '🇧🇾', code: 'BY', region: 'Eastern Europe' },
+    { name: 'Russia',           flag: '🇷🇺', code: 'RU', region: 'Eastern Europe' },
+    // Balkans
+    { name: 'Croatia',          flag: '🇭🇷', code: 'HR', region: 'Balkans' },
+    { name: 'Slovenia',         flag: '🇸🇮', code: 'SI', region: 'Balkans' },
+    { name: 'Serbia',           flag: '🇷🇸', code: 'RS', region: 'Balkans' },
+    { name: 'Bosnia & Herzegovina', flag: '🇧🇦', code: 'BA', region: 'Balkans' },
+    { name: 'Montenegro',       flag: '🇲🇪', code: 'ME', region: 'Balkans' },
+    { name: 'North Macedonia',  flag: '🇲🇰', code: 'MK', region: 'Balkans' },
+    { name: 'Albania',          flag: '🇦🇱', code: 'AL', region: 'Balkans' },
+    { name: 'Kosovo',           flag: '🇽🇰', code: 'XK', region: 'Balkans' },
+    // Western Asia / Middle East
+    { name: 'Turkey',           flag: '🇹🇷', code: 'TR', region: 'Western Asia' },
+    { name: 'Israel',           flag: '🇮🇱', code: 'IL', region: 'Western Asia' },
+    { name: 'Palestine',        flag: '🇵🇸', code: 'PS', region: 'Western Asia' },
+    { name: 'Lebanon',          flag: '🇱🇧', code: 'LB', region: 'Western Asia' },
+    { name: 'Jordan',           flag: '🇯🇴', code: 'JO', region: 'Western Asia' },
+    { name: 'Syria',            flag: '🇸🇾', code: 'SY', region: 'Western Asia' },
+    { name: 'Iraq',             flag: '🇮🇶', code: 'IQ', region: 'Western Asia' },
+    { name: 'Iran',             flag: '🇮🇷', code: 'IR', region: 'Western Asia' },
+    { name: 'Saudi Arabia',     flag: '🇸🇦', code: 'SA', region: 'Western Asia' },
+    { name: 'UAE',              flag: '🇦🇪', code: 'AE', region: 'Western Asia' },
+    { name: 'Qatar',            flag: '🇶🇦', code: 'QA', region: 'Western Asia' },
+    { name: 'Bahrain',          flag: '🇧🇭', code: 'BH', region: 'Western Asia' },
+    { name: 'Kuwait',           flag: '🇰🇼', code: 'KW', region: 'Western Asia' },
+    { name: 'Oman',             flag: '🇴🇲', code: 'OM', region: 'Western Asia' },
+    { name: 'Yemen',            flag: '🇾🇪', code: 'YE', region: 'Western Asia' },
+    { name: 'Armenia',          flag: '🇦🇲', code: 'AM', region: 'Western Asia' },
+    { name: 'Azerbaijan',       flag: '🇦🇿', code: 'AZ', region: 'Western Asia' },
+    { name: 'Georgia',          flag: '🇬🇪', code: 'GE', region: 'Western Asia' },
+    // Central Asia
+    { name: 'Kazakhstan',       flag: '🇰🇿', code: 'KZ', region: 'Central Asia' },
+    { name: 'Uzbekistan',       flag: '🇺🇿', code: 'UZ', region: 'Central Asia' },
+    { name: 'Turkmenistan',     flag: '🇹🇲', code: 'TM', region: 'Central Asia' },
+    { name: 'Kyrgyzstan',       flag: '🇰🇬', code: 'KG', region: 'Central Asia' },
+    { name: 'Tajikistan',       flag: '🇹🇯', code: 'TJ', region: 'Central Asia' },
+    { name: 'Afghanistan',      flag: '🇦🇫', code: 'AF', region: 'Central Asia' },
+    // South Asia
+    { name: 'India',            flag: '🇮🇳', code: 'IN', region: 'South Asia' },
+    { name: 'Pakistan',         flag: '🇵🇰', code: 'PK', region: 'South Asia' },
+    { name: 'Bangladesh',       flag: '🇧🇩', code: 'BD', region: 'South Asia' },
+    { name: 'Sri Lanka',        flag: '🇱🇰', code: 'LK', region: 'South Asia' },
+    { name: 'Nepal',            flag: '🇳🇵', code: 'NP', region: 'South Asia' },
+    { name: 'Bhutan',           flag: '🇧🇹', code: 'BT', region: 'South Asia' },
+    { name: 'Maldives',         flag: '🇲🇻', code: 'MV', region: 'South Asia' },
+    // East Asia
+    { name: 'China',            flag: '🇨🇳', code: 'CN', region: 'East Asia' },
+    { name: 'Japan',            flag: '🇯🇵', code: 'JP', region: 'East Asia' },
+    { name: 'South Korea',      flag: '🇰🇷', code: 'KR', region: 'East Asia' },
+    { name: 'North Korea',      flag: '🇰🇵', code: 'KP', region: 'East Asia' },
+    { name: 'Mongolia',         flag: '🇲🇳', code: 'MN', region: 'East Asia' },
+    { name: 'Taiwan',           flag: '🇹🇼', code: 'TW', region: 'East Asia' },
+    { name: 'Hong Kong',        flag: '🇭🇰', code: 'HK', region: 'East Asia' },
+    // Southeast Asia
+    { name: 'Thailand',         flag: '🇹🇭', code: 'TH', region: 'Southeast Asia' },
+    { name: 'Vietnam',          flag: '🇻🇳', code: 'VN', region: 'Southeast Asia' },
+    { name: 'Indonesia',        flag: '🇮🇩', code: 'ID', region: 'Southeast Asia' },
+    { name: 'Philippines',      flag: '🇵🇭', code: 'PH', region: 'Southeast Asia' },
+    { name: 'Malaysia',         flag: '🇲🇾', code: 'MY', region: 'Southeast Asia' },
+    { name: 'Singapore',        flag: '🇸🇬', code: 'SG', region: 'Southeast Asia' },
+    { name: 'Cambodia',         flag: '🇰🇭', code: 'KH', region: 'Southeast Asia' },
+    { name: 'Laos',             flag: '🇱🇦', code: 'LA', region: 'Southeast Asia' },
+    { name: 'Myanmar',          flag: '🇲🇲', code: 'MM', region: 'Southeast Asia' },
+    { name: 'Brunei',           flag: '🇧🇳', code: 'BN', region: 'Southeast Asia' },
+    { name: 'Timor-Leste',      flag: '🇹🇱', code: 'TL', region: 'Southeast Asia' },
+    // North America
+    { name: 'United States',    flag: '🇺🇸', code: 'US', region: 'North America' },
+    { name: 'Canada',           flag: '🇨🇦', code: 'CA', region: 'North America' },
+    { name: 'Mexico',           flag: '🇲🇽', code: 'MX', region: 'North America' },
+    // Central America
+    { name: 'Guatemala',        flag: '🇬🇹', code: 'GT', region: 'Central America' },
+    { name: 'Belize',           flag: '🇧🇿', code: 'BZ', region: 'Central America' },
+    { name: 'Honduras',         flag: '🇭🇳', code: 'HN', region: 'Central America' },
+    { name: 'El Salvador',      flag: '🇸🇻', code: 'SV', region: 'Central America' },
+    { name: 'Nicaragua',        flag: '🇳🇮', code: 'NI', region: 'Central America' },
+    { name: 'Costa Rica',       flag: '🇨🇷', code: 'CR', region: 'Central America' },
+    { name: 'Panama',           flag: '🇵🇦', code: 'PA', region: 'Central America' },
+    // Caribbean
+    { name: 'Cuba',             flag: '🇨🇺', code: 'CU', region: 'Caribbean' },
+    { name: 'Dominican Republic', flag: '🇩🇴', code: 'DO', region: 'Caribbean' },
+    { name: 'Haiti',            flag: '🇭🇹', code: 'HT', region: 'Caribbean' },
+    { name: 'Jamaica',          flag: '🇯🇲', code: 'JM', region: 'Caribbean' },
+    { name: 'Trinidad & Tobago',flag: '🇹🇹', code: 'TT', region: 'Caribbean' },
+    { name: 'Bahamas',          flag: '🇧🇸', code: 'BS', region: 'Caribbean' },
+    { name: 'Barbados',         flag: '🇧🇧', code: 'BB', region: 'Caribbean' },
+    { name: 'Saint Lucia',      flag: '🇱🇨', code: 'LC', region: 'Caribbean' },
+    { name: 'Grenada',          flag: '🇬🇩', code: 'GD', region: 'Caribbean' },
+    { name: 'Antigua & Barbuda',flag: '🇦🇬', code: 'AG', region: 'Caribbean' },
+    { name: 'Dominica',         flag: '🇩🇲', code: 'DM', region: 'Caribbean' },
+    { name: 'St. Vincent & Gr.',flag: '🇻🇨', code: 'VC', region: 'Caribbean' },
+    { name: 'St. Kitts & Nevis',flag: '🇰🇳', code: 'KN', region: 'Caribbean' },
+    // South America
+    { name: 'Brazil',           flag: '🇧🇷', code: 'BR', region: 'South America' },
+    { name: 'Argentina',        flag: '🇦🇷', code: 'AR', region: 'South America' },
+    { name: 'Chile',            flag: '🇨🇱', code: 'CL', region: 'South America' },
+    { name: 'Colombia',         flag: '🇨🇴', code: 'CO', region: 'South America' },
+    { name: 'Peru',             flag: '🇵🇪', code: 'PE', region: 'South America' },
+    { name: 'Venezuela',        flag: '🇻🇪', code: 'VE', region: 'South America' },
+    { name: 'Ecuador',          flag: '🇪🇨', code: 'EC', region: 'South America' },
+    { name: 'Bolivia',          flag: '🇧🇴', code: 'BO', region: 'South America' },
+    { name: 'Paraguay',         flag: '🇵🇾', code: 'PY', region: 'South America' },
+    { name: 'Uruguay',          flag: '🇺🇾', code: 'UY', region: 'South America' },
+    { name: 'Guyana',           flag: '🇬🇾', code: 'GY', region: 'South America' },
+    { name: 'Suriname',         flag: '🇸🇷', code: 'SR', region: 'South America' },
+    // Oceania
+    { name: 'Australia',        flag: '🇦🇺', code: 'AU', region: 'Oceania' },
+    { name: 'New Zealand',      flag: '🇳🇿', code: 'NZ', region: 'Oceania' },
+    { name: 'Papua New Guinea', flag: '🇵🇬', code: 'PG', region: 'Oceania' },
+    { name: 'Fiji',             flag: '🇫🇯', code: 'FJ', region: 'Oceania' },
+    { name: 'Solomon Islands',  flag: '🇸🇧', code: 'SB', region: 'Oceania' },
+    { name: 'Vanuatu',          flag: '🇻🇺', code: 'VU', region: 'Oceania' },
+    { name: 'Samoa',            flag: '🇼🇸', code: 'WS', region: 'Oceania' },
+    { name: 'Tonga',            flag: '🇹🇴', code: 'TO', region: 'Oceania' },
+    { name: 'Kiribati',         flag: '🇰🇮', code: 'KI', region: 'Oceania' },
+    { name: 'Micronesia',       flag: '🇫🇲', code: 'FM', region: 'Oceania' },
+    { name: 'Marshall Islands', flag: '🇲🇭', code: 'MH', region: 'Oceania' },
+    { name: 'Palau',            flag: '🇵🇼', code: 'PW', region: 'Oceania' },
+    { name: 'Nauru',            flag: '🇳🇷', code: 'NR', region: 'Oceania' },
+    { name: 'Tuvalu',           flag: '🇹🇻', code: 'TV', region: 'Oceania' },
+  ],
+
+  /* ============================================================
+     Hotels — for the destination detail
+     ============================================================ */
+  hotels: {
+    morocco: [
+      { name: 'La Mamounia',      city: 'Marrakech',   stars: 5, score: 9.4, reviews: 4280, price: 612, art: '🕌' },
+      { name: 'Royal Mansour',    city: 'Marrakech',   stars: 5, score: 9.6, reviews: 1820, price: 1480, art: '🏛️' },
+      { name: 'Riad Fès',         city: 'Fès',         stars: 5, score: 9.2, reviews: 980,  price: 284, art: '🕌' },
+      { name: 'Four Seasons',     city: 'Casablanca',  stars: 5, score: 9.0, reviews: 2140, price: 392, art: '🏨' },
+      { name: 'Dar Ahlam',        city: 'Skoura',      stars: 5, score: 9.7, reviews: 320,  price: 1850, art: '🏜️' },
+      { name: 'Heure Bleue Palais',city:'Essaouira',   stars: 5, score: 9.3, reviews: 612,  price: 248, art: '🌊' },
+    ],
+    japan: [
+      { name: 'Aman Tokyo',       city: 'Tokyo',       stars: 5, score: 9.5, reviews: 1620, price: 1840, art: '🗼' },
+      { name: 'Hoshinoya Kyoto',  city: 'Kyoto',       stars: 5, score: 9.6, reviews: 980,  price: 1240, art: '🏯' },
+      { name: 'Park Hyatt Tokyo', city: 'Tokyo',       stars: 5, score: 9.1, reviews: 2890, price: 720,  art: '🌆' },
+    ],
+    france: [
+      { name: 'Ritz Paris',       city: 'Paris',       stars: 5, score: 9.5, reviews: 3210, price: 1640, art: '🗼' },
+      { name: 'Hôtel du Cap',     city: 'Antibes',     stars: 5, score: 9.7, reviews: 480,  price: 2180, art: '🌊' },
+    ],
+    default: [
+      { name: 'Local Boutique',   city: 'City Center', stars: 4, score: 8.8, reviews: 1280, price: 184, art: '🏨' },
+      { name: 'Heritage Riad',    city: 'Old Town',    stars: 4, score: 9.1, reviews: 612,  price: 142, art: '🏛️' },
+    ],
+  },
+
+  /* ============================================================
+     Travel gear (Amazon affiliate)
+     ============================================================ */
+  gear: [
+    { name: 'Travel adapter, 100+ countries', price: '$24.99', art: '🔌', tag: 'most-bought' },
+    { name: 'Carry-on hardshell, 38L',       price: '$148.00', art: '🧳' },
+    { name: 'Anti-theft daypack',            price: '$62.50',  art: '🎒' },
+    { name: 'Compression packing cubes',     price: '$32.00',  art: '🧺' },
+    { name: 'Lonely Planet Morocco 2025',    price: '$22.99',  art: '📕', tag: 'editor pick' },
+    { name: 'Noise-cancelling headphones',   price: '$298.00', art: '🎧' },
+    { name: 'Reusable water bottle, 32oz',   price: '$38.00',  art: '🍶' },
+    { name: 'Universal SIM + eSIM card',     price: '$19.95',  art: '📱' },
+  ],
+
+  /* ============================================================
+     "Right now in the world" — random rolling feed
+     ============================================================ */
+  feedTemplates: [
+    { tag: 'pop',     tpl: 'A baby is born in <strong>{city}</strong> · world population now <strong>{pop}</strong>' },
+    { tag: 'pop',     tpl: '<strong>{n}</strong> people just turned 30 worldwide' },
+    { tag: 'tourism', tpl: '<strong>{n}</strong> hotel rooms booked in <strong>{city}</strong> in the last minute' },
+    { tag: 'tourism', tpl: '<strong>{n}</strong> tourists landed in Marrakech in the last hour' },
+    { tag: 'climate', tpl: 'Atmospheric CO₂ ticked up by <strong>{n}</strong> tonnes in the last 60 seconds' },
+    { tag: 'climate', tpl: '<strong>{n}</strong> hectares of tropical forest lost in the last 24h' },
+    { tag: 'energy',  tpl: 'Solar generated <strong>{n} GWh</strong> globally in the last hour' },
+    { tag: 'energy',  tpl: '<strong>{n}</strong> EVs sold worldwide today' },
+    { tag: 'econ',    tpl: '<strong>${n}M</strong> spent on international tourism in the last minute' },
+    { tag: 'econ',    tpl: '<strong>{n}</strong> Amazon packages shipped in the last 60 seconds' },
+    { tag: 'tech',    tpl: '<strong>{n}TB</strong> of data uploaded to the cloud in the last minute' },
+    { tag: 'tech',    tpl: '<strong>{n}</strong> GPT prompts submitted worldwide in the last second' },
+    { tag: 'pop',     tpl: '<strong>{n}</strong> couples married worldwide today' },
+    { tag: 'tourism', tpl: '<strong>{n}</strong> flights landed at Heathrow, JFK, CDG and DXB this hour' },
+    { tag: 'tech',    tpl: '<strong>{n}</strong> Wikipedia edits made in the last 10 minutes' },
+  ],
+  feedCities: ['Mumbai', 'Lagos', 'São Paulo', 'Cairo', 'Jakarta', 'Karachi', 'Manila', 'Dhaka', 'Mexico City', 'Istanbul', 'Tokyo', 'Marrakech', 'Bangkok', 'Paris'],
+
+  /* ============================================================
+     "Did you know" facts
+     ============================================================ */
+  facts: [
+    { text: 'Right now, <strong>0.74%</strong> of all humans who have ever lived are alive at the same time.', src: 'Population Reference Bureau' },
+    { text: 'In the time it takes to read this sentence, <strong>4.3 babies</strong> were born and <strong>1.9 people</strong> died.', src: 'UN World Population' },
+    { text: 'There are roughly <strong>13,400 commercial aircraft</strong> in the sky over your head right now.', src: 'ADS-B aggregate' },
+    { text: 'Morocco welcomes a tourist every <strong>1.8 seconds</strong> on average.', src: 'UN World Tourism' },
+    { text: 'Humanity creates <strong>402 exabytes</strong> of data every single day — that\'s <strong>4.6 PB/sec</strong>.', src: 'IDC Global DataSphere' },
+    { text: 'The world\'s GDP grows by about <strong>$3 million per second</strong> in nominal terms.', src: 'World Bank' },
+    { text: 'A new internet user comes online every <strong>0.19 seconds</strong>.', src: 'ITU' },
+    { text: 'Bangkok is the world\'s most-visited city, with <strong>32.4M</strong> international arrivals last year.', src: 'Mastercard GDCI' },
+    { text: 'The fastest-growing tourist destination in 2025 is <strong>Saudi Arabia</strong>, up <strong>65%</strong>.', src: 'UN Tourism Barometer' },
+    { text: 'Iceland produces <strong>99.98%</strong> of its electricity from renewable sources.', src: 'IRENA' },
+    { text: 'You share your birthday with about <strong>21 million</strong> other people on Earth.', src: 'UN demographics' },
+    { text: 'Today, humans will drink an estimated <strong>2.25 billion</strong> cups of coffee.', src: 'ICO' },
+  ],
+
+  /* ============================================================
+     Videos
+     ============================================================ */
+  videos: [
+    { title: 'Marrakech in 4K — souks, riads and the Atlas at dawn',  duration: '8:42', views: '2.1M', when: '2 days ago', art: '🏜️', big: true },
+    { title: 'How 8 billion people share one planet',                  duration: '12:18', views: '4.4M', when: '1 week ago', art: '🌍' },
+    { title: 'Iceland\'s renewable grid, explained',                   duration: '6:54', views: '812k', when: '3 days ago', art: '⚡' },
+    { title: 'Tokyo at rush hour — 13M commuters',                    duration: '4:21', views: '1.6M', when: '5 days ago', art: '🚇' },
+    { title: 'Where will the next billion people live?',              duration: '15:02', views: '2.8M', when: '2 weeks ago', art: '🏙️' },
+  ],
+
+  /* ============================================================
+     News feed
+     ============================================================ */
+  news: [
+    { title: 'Saudi tourism surges 65% YoY, overtakes Egypt in Q1', src: 'Reuters', when: '2m', tag: 'tourism' },
+    { title: 'Atmospheric CO₂ crosses 425ppm at Mauna Loa', src: 'NOAA', when: '14m', tag: 'climate' },
+    { title: 'EU population edges down for third year running', src: 'Eurostat', when: '47m', tag: 'pop' },
+    { title: 'Morocco signs visa-free deal with seven new countries', src: 'AP', when: '1h', tag: 'tourism' },
+    { title: 'Global EV sales pass 28% of new vehicle market', src: 'IEA', when: '2h', tag: 'energy' },
+    { title: 'Tokyo records 4M international tourists in single month', src: 'Nikkei', when: '3h', tag: 'tourism' },
+    { title: 'India overtakes China as world\'s most-populous country', src: 'UN DESA', when: '4h', tag: 'pop' },
+    { title: 'Tropical forest loss rises 13%, Brazil and Indonesia drive', src: 'WRI', when: '5h', tag: 'climate' },
+  ],
+
+  /* ============================================================
+     Trending searches
+     ============================================================ */
+  trending: [
+    { q: 'morocco tourist visa 2026',   v: '+412%' },
+    { q: 'chefchaouen blue city',       v: '+218%' },
+    { q: 'sahara desert tour 3 days',   v: '+187%' },
+    { q: 'casablanca to marrakech train',v: '+142%' },
+    { q: 'lisbon vs porto',             v: '+98%' },
+    { q: 'iceland northern lights may',  v: '+87%' },
+    { q: 'tokyo cherry blossom 2026',    v: '+74%' },
+    { q: 'turkey cappadocia balloons',   v: '+61%' },
+  ],
+
+  /* ============================================================
+     Scroller story — population is the most legible
+     ============================================================ */
+  scroller: [
+    {
+      eye: 'CHAPTER 01',
+      title: '8.15 billion humans, right now.',
+      body: 'It took 200,000 years for human population to reach one billion. The next billion took 130 years. The latest took just 12 years. We are living through the steepest demographic curve in our species\' history.',
+      bigVal: '8,152,847,302',
+      cap: 'World population · live UN/UNDESA medium-variant estimate',
+    },
+    {
+      eye: 'CHAPTER 02',
+      title: '2,500,000,000 added in just one lifetime.',
+      body: 'A person born in 1970 has watched the world add more humans than existed at the start of the Industrial Revolution. The acceleration is slowing — but the absolute numbers are unprecedented.',
+      bigVal: '2.5 B',
+      cap: 'Net additions, 1970–present',
+    },
+    {
+      eye: 'CHAPTER 03',
+      title: 'But the curve is bending.',
+      body: 'Global fertility has fallen from 5.0 to 2.2 children per woman since 1960. By the 2080s, the human population is projected to peak — possibly for the first time since the Black Death.',
+      bigVal: '2.2',
+      cap: 'Global total fertility rate · 1960 was 5.0',
+    },
+    {
+      eye: 'CHAPTER 04',
+      title: 'Africa adds the next billion.',
+      body: 'Nearly all population growth from now to 2100 will come from sub-Saharan Africa. Nigeria alone will pass the United States in population before 2050.',
+      bigVal: '+1.1 B',
+      cap: 'Sub-Saharan Africa, 2024 → 2050',
+    },
+    {
+      eye: 'CHAPTER 05',
+      title: 'Meanwhile, half the world is aging.',
+      body: 'Japan, Italy, South Korea, and a growing number of countries have already crossed peak working-age population. By 2050, a quarter of all Europeans will be over 65.',
+      bigVal: '25.4%',
+      cap: 'Share of EU population aged 65+, 2050 projection',
+    },
+  ],
+};

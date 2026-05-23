@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Activity, Cloud, DollarSign, FileText, Globe, MapPin, Plane, Settings, Users, type LucideIcon } from "lucide-react";
+import { Activity, Cloud, DollarSign, FileText, Globe, MapPin, Plane, Settings, Shuffle, Users, type LucideIcon } from "lucide-react";
 import { useNow } from "./useNow";
 import { computeTicker } from "@/lib/wsl-v2/computeTicker";
 import { FMT } from "@/lib/wsl-v2/fmt";
@@ -18,6 +18,7 @@ const ITEMS: Item[] = [
   { href: "/tourism", label: "Tourism", Icon: Plane },
   { href: "/destinations", label: "Destinations", Icon: MapPin },
   { href: "/story", label: "The big story", Icon: FileText },
+  { href: "/random", label: "Random", Icon: Shuffle },
   { href: "/about", label: "About & sources", Icon: Settings },
 ];
 

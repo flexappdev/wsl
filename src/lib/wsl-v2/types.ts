@@ -121,6 +121,13 @@ export type ScrollerChapter = {
   cap: string;
 };
 
+export type SimpleCountry = {
+  name: string;
+  flag: string;
+  code: string;
+  region: string;
+};
+
 export type WslPayload = {
   epoch: number;
   tickers: Ticker[];
@@ -130,6 +137,7 @@ export type WslPayload = {
   fastestGrowing: RankedCountry[];
   largestGdp: RankedCountry[];
   countries: Country[];
+  allCountries: SimpleCountry[];
   hotels: Record<string, Hotel[]>;
   gear: GearItem[];
   feedTemplates: FeedTemplate[];

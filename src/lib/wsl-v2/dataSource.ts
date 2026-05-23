@@ -155,6 +155,7 @@ export const getWslPayload = cache(async (): Promise<WslPayloadWithMeta> => {
     news: pick("news", news, SEED.news),
     trending: pick("trending", trending, SEED.trending),
     scroller: pick("scroller", scroller, SEED.scroller),
+    allCountries: SEED.allCountries,
     source: {
       overall: anyMongo ? "mongo" : "seed",
       sections,

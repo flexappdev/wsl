@@ -1,0 +1,237 @@
+/* Component styles shared across preview cards AND the UI kit.
+   Import after colors_and_type.css. */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              opacity var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+  user-select: none;
+}
+.btn:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring); }
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.btn-primary:hover { background: color-mix(in oklch, var(--primary) 90%, transparent); }
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border-color: var(--border);
+}
+.btn-secondary:hover { background: var(--card-hover); border-color: var(--border-hover); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--foreground-subtle);
+}
+.btn-ghost:hover { background: var(--muted); color: var(--foreground); }
+
+.btn-destructive {
+  background: var(--destructive);
+  color: var(--destructive-foreground);
+}
+.btn-destructive:hover { opacity: 0.9; }
+
+.btn-sm { height: 28px; padding: 0 10px; font-size: 12px; border-radius: 7px; }
+.btn-lg { height: 40px; padding: 0 18px; font-size: 14px; }
+.btn-icon { width: 32px; height: 32px; padding: 0; }
+
+/* ---------- Inputs ---------- */
+.input {
+  display: inline-flex; align-items: center;
+  height: 34px;
+  padding: 0 12px;
+  background: var(--card);
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+  width: 100%;
+  outline: none;
+}
+.input::placeholder { color: var(--foreground-muted); }
+.input:hover { border-color: var(--border-hover); }
+.input:focus { border-color: var(--ring); box-shadow: 0 0 0 2px color-mix(in oklch, var(--ring) 30%, transparent); }
+
+.label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--foreground-subtle);
+  margin-bottom: 6px;
+}
+
+/* ---------- Workspace chip (monogram) ---------- */
+.ws-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+.ws-chip-lg { width: 32px; height: 32px; border-radius: 8px; font-size: 13px; }
+.ws-chip-sm { width: 18px; height: 18px; border-radius: 4px; font-size: 9px; }
+
+.ws-chip.core    { background: var(--ws-core);    color: white; }
+.ws-chip.lists   { background: var(--ws-lists);   color: #2a1111; }
+.ws-chip.travel  { background: var(--ws-travel);  color: #14301a; }
+.ws-chip.bo      { background: var(--ws-bo);      color: white; }
+.ws-chip.context { background: var(--ws-context); color: white; }
+
+.ws-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--foreground-subtle);
+}
+
+/* ---------- Status badge ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.badge-dot { width: 6px; height: 6px; border-radius: 999px; }
+.badge.live    { background: var(--success-bg); color: var(--success); border-color: color-mix(in oklch, var(--success) 40%, transparent); }
+.badge.preview { background: var(--info-bg);    color: var(--info);    border-color: color-mix(in oklch, var(--info) 40%, transparent); }
+.badge.warn    { background: var(--warning-bg); color: var(--warning); border-color: color-mix(in oklch, var(--warning) 40%, transparent); }
+.badge.fail    { background: var(--destructive-bg); color: var(--destructive); border-color: color-mix(in oklch, var(--destructive) 40%, transparent); }
+.badge.neutral { background: var(--muted); color: var(--foreground-muted); border-color: var(--border); }
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.card-compact { padding: 12px 14px; }
+.card-title { font-size: 14px; font-weight: 600; color: var(--foreground); margin: 0 0 4px; }
+.card-meta  { font-size: 12px; color: var(--foreground-muted); }
+
+/* ---------- Tabs ---------- */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); }
+.tab {
+  padding: 8px 14px 10px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--foreground-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.tab:hover { color: var(--foreground-subtle); }
+.tab.active { color: var(--foreground); border-bottom-color: var(--foreground); }
+
+/* ---------- Segmented control ---------- */
+.seg {
+  display: inline-flex;
+  background: var(--muted);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  gap: 2px;
+}
+.seg > button {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--foreground-muted);
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.seg > button:hover { color: var(--foreground-subtle); }
+.seg > button.active { background: var(--card); color: var(--foreground); box-shadow: var(--shadow-sm); }
+
+/* ---------- Table ---------- */
+.table { width: 100%; border-collapse: collapse; font-family: var(--font-sans); font-size: 13px; }
+.table th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--foreground-muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground-subtle);
+  vertical-align: middle;
+}
+.table tbody tr:hover td { background: var(--card-hover); }
+.table td.strong { color: var(--foreground); font-weight: 500; }
+
+/* ---------- Nav item ---------- */
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--foreground-muted);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  text-decoration: none;
+}
+.nav-item:hover { background: var(--muted); color: var(--foreground); }
+.nav-item.active { background: var(--muted); color: var(--foreground); }
+.nav-item svg { width: 16px; height: 16px; stroke-width: 1.5; opacity: 0.9; }
+
+/* ---------- KPI card ---------- */
+.kpi {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.kpi-label { font-size: 12px; color: var(--foreground-muted); font-weight: 500; }
+.kpi-value { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--foreground); line-height: 1; }
+.kpi-delta { font-size: 11px; color: var(--foreground-muted); font-family: var(--font-mono); }
+.kpi-delta.up   { color: var(--success); }
+.kpi-delta.down { color: var(--destructive); }
+
+/* ---------- Empty state ---------- */
+.empty {
+  text-align: center;
+  padding: 32px 16px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--foreground-muted);
+}
+.empty-title { font-size: 14px; color: var(--foreground); font-weight: 500; margin-bottom: 6px; }
+.empty-body  { font-size: 12px; margin-bottom: 12px; }
