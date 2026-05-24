@@ -15,7 +15,7 @@ function LoginForm() {
   const router = useRouter();
   const params = useSearchParams();
   const initialError = ERROR_LABELS[params.get("error") ?? ""] ?? "";
-  const [email, setEmail] = useState("mat@matsiems.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(initialError);
   const [loading, setLoading] = useState(false);
@@ -60,7 +60,7 @@ function LoginForm() {
           </Link>
           <h1 className="text-xl font-semibold" style={{ color: "var(--foreground)" }}>Sign in</h1>
           <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>
-            Admin access restricted to mat@matsiems.com
+            Admin access is restricted.
           </p>
         </div>
         <form onSubmit={handleLogin} className="space-y-3">
@@ -72,8 +72,9 @@ function LoginForm() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
               required
+              disabled
               className="input"
-              style={{ width: "100%" }}
+              style={{ width: "100%", opacity: 0.6, cursor: "not-allowed" }}
             />
           </div>
           <div className="space-y-1">
