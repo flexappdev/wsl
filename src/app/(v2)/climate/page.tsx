@@ -1,9 +1,20 @@
+import type { Metadata } from "next";
 import { Ticker } from "@/components/wsl-v2/Ticker";
 import { TopList } from "@/components/wsl-v2/TopList";
 import { RandomFact } from "@/components/wsl-v2/RandomFact";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 
 export const revalidate = 300;
+
+export const metadata: Metadata = {
+  title: "Climate & energy",
+  description:
+    "The planet's vital signs — emissions, energy, forest cover, biodiversity. Top emitters, renewables leaders, and CO₂ milestones.",
+  openGraph: {
+    title: "Climate & energy · World Stats Live",
+    description: "Live climate and energy indicators.",
+  },
+};
 
 const TICKER_IDS = ["co2", "energy", "forest", "species"];
 

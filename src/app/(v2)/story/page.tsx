@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 
 export const revalidate = 300;
+
+export const metadata: Metadata = {
+  title: "Story · Population",
+  description:
+    "Five chapters on the steepest demographic curve in human history. 8.15 billion humans, right now.",
+  openGraph: {
+    title: "Story · Population — World Stats Live",
+    description: "Long-form on the steepest demographic curve in history.",
+  },
+};
 
 export default async function StoryPage() {
   const payload = await getWslPayload();

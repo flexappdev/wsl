@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 
 export const revalidate = 300;
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Where the numbers come from. Data sources, methodology, stack and FAQ for World Stats Live.",
+  openGraph: {
+    title: "About · World Stats Live",
+    description: "Data sources, methodology, stack and FAQ.",
+  },
+};
 
 const SOURCES = [
   { tag: "POPULATION", name: "UN DESA · World Population Prospects", url: "https://population.un.org/wpp/" },

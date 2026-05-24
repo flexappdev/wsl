@@ -6,7 +6,9 @@
     "dev": "next dev --port 19011",
     "build": "next build",
     "start": "next start --port 19011",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed:mongo": "npx -y tsx scripts/seed-mongo.ts",
+    "seed:mongo:dry": "npx -y tsx scripts/seed-mongo.ts --dry"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

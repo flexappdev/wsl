@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Ticker } from "@/components/wsl-v2/Ticker";
 import { TopList } from "@/components/wsl-v2/TopList";
 import { RandomFact } from "@/components/wsl-v2/RandomFact";
@@ -5,6 +6,16 @@ import { PopulationCurve } from "@/components/wsl-v2/PopulationCurve";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 
 export const revalidate = 300;
+
+export const metadata: Metadata = {
+  title: "Population",
+  description:
+    "How many of us are there? Live world population, country rankings, and the demographic curve from 1700 to 2100.",
+  openGraph: {
+    title: "Population · World Stats Live",
+    description: "Live world population and country rankings.",
+  },
+};
 
 const TICKER_IDS = ["population", "births", "deaths", "internet"];
 

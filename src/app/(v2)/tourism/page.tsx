@@ -1,9 +1,20 @@
+import type { Metadata } from "next";
 import { Ticker } from "@/components/wsl-v2/Ticker";
 import { TopList } from "@/components/wsl-v2/TopList";
 import { RandomFact } from "@/components/wsl-v2/RandomFact";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 
 export const revalidate = 300;
+
+export const metadata: Metadata = {
+  title: "Tourism & travel",
+  description:
+    "The world on the move. Live tourism spend, most-visited countries, fastest-growing destinations, busiest airports.",
+  openGraph: {
+    title: "Tourism & travel · World Stats Live",
+    description: "Live global tourism and travel indicators.",
+  },
+};
 
 const TICKER_IDS = ["tourism", "hotels", "flights"];
 

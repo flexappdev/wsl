@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ChevronRight } from "lucide-react";
 import { Hero } from "@/components/wsl-v2/Hero";
@@ -10,6 +11,16 @@ import { AboutStrip } from "@/components/wsl-v2/AboutStrip";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 
 export const revalidate = 300;
+
+export const metadata: Metadata = {
+  title: "World stats, live",
+  description:
+    "The planet's most-watched indicators, updated in real time. Population, climate, tourism, energy and the economy — one console.",
+  openGraph: {
+    title: "World Stats Live — the planet's vital signs",
+    description: "Live world indicators in one console.",
+  },
+};
 
 const DASHBOARD_TICKER_IDS = ["flights", "co2", "tourism", "hotels"] as const;
 

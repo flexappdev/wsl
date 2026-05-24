@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import { RandomFact } from "@/components/wsl-v2/RandomFact";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 
 export const revalidate = 300;
+
+export const metadata: Metadata = {
+  title: "Destinations",
+  description:
+    "195 countries, one console. Population, GDP, visitors, top stays, and curated gear for every destination.",
+  openGraph: {
+    title: "Destinations · World Stats Live",
+    description: "Country profiles for every destination on Earth.",
+  },
+};
 
 export default async function DestinationsPage() {
   const payload = await getWslPayload();
