@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>WSL · Auth sequence</title>
+<link rel="stylesheet" href="./_shared.css" />
+</head>
+<body>
+<main class="frame">
+  <div class="eyebrow">DIAGRAM · SEQUENCE</div>
+  <h1 class="title">Who can reach <span class="mono" style="font-style:normal;font-size:24px">/bo</span>.</h1>
+  <p class="lede">Every request to a gated route goes through <code class="mono">updateSession()</code>. The middleware short-circuits on three checks before it lets the request through, and is env-guarded so a missing Supabase URL never 500s the public site.</p>
+
+  <svg viewBox="0 0 800 560" width="100%" role="img" aria-label="WSL auth sequence">
+    <!-- Lifelines (4 actors @ 120px spacing starting x=80) -->
+    <!-- Headers -->
+    <rect x="32" y="32" width="120" height="40" rx="6" class="node-fill-paper" />
+    <text x="92" y="56" text-anchor="middle" class="label label-bold">Browser</text>
+
+    <rect x="200" y="32" width="120" height="40" rx="6" class="node-fill-accent" />
+    <text x="260" y="56" text-anchor="middle" class="label label-bold">middleware</text>
+
+    <rect x="368" y="32" width="120" height="40" rx="6" class="node-fill-paper" />
+    <text x="428" y="56" text-anchor="middle" class="label label-bold">Supabase</text>
+
+    <rect x="536" y="32" width="120" height="40" rx="6" class="node-fill-paper" />
+    <text x="596" y="56" text-anchor="middle" class="label label-bold">/bo route</text>
+
+    <!-- Lifelines -->
+    <line x1="92"  y1="80" x2="92"  y2="528" stroke="var(--hair)" />
+    <line x1="260" y1="80" x2="260" y2="528" stroke="var(--hair)" />
+    <line x1="428" y1="80" x2="428" y2="528" stroke="var(--hair)" />
+    <line x1="596" y1="80" x2="596" y2="528" stroke="var(--hair)" />
+
+    <!-- Step 1: Browser -> middleware -->
+    <path d="M 92 116 L 256 116" class="arrow" marker-end="url(#arrow)" />
+    <text x="96" y="108" class="label-mono">GET /bo</text>
+
+    <!-- Step 2: middleware self-check (env guard) -->
+    <rect x="240" y="132" width="40" height="32" rx="4" class="node-fill-paper" />
+    <text x="260" y="152" text-anchor="middle" class="label-mono">env?</text>
+    <text x="288" y="148" class="label-mono label-muted">if NEXT_PUBLIC_SUPABASE_URL ∅ → /login</text>
+
+    <!-- Step 3: middleware -> Supabase -->
+    <path d="M 260 196 L 424 196" class="arrow" marker-end="url(#arrow)" />
+    <text x="264" y="188" class="label-mono">getSession()</text>
+
+    <!-- Step 4: Supabase -> middleware (response) -->
+    <path d="M 428 232 L 264 232" class="arrow" marker-end="url(#arrow)" />
+    <text x="268" y="224" class="label-mono">user | null</text>
+
+    <!-- Step 5: allowlist check -->
+    <rect x="240" y="252" width="40" height="32" rx="4" class="node-fill-paper" />
+    <text x="260" y="272" text-anchor="middle" class="label-mono">allow?</text>
+    <text x="288" y="268" class="label-mono label-muted">email ∈ ALLOWED_EMAILS · ["mat@matsiems.com"]</text>
+
+    <!-- Step 6a: not allowed -> sign out + /login -->
+    <path d="M 260 300 L 96 300" class="arrow-muted" marker-end="url(#arrow-muted)" />
+    <text x="100" y="292" class="label-mono label-muted">302 /login?error=unauthorized</text>
+
+    <!-- Step 6b: allowed -> /bo route -->
+    <path d="M 260 348 L 592 348" class="arrow-accent" marker-end="url(#arrow-accent)" />
+    <text x="264" y="340" class="label-mono">forward</text>
+
+    <!-- Step 7: /bo response -->
+    <path d="M 596 388 L 264 388" class="arrow" marker-end="url(#arrow)" />
+    <text x="600" y="380" class="label-mono">html</text>
+
+    <!-- Step 8: middleware -> Browser -->
+    <path d="M 260 424 L 96 424" class="arrow-accent" marker-end="url(#arrow-accent)" />
+    <text x="100" y="416" class="label-mono">200 OK</text>
+
+    <text x="32" y="492" class="label-muted">DEV BYPASS</text>
+    <line x1="32" y1="500" x2="200" y2="500" stroke="var(--hair)" />
+    <text x="32" y="520" class="label-mono">cookie wsl-dev-bypass=1 skips Supabase (NODE_ENV=development only)</text>
+
+    <defs>
+      <marker id="arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--ink)" />
+      </marker>
+      <marker id="arrow-muted" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--muted)" />
+      </marker>
+      <marker id="arrow-accent" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--accent)" />
+      </marker>
+    </defs>
+  </svg>
+
+  <p class="note">The two green steps — <em>forward</em> and <em>200 OK</em> — are the only path that reaches a <code class="mono">/bo</code> page. Everything else terminates at <code class="mono">/login</code>. The env-guard at the top exists because an empty Supabase URL throws inside <code class="mono">createServerClient</code> and would otherwise 500 every public request too.</p>
+</main>
+</body>
+</html>

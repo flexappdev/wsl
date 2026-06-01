@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>WSL · Data source flow</title>
+<link rel="stylesheet" href="./_shared.css" />
+</head>
+<body>
+<main class="frame">
+  <div class="eyebrow">DIAGRAM · FLOWCHART</div>
+  <h1 class="title">Mongo first, seed when not.</h1>
+  <p class="lede">Every section of every page goes through one <code class="mono">pick()</code> decision. When a Mongo collection has zero documents — or the cluster is unreachable — the section transparently falls back to the in-repo <code class="mono">SEED</code> constant.</p>
+
+  <svg viewBox="0 0 800 520" width="100%" role="img" aria-label="WSL data source flow">
+    <!-- Start: page request -->
+    <rect x="320" y="32" width="160" height="48" rx="24" class="node-fill-paper" />
+    <text x="400" y="60" text-anchor="middle" class="label label-bold">getWslPayload()</text>
+
+    <path d="M 400 80 L 400 116" class="arrow" marker-end="url(#arrow)" />
+
+    <!-- Decision: Mongo configured? -->
+    <polygon points="400,116 504,168 400,220 296,168" class="node-fill-paper" />
+    <text x="400" y="164" text-anchor="middle" class="label label-bold">MONGO_URI set?</text>
+    <text x="400" y="184" text-anchor="middle" class="label-mono">isMongoConfigured()</text>
+
+    <!-- No branch -> SEED -->
+    <path d="M 296 168 L 152 168" class="arrow-muted" marker-end="url(#arrow-muted)" />
+    <text x="224" y="160" text-anchor="middle" class="label-mono label-muted">no</text>
+
+    <!-- Yes branch -->
+    <path d="M 400 220 L 400 256" class="arrow-accent" marker-end="url(#arrow-accent)" />
+    <text x="408" y="244" class="label-mono">yes</text>
+
+    <!-- Read each of 14 collections -->
+    <rect x="280" y="256" width="240" height="56" rx="8" class="node-fill-accent" />
+    <text x="400" y="280" text-anchor="middle" class="label label-bold">Promise.all(readArray ×14)</text>
+    <text x="400" y="300" text-anchor="middle" class="label-mono">limit 500 · strip _id</text>
+
+    <path d="M 400 312 L 400 348" class="arrow" marker-end="url(#arrow)" />
+
+    <!-- Decision: section has docs? -->
+    <polygon points="400,348 524,400 400,452 276,400" class="node-fill-paper" />
+    <text x="400" y="396" text-anchor="middle" class="label label-bold">docs.length &gt; 0?</text>
+    <text x="400" y="416" text-anchor="middle" class="label-mono">per section</text>
+
+    <!-- Yes -> mongo -->
+    <path d="M 524 400 L 632 400" class="arrow-accent" marker-end="url(#arrow-accent)" />
+    <text x="540" y="392" class="label-mono">yes</text>
+    <rect x="632" y="376" width="136" height="48" rx="8" class="node-fill-accent" />
+    <text x="700" y="400" text-anchor="middle" class="label label-bold">section = mongo</text>
+    <text x="700" y="416" text-anchor="middle" class="label-mono">overall = mongo</text>
+
+    <!-- No -> SEED -->
+    <path d="M 276 400 L 168 400" class="arrow-muted" marker-end="url(#arrow-muted)" />
+    <text x="180" y="392" class="label-mono label-muted">no</text>
+    <rect x="32" y="376" width="136" height="48" rx="8" class="node-fill-paper" />
+    <text x="100" y="400" text-anchor="middle" class="label label-bold">section = seed</text>
+    <text x="100" y="416" text-anchor="middle" class="label-mono">fallback per-collection</text>
+
+    <!-- SEED bypass from "no" branch -->
+    <rect x="32" y="144" width="120" height="48" rx="8" class="node-fill-paper" />
+    <text x="92" y="172" text-anchor="middle" class="label label-bold">SEED everything</text>
+
+    <text x="32" y="484" class="label-muted">SOURCE PILL</text>
+    <line x1="32" y1="492" x2="200" y2="492" stroke="var(--hair)" />
+    <text x="32" y="508" class="label-mono">overall = mongo if any section came from Mongo, else seed</text>
+
+    <defs>
+      <marker id="arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--ink)" />
+      </marker>
+      <marker id="arrow-muted" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--muted)" />
+      </marker>
+      <marker id="arrow-accent" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--accent)" />
+      </marker>
+    </defs>
+  </svg>
+
+  <p class="note">The green path is the desired prod state; the muted fallback path is what keeps the site green when Mongo is empty, unreachable, or — as on Atlas right now — at the cluster-wide collection cap.</p>
+</main>
+</body>
+</html>

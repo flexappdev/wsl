@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>WSL · Ship pipeline</title>
+<link rel="stylesheet" href="./_shared.css" />
+</head>
+<body>
+<main class="frame">
+  <div class="eyebrow">DIAGRAM · WORKFLOW PIPELINE</div>
+  <h1 class="title">PBI → Build → Preview → Push → Deploy.</h1>
+  <p class="lede">The five-stage path the appai cockpit defines for every site. WSL sits in the same pipeline as the other twelve sites — Vercel link is the single owed step before stage 5 completes for prod.</p>
+
+  <svg viewBox="0 0 800 320" width="100%" role="img" aria-label="WSL ship pipeline">
+    <!-- 5 stages -->
+    <!-- Stage 1: PBI -->
+    <rect x="32" y="80" width="128" height="80" rx="8" class="node-fill-paper" />
+    <text x="96" y="108" text-anchor="middle" class="label-mono label-muted">STAGE 1</text>
+    <text x="96" y="132" text-anchor="middle" class="label label-bold">PBI</text>
+    <text x="96" y="148" text-anchor="middle" class="label-mono">cockpit backlog</text>
+
+    <!-- Stage 2: Build -->
+    <rect x="184" y="80" width="128" height="80" rx="8" class="node-fill-paper" />
+    <text x="248" y="108" text-anchor="middle" class="label-mono label-muted">STAGE 2</text>
+    <text x="248" y="132" text-anchor="middle" class="label label-bold">Build</text>
+    <text x="248" y="148" text-anchor="middle" class="label-mono">tsc + next build</text>
+
+    <!-- Stage 3: Preview -->
+    <rect x="336" y="80" width="128" height="80" rx="8" class="node-fill-paper" />
+    <text x="400" y="108" text-anchor="middle" class="label-mono label-muted">STAGE 3</text>
+    <text x="400" y="132" text-anchor="middle" class="label label-bold">Preview</text>
+    <text x="400" y="148" text-anchor="middle" class="label-mono">curl 19011 · QA</text>
+
+    <!-- Stage 4: Push -->
+    <rect x="488" y="80" width="128" height="80" rx="8" class="node-fill-accent" />
+    <text x="552" y="108" text-anchor="middle" class="label-mono label-muted">STAGE 4</text>
+    <text x="552" y="132" text-anchor="middle" class="label label-bold">Push</text>
+    <text x="552" y="148" text-anchor="middle" class="label-mono">git → flexappdev/wsl</text>
+
+    <!-- Stage 5: Deploy -->
+    <rect x="640" y="80" width="128" height="80" rx="8" class="node-fill-paper" stroke-dasharray="4 4" stroke="var(--muted)" />
+    <text x="704" y="108" text-anchor="middle" class="label-mono label-muted">STAGE 5</text>
+    <text x="704" y="132" text-anchor="middle" class="label label-bold">Deploy</text>
+    <text x="704" y="148" text-anchor="middle" class="label-mono label-muted">Vercel — owed</text>
+
+    <!-- Connectors -->
+    <path d="M 160 120 L 184 120" class="arrow" marker-end="url(#arrow)" />
+    <path d="M 312 120 L 336 120" class="arrow" marker-end="url(#arrow)" />
+    <path d="M 464 120 L 488 120" class="arrow" marker-end="url(#arrow)" />
+    <path d="M 616 120 L 640 120" class="arrow-accent" marker-end="url(#arrow-accent)" />
+
+    <!-- Underline status -->
+    <text x="32"  y="204" class="label-mono label-muted">done</text>
+    <text x="184" y="204" class="label-mono label-muted">done</text>
+    <text x="336" y="204" class="label-mono label-muted">done</text>
+    <text x="488" y="204" class="label-mono">done · 3e743c4</text>
+    <text x="640" y="204" class="label-mono label-muted">awaiting /abc-vercel</text>
+
+    <!-- Footer -->
+    <line x1="32" y1="240" x2="768" y2="240" stroke="var(--hair)" />
+    <text x="32" y="264" class="label-muted">BLOCKERS</text>
+    <text x="32" y="288" class="label-mono">apps-registry.live_url = null · Vercel project not linked · NEXT_PUBLIC_SITE_URL not in production env</text>
+
+    <defs>
+      <marker id="arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--ink)" />
+      </marker>
+      <marker id="arrow-accent" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--accent)" />
+      </marker>
+    </defs>
+  </svg>
+
+  <p class="note">The accent marks the last completed stage. The dashed Deploy box is the one remaining gap before WSL has a live URL — the work is procedural (CLI link + env sync) rather than codebase.</p>
+</main>
+</body>
+</html>

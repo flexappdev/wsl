@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>WSL · Collections</title>
+<link rel="stylesheet" href="./_shared.css" />
+</head>
+<body>
+<main class="frame">
+  <div class="eyebrow">DIAGRAM · DATA MODEL</div>
+  <h1 class="title">Fourteen collections, eight pages.</h1>
+  <p class="lede">The WSL site reads from fourteen <code class="mono">wsl_*</code> Mongo collections. Twelve are currently seeded; <code class="mono">wsl_scroller</code> and <code class="mono">wsl_hotels</code> fall back to <code class="mono">SEED</code> because the cluster is at its 500-collection cap.</p>
+
+  <svg viewBox="0 0 800 560" width="100%" role="img" aria-label="WSL collections data model">
+    <!-- Title row -->
+    <text x="32" y="32" class="label-muted">COLLECTION</text>
+    <text x="240" y="32" class="label-muted">DOCS</text>
+    <text x="320" y="32" class="label-muted">STATUS</text>
+    <text x="440" y="32" class="label-muted">PRIMARY READERS</text>
+    <line x1="32" y1="40" x2="768" y2="40" stroke="var(--hair)" />
+
+    <!-- Rows: y starts at 60, each row 32px tall -->
+    <!-- Row 1: wsl_tickers -->
+    <text x="32" y="64" class="label label-bold mono">wsl_tickers</text>
+    <text x="240" y="64" class="label-mono">12</text>
+    <rect x="320" y="52" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="64" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="64" class="label-mono label-muted">/  /population  /gdp  /climate  /tourism</text>
+
+    <!-- Row 2: wsl_currencies -->
+    <text x="32" y="96" class="label label-bold mono">wsl_currencies</text>
+    <text x="240" y="96" class="label-mono">8</text>
+    <rect x="320" y="84" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="96" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="96" class="label-mono label-muted">/  /gdp</text>
+
+    <!-- Row 3: wsl_cities -->
+    <text x="32" y="128" class="label label-bold mono">wsl_cities</text>
+    <text x="240" y="128" class="label-mono">20</text>
+    <rect x="320" y="116" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="128" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="128" class="label-mono label-muted">/  (world map &amp; right-now feed)</text>
+
+    <!-- Row 4: wsl_top_visited -->
+    <text x="32" y="160" class="label label-bold mono">wsl_top_visited</text>
+    <text x="240" y="160" class="label-mono">10</text>
+    <rect x="320" y="148" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="160" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="160" class="label-mono label-muted">/  /tourism</text>
+
+    <!-- Row 5: wsl_fastest_growing -->
+    <text x="32" y="192" class="label label-bold mono">wsl_fastest_growing</text>
+    <text x="240" y="192" class="label-mono">8</text>
+    <rect x="320" y="180" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="192" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="192" class="label-mono label-muted">/tourism</text>
+
+    <!-- Row 6: wsl_largest_gdp -->
+    <text x="32" y="224" class="label label-bold mono">wsl_largest_gdp</text>
+    <text x="240" y="224" class="label-mono">8</text>
+    <rect x="320" y="212" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="224" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="224" class="label-mono label-muted">/gdp</text>
+
+    <!-- Row 7: wsl_countries -->
+    <text x="32" y="256" class="label label-bold mono">wsl_countries</text>
+    <text x="240" y="256" class="label-mono">12</text>
+    <rect x="320" y="244" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="256" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="256" class="label-mono label-muted">/destinations</text>
+
+    <!-- Row 8: wsl_hotels -->
+    <text x="32" y="288" class="label label-bold mono">wsl_hotels</text>
+    <text x="240" y="288" class="label-mono">—</text>
+    <rect x="320" y="276" width="64" height="16" rx="4" class="node-fill-paper" stroke="var(--muted)" stroke-dasharray="3 3" />
+    <text x="352" y="288" text-anchor="middle" class="label-mono label-muted">seed</text>
+    <text x="440" y="288" class="label-mono label-muted">/destinations  (Atlas cap blocked seed)</text>
+
+    <!-- Row 9: wsl_gear -->
+    <text x="32" y="320" class="label label-bold mono">wsl_gear</text>
+    <text x="240" y="320" class="label-mono">8</text>
+    <rect x="320" y="308" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="320" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="320" class="label-mono label-muted">/destinations  (gear strip)</text>
+
+    <!-- Row 10: wsl_news -->
+    <text x="32" y="352" class="label label-bold mono">wsl_news</text>
+    <text x="240" y="352" class="label-mono">8</text>
+    <rect x="320" y="340" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="352" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="352" class="label-mono label-muted">/  /gdp  /climate  /tourism</text>
+
+    <!-- Row 11: wsl_trending -->
+    <text x="32" y="384" class="label label-bold mono">wsl_trending</text>
+    <text x="240" y="384" class="label-mono">8</text>
+    <rect x="320" y="372" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="384" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="384" class="label-mono label-muted">/destinations</text>
+
+    <!-- Row 12: wsl_facts -->
+    <text x="32" y="416" class="label label-bold mono">wsl_facts</text>
+    <text x="240" y="416" class="label-mono">12</text>
+    <rect x="320" y="404" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="416" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="416" class="label-mono label-muted">/  /population  /gdp  /climate  /tourism  /destinations</text>
+
+    <!-- Row 13: wsl_videos -->
+    <text x="32" y="448" class="label label-bold mono">wsl_videos</text>
+    <text x="240" y="448" class="label-mono">5</text>
+    <rect x="320" y="436" width="64" height="16" rx="4" class="node-fill-accent" />
+    <text x="352" y="448" text-anchor="middle" class="label-mono">mongo</text>
+    <text x="440" y="448" class="label-mono label-muted">/  (latest video strip)</text>
+
+    <!-- Row 14: wsl_scroller -->
+    <text x="32" y="480" class="label label-bold mono">wsl_scroller</text>
+    <text x="240" y="480" class="label-mono">—</text>
+    <rect x="320" y="468" width="64" height="16" rx="4" class="node-fill-paper" stroke="var(--muted)" stroke-dasharray="3 3" />
+    <text x="352" y="480" text-anchor="middle" class="label-mono label-muted">seed</text>
+    <text x="440" y="480" class="label-mono label-muted">/story  (Atlas cap blocked seed)</text>
+
+    <line x1="32" y1="500" x2="768" y2="500" stroke="var(--hair)" />
+    <text x="32" y="524" class="label-muted">TOTAL</text>
+    <text x="160" y="524" class="label-mono">12 / 14 mongo · 2 / 14 seed · 119 docs seeded</text>
+  </svg>
+
+  <p class="note">Filled green badges are live on the cluster. Two dashed seed badges denote sections that need extra cluster room (or a schema collapse into <code class="mono">wsl_countries.hotels[]</code> and <code class="mono">wsl_facts.scroller[]</code>) before they can be promoted to Mongo.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>WSL · Routes</title>
+<link rel="stylesheet" href="./_shared.css" />
+</head>
+<body>
+<main class="frame">
+  <div class="eyebrow">DIAGRAM · ROUTE TREE</div>
+  <h1 class="title">Twenty-six routes, three modes.</h1>
+  <p class="lede">Public ISR routes (rebuilt every 5 minutes), dynamic admin routes (re-rendered per request), and the auth surfaces. The route group <code class="mono">(v2)</code> shares one client shell across every section.</p>
+
+  <svg viewBox="0 0 800 600" width="100%" role="img" aria-label="WSL routes tree">
+    <!-- Root -->
+    <rect x="320" y="32" width="160" height="48" rx="8" class="node-fill-accent" />
+    <text x="400" y="56" text-anchor="middle" class="label label-bold">app/</text>
+    <text x="400" y="72" text-anchor="middle" class="label-mono">26 routes</text>
+
+    <!-- Three trunks -->
+    <path d="M 400 80 L 400 100 L 160 100 L 160 128" class="arrow" />
+    <path d="M 400 80 L 400 128" class="arrow" />
+    <path d="M 400 80 L 400 100 L 640 100 L 640 128" class="arrow" />
+
+    <!-- (v2) public -->
+    <rect x="64" y="128" width="192" height="48" rx="8" class="node-fill-paper" />
+    <text x="160" y="152" text-anchor="middle" class="label label-bold">(v2)/ · public · ISR</text>
+    <text x="160" y="168" text-anchor="middle" class="label-mono">revalidate 300s</text>
+
+    <!-- bo gated -->
+    <rect x="304" y="128" width="192" height="48" rx="8" class="node-fill-paper" />
+    <text x="400" y="152" text-anchor="middle" class="label label-bold">bo/ · gated · dynamic</text>
+    <text x="400" y="168" text-anchor="middle" class="label-mono">force-dynamic</text>
+
+    <!-- auth -->
+    <rect x="544" y="128" width="192" height="48" rx="8" class="node-fill-paper" />
+    <text x="640" y="152" text-anchor="middle" class="label label-bold">auth/ + login + api/</text>
+    <text x="640" y="168" text-anchor="middle" class="label-mono">edge + RSC</text>
+
+    <!-- v2 leaves -->
+    <text x="32"  y="208" class="label-mono">/</text>
+    <text x="32"  y="232" class="label-mono">/population</text>
+    <text x="32"  y="256" class="label-mono">/gdp</text>
+    <text x="32"  y="280" class="label-mono">/climate</text>
+    <text x="32"  y="304" class="label-mono">/tourism</text>
+    <text x="32"  y="328" class="label-mono">/destinations</text>
+    <text x="32"  y="352" class="label-mono">/story</text>
+    <text x="32"  y="376" class="label-mono">/about</text>
+    <text x="32"  y="400" class="label-mono">/random</text>
+
+    <!-- v2 hairlines from parent -->
+    <line x1="160" y1="176" x2="160" y2="400" stroke="var(--hair)" />
+    <line x1="160" y1="208" x2="156" y2="208" stroke="var(--hair)" />
+    <line x1="160" y1="232" x2="156" y2="232" stroke="var(--hair)" />
+    <line x1="160" y1="256" x2="156" y2="256" stroke="var(--hair)" />
+    <line x1="160" y1="280" x2="156" y2="280" stroke="var(--hair)" />
+    <line x1="160" y1="304" x2="156" y2="304" stroke="var(--hair)" />
+    <line x1="160" y1="328" x2="156" y2="328" stroke="var(--hair)" />
+    <line x1="160" y1="352" x2="156" y2="352" stroke="var(--hair)" />
+    <line x1="160" y1="376" x2="156" y2="376" stroke="var(--hair)" />
+    <line x1="160" y1="400" x2="156" y2="400" stroke="var(--hair)" />
+
+    <!-- bo leaves -->
+    <text x="304" y="208" class="label-mono">/bo</text>
+    <text x="304" y="232" class="label-mono">/bo/collections</text>
+    <text x="304" y="256" class="label-mono">/bo/collections/[name]</text>
+    <text x="304" y="280" class="label-mono">/bo/site-data</text>
+    <text x="304" y="304" class="label-mono">/bo/diagrams</text>
+
+    <line x1="400" y1="176" x2="400" y2="304" stroke="var(--hair)" />
+    <line x1="400" y1="208" x2="396" y2="208" stroke="var(--hair)" />
+    <line x1="400" y1="232" x2="396" y2="232" stroke="var(--hair)" />
+    <line x1="400" y1="256" x2="396" y2="256" stroke="var(--hair)" />
+    <line x1="400" y1="280" x2="396" y2="280" stroke="var(--hair)" />
+    <line x1="400" y1="304" x2="396" y2="304" stroke="var(--hair)" />
+
+    <!-- auth leaves -->
+    <text x="544" y="208" class="label-mono">/login</text>
+    <text x="544" y="232" class="label-mono">/auth/callback</text>
+    <text x="544" y="256" class="label-mono">/auth/error</text>
+    <text x="544" y="280" class="label-mono">/api/* (wsl bo + countries…)</text>
+    <text x="544" y="304" class="label-mono">/robots.txt</text>
+    <text x="544" y="328" class="label-mono">/sitemap.xml</text>
+    <text x="544" y="352" class="label-mono">/not-found</text>
+    <text x="544" y="376" class="label-mono">/error</text>
+
+    <line x1="640" y1="176" x2="640" y2="376" stroke="var(--hair)" />
+    <line x1="640" y1="208" x2="636" y2="208" stroke="var(--hair)" />
+    <line x1="640" y1="232" x2="636" y2="232" stroke="var(--hair)" />
+    <line x1="640" y1="256" x2="636" y2="256" stroke="var(--hair)" />
+    <line x1="640" y1="280" x2="636" y2="280" stroke="var(--hair)" />
+    <line x1="640" y1="304" x2="636" y2="304" stroke="var(--hair)" />
+    <line x1="640" y1="328" x2="636" y2="328" stroke="var(--hair)" />
+    <line x1="640" y1="352" x2="636" y2="352" stroke="var(--hair)" />
+    <line x1="640" y1="376" x2="636" y2="376" stroke="var(--hair)" />
+
+    <text x="32" y="488" class="label-muted">LEGEND</text>
+    <line x1="32" y1="496" x2="200" y2="496" stroke="var(--hair)" />
+    <rect x="32"  y="512" width="16" height="12" rx="4" class="node-fill-accent" />
+    <text x="56" y="524" class="label-mono">accent = focal / root</text>
+    <text x="240" y="524" class="label-mono">○ static prerender · ƒ dynamic per request</text>
+  </svg>
+
+  <p class="note">All <code class="mono">(v2)</code> leaves are statically prerendered with 5-minute ISR; <code class="mono">bo/*</code> leaves are <code class="mono">force-dynamic</code> so they re-render the live Mongo state on every request.</p>
+</main>
+</body>
+</html>

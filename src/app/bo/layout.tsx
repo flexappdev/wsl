@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, Database, FileJson, LogOut } from "lucide-react";
+import { Activity, Database, FileJson, LogOut, Network } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getMongoDbName, isMongoConfigured } from "@/lib/mongo";
 
@@ -24,6 +24,7 @@ export default async function BoLayout({ children }: { children: React.ReactNode
           <Link href="/bo" className="nav-item"><Activity size={16} /> Overview</Link>
           <Link href="/bo/collections" className="nav-item"><Database size={16} /> Collections</Link>
           <Link href="/bo/site-data" className="nav-item"><FileJson size={16} /> Site data</Link>
+          <Link href="/bo/diagrams" className="nav-item"><Network size={16} /> Diagrams</Link>
         </div>
         <div className="sb-group">
           <div className="type-eyebrow" style={{ padding: "0 10px 6px" }}>SESSION</div>
