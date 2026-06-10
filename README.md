@@ -15,7 +15,9 @@ Repo: https://github.com/flexappdev/wsl · Vercel deploy at root path.
 - `/story` — long-form scroller (5 chapters on the population curve)
 - `/about` — 12 cited sources, stack, methodology, FAQ
 - `/random` — random fact / globe spin
-- `/bo` — Supabase-gated admin (Mongo health, collection browser, site-data viewer)
+- `/wikivoyage` — country travel guide index (81 countries by region, Wikivoyage-powered)
+- `/wikivoyage/[slug]` — individual country travel guide with hero image + extract (81 SSG pages)
+- `/bo` — Supabase-gated admin (Mongo health, collection browser, site-data viewer, wikivoyage stats)
 - `/login`, `/auth/callback`, `/auth/error` — auth flow
 
 ## SEO / discoverability
@@ -29,6 +31,7 @@ Repo: https://github.com/flexappdev/wsl · Vercel deploy at root path.
 - MongoDB read-only via `MONGO_URI` + `MONGO_DB` (defaults to `AIDB`) — see `src/lib/mongo.ts`
 - Static seed at `src/lib/wsl-v2/seed.ts` (ported from `ux/wsl-v2/src/data.js`) — keeps the site green when Mongo is unset
 - Seed → Mongo: `npm run seed:mongo` (writes 14 `wsl_*` collections; `seed:mongo:dry` previews)
+- Wikivoyage snapshot: `npm run ingest:wikivoyage` — bulk-fetches 198 countries from the Wikivoyage API, writes to `public/data/wikivoyage-countries.json` (81 countries with extracts, shipped with the build); `ingest:wikivoyage:refresh` bypasses disk cache
 
 ## Env
 

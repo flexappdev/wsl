@@ -8,7 +8,9 @@
     "start": "next start --port 19011",
     "lint": "next lint",
     "seed:mongo": "npx -y tsx scripts/seed-mongo.ts",
-    "seed:mongo:dry": "npx -y tsx scripts/seed-mongo.ts --dry"
+    "seed:mongo:dry": "npx -y tsx scripts/seed-mongo.ts --dry",
+    "ingest:wikivoyage": "npx -y tsx scripts/ingest-wikivoyage.ts",
+    "ingest:wikivoyage:refresh": "npx -y tsx scripts/ingest-wikivoyage.ts --refresh"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

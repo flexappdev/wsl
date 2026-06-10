@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getWikivoyageDataset } from "@/lib/wikivoyage/data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://worldstats.live";
 
@@ -9,16 +10,27 @@ const PUBLIC_ROUTES: { path: string; changeFrequency: MetadataRoute.Sitemap[numb
   { path: "/climate",      changeFrequency: "hourly",  priority: 0.9 },
   { path: "/tourism",      changeFrequency: "hourly",  priority: 0.9 },
   { path: "/destinations", changeFrequency: "daily",   priority: 0.8 },
+  { path: "/wikivoyage",   changeFrequency: "weekly",  priority: 0.8 },
   { path: "/story",        changeFrequency: "weekly",  priority: 0.7 },
   { path: "/about",        changeFrequency: "monthly", priority: 0.5 },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
-  return PUBLIC_ROUTES.map((r) => ({
+  const base = PUBLIC_ROUTES.map((r) => ({
     url: `${SITE_URL}${r.path}`,
     lastModified,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
+
+  const ds = await getWikivoyageDataset();
+  const countryPages = ds.entries.map((e) => ({
+    url: `${SITE_URL}/wikivoyage/${e.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...base, ...countryPages];
 }
