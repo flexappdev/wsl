@@ -10,6 +10,8 @@ export type WikivoyageEntry = {
   coordinates?: { lat: number; lon: number };
   wikivoyage_url: string;
   pageid: number;
+  source?: "wikivoyage" | "wikipedia";
+  s3_hero?: boolean;
 };
 
 export type WikivoyageDataset = {

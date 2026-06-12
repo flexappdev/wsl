@@ -15,9 +15,9 @@ Repo: https://github.com/flexappdev/wsl · Vercel deploy at root path.
 - `/story` — long-form scroller (5 chapters on the population curve)
 - `/about` — 12 cited sources, stack, methodology, FAQ
 - `/random` — random fact / globe spin
-- `/wikivoyage` — country travel guide index (81 countries by region, Wikivoyage-powered)
-- `/wikivoyage/[slug]` — individual country travel guide with hero image + extract (81 SSG pages)
-- `/bo` — Supabase-gated admin (Mongo health, collection browser, site-data viewer, wikivoyage stats)
+- `/wikivoyage` — country travel guide index — **198 countries grouped by 5 continents** with Seedance video loops per continent, region sub-headers, newsletter signup
+- `/wikivoyage/[slug]` — individual country travel guide — FLUX hero image (1792×1024), JSON-LD `TouristDestination` schema, per-country OG card, GA4 `wikivoyage_country_view` event (198 SSG pages + 198 per-slug OG images)
+- `/bo` — Supabase-gated admin (Mongo health, collection browser, site-data viewer, wikivoyage stats, 9 codebase diagrams)
 - `/login`, `/auth/callback`, `/auth/error` — auth flow
 
 ## SEO / discoverability
@@ -31,7 +31,24 @@ Repo: https://github.com/flexappdev/wsl · Vercel deploy at root path.
 - MongoDB read-only via `MONGO_URI` + `MONGO_DB` (defaults to `AIDB`) — see `src/lib/mongo.ts`
 - Static seed at `src/lib/wsl-v2/seed.ts` (ported from `ux/wsl-v2/src/data.js`) — keeps the site green when Mongo is unset
 - Seed → Mongo: `npm run seed:mongo` (writes 14 `wsl_*` collections; `seed:mongo:dry` previews)
-- Wikivoyage snapshot: `npm run ingest:wikivoyage` — bulk-fetches 198 countries from the Wikivoyage API, writes to `public/data/wikivoyage-countries.json` (81 countries with extracts, shipped with the build); `ingest:wikivoyage:refresh` bypasses disk cache
+
+## Wikivoyage atlas pipeline
+
+The `/wikivoyage` section is a 198-country travel atlas built from three sources and a media pipeline. Re-run any leg independently.
+
+| Step | Script | Output |
+|---|---|---|
+| 1. Text ingest | `npm run ingest:wikivoyage` | `public/data/wikivoyage-countries.json` (245KB, 198 entries) |
+| 2. FLUX heroes | `npm run gen:heroes` | `s3://com27/wsl/heroes/<slug>.jpg` × 198 (1792×1024) |
+| 3. Seedance loops | `npm run gen:region-loops` | `s3://com27/wsl/regions/<continent>.mp4` × 5 (5s 864×480) |
+
+**Step 1: text** — bulk-fetches every country in `SEED.allCountries` from the Wikivoyage MediaWiki API (50 titles/call). For the ~116 countries with empty Wikivoyage extracts (templates that don't survive `exintro=1`), falls back to the Wikipedia REST summary API. Each entry is tagged `source: "wikivoyage" | "wikipedia"` for transparency. Pages cache under `.cache/wikivoyage/` so re-runs are near-instant; use `npm run ingest:wikivoyage:refresh` to bypass.
+
+**Step 2: heroes** — Runware FLUX (`runware:100@1`, hard-pinned per [[feedback_runware_default_model_is_video]]). 1792×1024 editorial landscape per country. Uploads via SigV4 PUT to `com27` bucket, region `eu-west-2`. Bucket policy needs a `PublicReadWsl` statement allowing `s3:GetObject` on `arn:aws:s3:::com27/wsl/*`. Run with `--limit=5` for smoke test, `--skip-existing` to backfill.
+
+**Step 3: continent loops** — Runware Seedance (`bytedance:2@2`). 5 loops, one per continent (Africa, Asia, Europe, Americas, Oceania), mounted as `<video autoplay muted loop>` on the `/wikivoyage` index. ~5MB each.
+
+**Env required:** `RUNWARE_API_KEY`, `S3_ACCESS_KEY`, `S3_SECRET_ACCESS_KEY` (read from `.env.local` then `~/context-2026/agents/.env`).
 
 ## Env
 

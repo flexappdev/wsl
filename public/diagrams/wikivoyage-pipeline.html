@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>WSL · Wikivoyage pipeline</title>
+<link rel="stylesheet" href="./_shared.css" />
+</head>
+<body>
+<main class="frame">
+  <div class="eyebrow">DIAGRAM · INGEST PIPELINE</div>
+  <h1 class="title">198 countries, two sources, one snapshot.</h1>
+  <p class="lede">The wikivoyage ingest walks every country in <code class="mono">SEED.allCountries</code>, asks Wikivoyage first, falls back to Wikipedia, generates a FLUX hero, and writes a single <code class="mono">public/data/wikivoyage-countries.json</code> snapshot that ships with the build.</p>
+
+  <svg viewBox="0 0 800 560" width="100%" role="img" aria-label="Wikivoyage ingest pipeline">
+    <!-- Stage 1: SEED -->
+    <rect x="32" y="32" width="160" height="56" rx="8" class="node-fill-paper" />
+    <text x="112" y="56" text-anchor="middle" class="label label-bold">SEED.allCountries</text>
+    <text x="112" y="76" text-anchor="middle" class="label-mono">198 entries</text>
+
+    <path d="M 192 60 L 232 60" class="arrow" marker-end="url(#arrow)" />
+
+    <!-- Stage 2: Wikivoyage bulk fetch -->
+    <rect x="232" y="32" width="160" height="56" rx="8" class="node-fill-accent" />
+    <text x="312" y="52" text-anchor="middle" class="label label-bold">Wikivoyage bulk</text>
+    <text x="312" y="68" text-anchor="middle" class="label-mono">50 titles/call</text>
+    <text x="312" y="82" text-anchor="middle" class="label-mono">82 hits</text>
+
+    <!-- Decision diamond: extract >= 120? -->
+    <polygon points="312,128 408,176 312,224 216,176" class="node-fill-paper" />
+    <text x="312" y="172" text-anchor="middle" class="label label-bold">extract ≥ 120?</text>
+    <text x="312" y="192" text-anchor="middle" class="label-mono">filter empty</text>
+
+    <path d="M 312 88 L 312 128" class="arrow" marker-end="url(#arrow)" />
+
+    <!-- yes path: keep as wikivoyage -->
+    <path d="M 408 176 L 528 176" class="arrow-accent" marker-end="url(#arrow-accent)" />
+    <text x="424" y="168" class="label-mono">yes</text>
+    <rect x="528" y="148" width="160" height="56" rx="8" class="node-fill-accent" />
+    <text x="608" y="172" text-anchor="middle" class="label label-bold">source = wikivoyage</text>
+    <text x="608" y="192" text-anchor="middle" class="label-mono">82 entries</text>
+
+    <!-- no path: Wikipedia fallback -->
+    <path d="M 312 224 L 312 256" class="arrow-muted" marker-end="url(#arrow-muted)" />
+    <text x="320" y="244" class="label-mono">no</text>
+
+    <rect x="232" y="256" width="160" height="56" rx="8" class="node-fill-paper" />
+    <text x="312" y="280" text-anchor="middle" class="label label-bold">Wikipedia REST</text>
+    <text x="312" y="296" text-anchor="middle" class="label-mono">/page/summary/&lt;title&gt;</text>
+
+    <path d="M 392 284 L 528 284" class="arrow-accent" marker-end="url(#arrow-accent)" />
+    <text x="424" y="276" class="label-mono">116 hits</text>
+    <rect x="528" y="256" width="160" height="56" rx="8" class="node-fill-accent" />
+    <text x="608" y="280" text-anchor="middle" class="label label-bold">source = wikipedia</text>
+    <text x="608" y="296" text-anchor="middle" class="label-mono">116 entries</text>
+
+    <!-- Join into snapshot -->
+    <path d="M 608 204 L 608 244" class="arrow" marker-end="url(#arrow)" />
+    <path d="M 608 312 L 608 344" class="arrow" marker-end="url(#arrow)" />
+
+    <rect x="528" y="344" width="160" height="56" rx="8" class="node-fill-accent" />
+    <text x="608" y="368" text-anchor="middle" class="label label-bold">snapshot JSON</text>
+    <text x="608" y="384" text-anchor="middle" class="label-mono">245KB · 198 entries</text>
+
+    <!-- Stage 4: FLUX heroes (parallel pipeline) -->
+    <rect x="32" y="256" width="160" height="56" rx="8" class="node-fill-paper" />
+    <text x="112" y="280" text-anchor="middle" class="label label-bold">FLUX hero gen</text>
+    <text x="112" y="296" text-anchor="middle" class="label-mono">runware:100@1</text>
+
+    <path d="M 192 284 L 216 284" class="arrow-muted" marker-end="url(#arrow-muted)" />
+
+    <rect x="32" y="344" width="160" height="56" rx="8" class="node-fill-paper" />
+    <text x="112" y="368" text-anchor="middle" class="label label-bold">S3 com27/wsl/heroes</text>
+    <text x="112" y="384" text-anchor="middle" class="label-mono">1792×1024 JPG</text>
+
+    <path d="M 112 312 L 112 344" class="arrow" marker-end="url(#arrow)" />
+    <path d="M 192 372 L 528 372" class="arrow" marker-end="url(#arrow)" />
+
+    <!-- Stage 5: build -->
+    <path d="M 608 400 L 608 444" class="arrow" marker-end="url(#arrow)" />
+    <rect x="468" y="444" width="280" height="56" rx="8" class="node-fill-accent" />
+    <text x="608" y="468" text-anchor="middle" class="label label-bold">next build → 198 SSG pages</text>
+    <text x="608" y="484" text-anchor="middle" class="label-mono">/wikivoyage + /wikivoyage/[slug]</text>
+
+    <text x="32" y="528" class="label-muted">CADENCE</text>
+    <line x1="32" y1="536" x2="200" y2="536" stroke="var(--hair)" />
+    <text x="32" y="552" class="label-mono">re-run ingest weekly · re-run gen:heroes only for missing slugs</text>
+
+    <defs>
+      <marker id="arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--ink)" />
+      </marker>
+      <marker id="arrow-muted" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--muted)" />
+      </marker>
+      <marker id="arrow-accent" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--accent)" />
+      </marker>
+    </defs>
+  </svg>
+
+  <p class="note">The accent path is the production flow; muted nodes are the parallel FLUX pipeline that runs once per ingest. The snapshot ships in the Vercel build — no runtime API calls.</p>
+</main>
+</body>
+</html>

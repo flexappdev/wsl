@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>WSL · Wikivoyage data sources</title>
+<link rel="stylesheet" href="./_shared.css" />
+</head>
+<body>
+<main class="frame">
+  <div class="eyebrow">DIAGRAM · DATA HIERARCHY</div>
+  <h1 class="title">Three sources, one entry, predictable shape.</h1>
+  <p class="lede">Each <code class="mono">WikivoyageEntry</code> is the merge of up to three data sources: editorial text from Wikivoyage or Wikipedia, a FLUX-generated hero from Runware on S3, and structured metadata (region, code, flag) always sourced from the static SEED.</p>
+
+  <svg viewBox="0 0 800 480" width="100%" role="img" aria-label="Data source hierarchy">
+    <!-- Output entry on the right -->
+    <rect x="552" y="160" width="216" height="200" rx="8" class="node-fill-accent" />
+    <text x="660" y="184" text-anchor="middle" class="label label-bold">WikivoyageEntry</text>
+    <line x1="568" y1="196" x2="752" y2="196" stroke="var(--accent)" />
+    <text x="568" y="216" class="label-mono">slug, title, region, code,</text>
+    <text x="568" y="232" class="label-mono">flag, extract, source,</text>
+    <text x="568" y="248" class="label-mono">thumbnail, original,</text>
+    <text x="568" y="264" class="label-mono">coordinates, pageid,</text>
+    <text x="568" y="280" class="label-mono">wikivoyage_url, s3_hero</text>
+    <text x="568" y="312" class="label-muted label-mono">198 of these,</text>
+    <text x="568" y="328" class="label-muted label-mono">sorted by title,</text>
+    <text x="568" y="344" class="label-muted label-mono">in one JSON snapshot.</text>
+
+    <!-- Source 1: SEED (always) -->
+    <rect x="32" y="32" width="200" height="72" rx="8" class="node-fill-accent" />
+    <text x="132" y="56" text-anchor="middle" class="label label-bold">SEED.allCountries</text>
+    <text x="132" y="76" text-anchor="middle" class="label-mono">src/lib/wsl-v2/seed.ts</text>
+    <text x="132" y="92" text-anchor="middle" class="label-mono label-muted">always — 198 stable entries</text>
+
+    <path d="M 232 68 L 552 200" class="arrow-accent" marker-end="url(#arrow-accent)" />
+    <text x="372" y="120" class="label-mono">name · region · code · flag</text>
+
+    <!-- Source 2: Wikivoyage (primary) -->
+    <rect x="32" y="144" width="200" height="72" rx="8" class="node-fill-paper" />
+    <text x="132" y="168" text-anchor="middle" class="label label-bold">Wikivoyage API</text>
+    <text x="132" y="188" text-anchor="middle" class="label-mono">en.wikivoyage.org/w/api.php</text>
+    <text x="132" y="204" text-anchor="middle" class="label-mono label-muted">primary — 82 hits</text>
+
+    <path d="M 232 180 L 552 240" class="arrow" marker-end="url(#arrow)" />
+    <text x="280" y="208" class="label-mono">extract · thumbnail · coords</text>
+
+    <!-- Source 3: Wikipedia (fallback) -->
+    <rect x="32" y="256" width="200" height="72" rx="8" class="node-fill-paper" />
+    <text x="132" y="280" text-anchor="middle" class="label label-bold">Wikipedia REST</text>
+    <text x="132" y="300" text-anchor="middle" class="label-mono">en.wikipedia.org/api/rest_v1</text>
+    <text x="132" y="316" text-anchor="middle" class="label-mono label-muted">fallback — 116 hits</text>
+
+    <path d="M 232 292 L 552 280" class="arrow-muted" marker-end="url(#arrow-muted)" />
+    <text x="280" y="316" class="label-mono label-muted">extract · thumbnail · coords</text>
+
+    <!-- Source 4: Runware FLUX (parallel image gen) -->
+    <rect x="32" y="368" width="200" height="72" rx="8" class="node-fill-paper" />
+    <text x="132" y="392" text-anchor="middle" class="label label-bold">Runware FLUX</text>
+    <text x="132" y="412" text-anchor="middle" class="label-mono">runware:100@1 → S3</text>
+    <text x="132" y="428" text-anchor="middle" class="label-mono label-muted">async — 1792×1024 JPG</text>
+
+    <path d="M 232 404 L 552 340" class="arrow-muted" marker-end="url(#arrow-muted)" />
+    <text x="280" y="392" class="label-mono label-muted">s3_hero (boolean stamp)</text>
+
+    <defs>
+      <marker id="arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--ink)" />
+      </marker>
+      <marker id="arrow-muted" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--muted)" />
+      </marker>
+      <marker id="arrow-accent" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 0 0 L 8 4 L 0 8 Z" fill="var(--accent)" />
+      </marker>
+    </defs>
+  </svg>
+
+  <p class="note">SEED is the only source that never fails — it ships in the bundle. Wikivoyage and Wikipedia are both file-cached under <code class="mono">.cache/wikivoyage/</code> to make re-runs idempotent and offline-friendly. The FLUX pipeline runs as a separate <code class="mono">npm run gen:heroes</code> step and stamps <code class="mono">s3_hero=true</code> on the entry when the JPG is up.</p>
+</main>
+</body>
+</html>

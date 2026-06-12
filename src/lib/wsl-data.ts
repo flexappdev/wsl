@@ -17,7 +17,8 @@ export async function getCountries(): Promise<{ countries: Country[] }> {
   const url = "https://restcountries.com/v3.1/all?fields=name,cca3,capital,region,subregion,population,area,flag,flags,languages,currencies";
   const res = await fetch(url, { next: { revalidate: 86400 } });
   if (!res.ok) return { countries: [] };
-  const raw = (await res.json()) as Array<Record<string, unknown>>;
+  const parsed = await res.json();
+  const raw = Array.isArray(parsed) ? (parsed as Array<Record<string, unknown>>) : [];
   const countries: Country[] = raw
     .map((c) => {
       const nameObj = c.name as { common?: string; official?: string } | undefined;

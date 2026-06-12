@@ -1,29 +1,32 @@
 /**
- * Ingest Wikivoyage country articles for the WSL site.
+ * Ingest country travel articles for the WSL site.
  *
  *   npm run ingest:wikivoyage           — full ingest of all SEED.allCountries
  *   npm run ingest:wikivoyage -- --refresh  — bypass disk cache
  *   npm run ingest:wikivoyage -- --limit 10 — first N countries only (for smoke)
  *
+ * Data flow:
+ *   1. SEED.allCountries → Wikivoyage MediaWiki bulk-fetch (extract|pageimages|coordinates)
+ *   2. For each country with empty Wikivoyage extract → Wikipedia REST summary fallback
+ *   3. Write combined dataset to public/data/wikivoyage-countries.json
+ *
  * Output: public/data/wikivoyage-countries.json (read by src/lib/wikivoyage/data.ts).
  *
  * Why public/data instead of Mongo: the AIDB Atlas cluster is at its 500-collection
- * cap (see project_mtd_v2_prodready memory) so we can't open a new wsl_wikivoyage
- * collection right now. The JSON snapshot lives in the repo + ships with each
- * Vercel deploy, which is fine for ~200 stable country articles.
+ * cap (see project_mtd_v2_prodready memory). JSON snapshot ships with the build.
  */
 
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { SEED } from "../src/lib/wsl-v2/seed";
-import { bulkFetchPages, slugify } from "../src/lib/wikivoyage/api";
+import { bulkFetchPages, fetchWikipediaSummary, slugify } from "../src/lib/wikivoyage/api";
 import type { WikivoyageDataset, WikivoyageEntry } from "../src/lib/wikivoyage/types";
 
 const refresh = process.argv.includes("--refresh");
 const limitIdx = process.argv.indexOf("--limit");
 const limit = limitIdx >= 0 ? Math.max(1, Number(process.argv[limitIdx + 1] ?? 0)) : 0;
 
-// Some countries have non-trivial Wikivoyage titles. Override here.
+// Override seed names that don't match Wikivoyage article titles.
 const TITLE_OVERRIDES: Record<string, string> = {
   "United States": "United States of America",
   "Hong Kong": "Hong Kong",
@@ -37,6 +40,7 @@ const TITLE_OVERRIDES: Record<string, string> = {
   "Eswatini": "Eswatini",
   "Sao Tome": "São Tomé and Príncipe",
   "Sao Tome and Principe": "São Tomé and Príncipe",
+  "São Tomé & Príncipe": "São Tomé and Príncipe",
   "St. Kitts & Nevis": "Saint Kitts and Nevis",
   "St. Vincent & Gr.": "Saint Vincent and the Grenadines",
   "Saint Lucia": "Saint Lucia",
@@ -46,21 +50,71 @@ const TITLE_OVERRIDES: Record<string, string> = {
   "Timor-Leste": "East Timor",
   "Burma": "Myanmar",
   "Macedonia": "North Macedonia",
+  // Wikipedia uses "The" prefix for these
+  "Gambia": "The Gambia",
+  "Bahamas": "The Bahamas",
+  "Central African Rep.": "Central African Republic",
+  "UAE": "United Arab Emirates",
+  "UK": "United Kingdom",
+  "South Korea": "South Korea",
+  "North Korea": "North Korea",
+  // Special chars
+  "Curacao": "Curaçao",
+  "Reunion": "Réunion",
 };
+
+// Wikipedia uses sometimes-different titles than Wikivoyage. Override per-country.
+const WIKIPEDIA_TITLE_OVERRIDES: Record<string, string> = {
+  ...TITLE_OVERRIDES,
+  "DR Congo": "Democratic Republic of the Congo",
+  "Republic of Congo": "Republic of the Congo",
+  "Burma": "Myanmar",
+  "East Timor": "Timor-Leste",
+  "Vatican": "Vatican City",
+  "Macedonia": "North Macedonia",
+  "Central African Rep.": "Central African Republic",
+};
+
+function buildEntry(
+  c: { name: string; region: string; code: string; flag: string },
+  page: {
+    title: string;
+    pageid: number;
+    extract?: string;
+    thumbnail?: { source: string };
+    original?: { source: string };
+    coordinates?: { lat: number; lon: number };
+  },
+  source: "wikivoyage" | "wikipedia",
+  url: string,
+): WikivoyageEntry {
+  return {
+    slug: slugify(c.name),
+    title: c.name,
+    region: c.region,
+    code: c.code,
+    flag: c.flag,
+    extract: page.extract ?? "",
+    thumbnail: page.thumbnail?.source,
+    original: page.original?.source,
+    coordinates: page.coordinates,
+    wikivoyage_url: url,
+    pageid: page.pageid,
+    source,
+  };
+}
 
 async function main() {
   const all = SEED.allCountries;
   const slice = limit > 0 ? all.slice(0, limit) : all;
-  console.log(`[ingest-wikivoyage] requesting ${slice.length} country articles (refresh=${refresh})`);
+  console.log(`[ingest] requesting ${slice.length} country articles (refresh=${refresh})`);
 
+  // Pass 1: Wikivoyage bulk fetch
   const titles = slice.map((c) => TITLE_OVERRIDES[c.name] ?? c.name);
   const pages = await bulkFetchPages(titles, { refresh });
-  console.log(`[ingest-wikivoyage] fetched ${pages.length} / ${slice.length} pages`);
+  console.log(`[ingest] wikivoyage pages fetched: ${pages.length} / ${slice.length}`);
 
-  // Index pages by title for join
   const byTitle = new Map(pages.map((p) => [p.title.toLowerCase(), p]));
-  // Also index by the overridden title for the OVERRIDES set (so e.g. "United
-  // States" can resolve to the "United States of America" Wikivoyage page).
   const byOverride = new Map(
     Object.entries(TITLE_OVERRIDES).map(([friendly, wv]) => [
       friendly.toLowerCase(),
@@ -69,27 +123,45 @@ async function main() {
   );
 
   const entries: WikivoyageEntry[] = [];
-  const missing: string[] = [];
+  const needFallback: typeof slice = [];
+
   for (const c of slice) {
     const page = byTitle.get(c.name.toLowerCase()) ?? byOverride.get(c.name.toLowerCase());
-    if (!page || !page.extract) {
-      missing.push(c.name);
-      continue;
+    if (page && page.extract && page.extract.length >= 120) {
+      entries.push(buildEntry(c, page, "wikivoyage", page.wikivoyage_url));
+    } else {
+      needFallback.push(c);
     }
-    entries.push({
-      slug: slugify(c.name),
-      title: c.name,
-      region: c.region,
-      code: c.code,
-      flag: c.flag,
-      extract: page.extract,
-      thumbnail: page.thumbnail?.source,
-      original: page.original?.source,
-      coordinates: page.coordinates,
-      wikivoyage_url: page.wikivoyage_url,
-      pageid: page.pageid,
-    });
   }
+
+  console.log(`[ingest] wikivoyage entries: ${entries.length}`);
+  console.log(`[ingest] needing Wikipedia fallback: ${needFallback.length}`);
+
+  // Pass 2: Wikipedia REST fallback
+  let wpHits = 0;
+  for (const c of needFallback) {
+    const wpTitle = WIKIPEDIA_TITLE_OVERRIDES[c.name] ?? c.name;
+    const summary = await fetchWikipediaSummary(wpTitle, { refresh });
+    if (!summary) continue;
+    entries.push(
+      buildEntry(
+        c,
+        {
+          title: summary.title,
+          pageid: summary.pageid,
+          extract: summary.extract,
+          thumbnail: summary.thumbnail,
+          original: summary.original,
+          coordinates: summary.coordinates,
+        },
+        "wikipedia",
+        summary.url,
+      ),
+    );
+    wpHits += 1;
+  }
+
+  console.log(`[ingest] wikipedia fallback hits: ${wpHits} / ${needFallback.length}`);
 
   entries.sort((a, b) => a.title.localeCompare(b.title));
 
@@ -103,14 +175,20 @@ async function main() {
   await fs.mkdir(path.dirname(outPath), { recursive: true });
   await fs.writeFile(outPath, JSON.stringify(dataset, null, 2));
   const bytes = (await fs.stat(outPath)).size;
-  console.log(`[ingest-wikivoyage] wrote ${outPath}`);
-  console.log(`[ingest-wikivoyage] entries=${entries.length}  missing=${missing.length}  size=${(bytes / 1024).toFixed(1)}KB`);
-  if (missing.length) {
-    console.log(`[ingest-wikivoyage] missing titles: ${missing.slice(0, 10).join(", ")}${missing.length > 10 ? " …" : ""}`);
+  const missingCount = slice.length - entries.length;
+  const wvCount = entries.filter((e) => e.source === "wikivoyage").length;
+  const wpCount = entries.filter((e) => e.source === "wikipedia").length;
+  console.log(`[ingest] wrote ${outPath}`);
+  console.log(
+    `[ingest] total=${entries.length}  wikivoyage=${wvCount}  wikipedia=${wpCount}  missing=${missingCount}  size=${(bytes / 1024).toFixed(1)}KB`,
+  );
+  if (missingCount > 0) {
+    const missingNames = slice.filter((c) => !entries.find((e) => e.slug === slugify(c.name))).map((c) => c.name);
+    console.log(`[ingest] missing: ${missingNames.slice(0, 15).join(", ")}${missingNames.length > 15 ? " …" : ""}`);
   }
 }
 
 main().catch((err) => {
-  console.error("[ingest-wikivoyage] failed:", err);
+  console.error("[ingest] failed:", err);
   process.exit(1);
 });

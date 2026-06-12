@@ -199,3 +199,71 @@ export function slugify(s: string): string {
     .replace(/^-+|-+$/g, "")
     .slice(0, 100);
 }
+
+// Wikipedia REST summary — fallback when Wikivoyage extract is empty.
+// Pattern from ~/APPS/wikai/lib/wiki.ts.
+const WIKIPEDIA_SUMMARY = "https://en.wikipedia.org/api/rest_v1/page/summary/";
+const MIN_EXTRACT_LEN = 120;
+
+export type WikipediaSummary = {
+  title: string;
+  pageid: number;
+  extract: string;
+  thumbnail?: { source: string; width: number; height: number };
+  original?: { source: string; width: number; height: number };
+  coordinates?: { lat: number; lon: number };
+  url: string;
+};
+
+export async function fetchWikipediaSummary(
+  title: string,
+  { refresh = false }: { refresh?: boolean } = {},
+): Promise<WikipediaSummary | null> {
+  const cacheFile = `wp__${title.replace(/[^a-z0-9-]+/gi, "_").slice(0, 80).toLowerCase()}.json`;
+  if (!refresh) {
+    const cached = await readCache<WikipediaSummary>(cacheFile);
+    if (cached) return cached;
+  }
+  const url = WIKIPEDIA_SUMMARY + encodeURIComponent(title.replace(/ /g, "_"));
+  let attempt = 0;
+  while (attempt < 2) {
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 8000);
+      const r = await fetch(url, {
+        headers: { "User-Agent": USER_AGENT, accept: "application/json" },
+        signal: controller.signal,
+      });
+      clearTimeout(timer);
+      if (!r.ok) {
+        attempt += 1;
+        continue;
+      }
+      const j = (await r.json()) as {
+        title?: string;
+        pageid?: number;
+        extract?: string;
+        thumbnail?: { source: string; width: number; height: number };
+        originalimage?: { source: string; width: number; height: number };
+        coordinates?: { lat: number; lon: number };
+        content_urls?: { desktop?: { page?: string } };
+      };
+      if (!j.extract || j.extract.length < MIN_EXTRACT_LEN) return null;
+      const summary: WikipediaSummary = {
+        title: j.title ?? title,
+        pageid: j.pageid ?? 0,
+        extract: j.extract,
+        thumbnail: j.thumbnail,
+        original: j.originalimage,
+        coordinates: j.coordinates,
+        url: j.content_urls?.desktop?.page ??
+          `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, "_"))}`,
+      };
+      await writeCache(cacheFile, summary);
+      return summary;
+    } catch {
+      attempt += 1;
+    }
+  }
+  return null;
+}

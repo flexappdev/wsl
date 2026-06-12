@@ -3,10 +3,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, MapPin } from "lucide-react";
 import { getWikivoyageBySlug, getWikivoyageDataset } from "@/lib/wikivoyage/data";
+import WikivoyageViewTracker from "@/components/WikivoyageViewTracker";
 
 export const revalidate = 3600;
 
 type Props = { params: Promise<{ slug: string }> };
+
+const S3_HERO_BASE = "https://com27.s3.eu-west-2.amazonaws.com/wsl/heroes";
+
+function heroUrl(entry: { slug: string; thumbnail?: string; s3_hero?: boolean }): string | undefined {
+  if (entry.s3_hero) return `${S3_HERO_BASE}/${entry.slug}.jpg`;
+  return entry.thumbnail;
+}
 
 export async function generateStaticParams() {
   const ds = await getWikivoyageDataset();
@@ -18,13 +26,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = await getWikivoyageBySlug(slug);
   if (!entry) return {};
   const desc = entry.extract.slice(0, 160).replace(/\n+/g, " ").trim();
+  const hero = heroUrl(entry);
   return {
-    title: `${entry.title} Travel Guide · World Stats Live`,
+    title: `${entry.title} Travel Guide`,
     description: desc,
     openGraph: {
       title: `${entry.title} · World Stats Live`,
       description: desc,
-      ...(entry.thumbnail ? { images: [{ url: entry.thumbnail }] } : {}),
+      ...(hero ? { images: [{ url: hero, width: 1792, height: 1024 }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${entry.title} · World Stats Live`,
+      description: desc,
+      ...(hero ? { images: [hero] } : {}),
     },
   };
 }
@@ -35,9 +50,40 @@ export default async function WikivoyageSlugPage({ params }: Props) {
   if (!entry) notFound();
 
   const paragraphs = entry.extract.split(/\n\n+/).filter(Boolean);
+  const hero = heroUrl(entry);
+  const isWikipedia = entry.source === "wikipedia";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    name: entry.title,
+    description: entry.extract.slice(0, 250).replace(/\n+/g, " ").trim(),
+    ...(hero && { image: hero }),
+    ...(entry.coordinates && {
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: entry.coordinates.lat,
+        longitude: entry.coordinates.lon,
+      },
+    }),
+    sameAs: entry.wikivoyage_url,
+    touristType: "International tourists",
+    countryOfOrigin: {
+      "@type": "Country",
+      name: entry.title,
+      ...(entry.code && { identifier: entry.code }),
+    },
+  };
 
   return (
     <main className="page-content">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <WikivoyageViewTracker slug={entry.slug} region={entry.region} source={entry.source ?? "wikivoyage"} />
+
       <nav className="wv-back">
         <Link href="/wikivoyage" className="back-link">
           <ArrowLeft size={14} /> All countries
@@ -52,15 +98,10 @@ export default async function WikivoyageSlugPage({ params }: Props) {
         </div>
       </header>
 
-      {entry.thumbnail && (
+      {hero && (
         <div className="wv-hero">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={entry.thumbnail}
-            alt={`${entry.title} landscape`}
-            className="wv-hero-img"
-            loading="eager"
-          />
+          <img src={hero} alt={`${entry.title} landscape`} className="wv-hero-img" loading="eager" />
         </div>
       )}
 
@@ -77,7 +118,7 @@ export default async function WikivoyageSlugPage({ params }: Props) {
           rel="noopener noreferrer"
           className="wv-source-link"
         >
-          Wikivoyage <ExternalLink size={12} />
+          {isWikipedia ? "Wikipedia" : "Wikivoyage"} <ExternalLink size={12} />
         </a>
       </div>
 
@@ -97,8 +138,8 @@ export default async function WikivoyageSlugPage({ params }: Props) {
         .wv-title { font-size: 1.75rem; font-weight: 700; margin: 0 0 0.15rem; }
         .wv-region { color: var(--muted); font-size: 0.85rem; margin: 0; }
         .wv-hero { margin-bottom: 1.5rem; border-radius: 8px; overflow: hidden;
-          max-height: 360px; background: var(--paper-2, #1a1a1a); }
-        .wv-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; max-height: 360px; }
+          max-height: 420px; background: var(--paper-2, #1a1a1a); }
+        .wv-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; max-height: 420px; }
         .wv-meta-row { display: flex; align-items: center; gap: 1.25rem;
           margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--muted); }
         .wv-coord { display: inline-flex; align-items: center; gap: 0.25rem; }

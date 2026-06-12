@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-10T16:50:08.000Z",
-  "count": 81,
+  "generatedAt": "2026-06-12T06:16:14.971Z",
+  "count": 198,
   "entries": [
     {
       "slug": "afghanistan",
@@ -16,7 +16,9 @@
         "lon": 65.1705
       },
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Afghanistan",
-      "pageid": 270
+      "pageid": 270,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "albania",
@@ -32,7 +34,9 @@
         "lon": 19.8203
       },
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Albania",
-      "pageid": 537
+      "pageid": 537,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "algeria",
@@ -48,7 +52,9 @@
         "lon": 1
       },
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Algeria",
-      "pageid": 649
+      "pageid": 649,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "andorra",
@@ -60,7 +66,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/8/86/Andorra_map_2.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/8/86/Andorra_map_2.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Andorra",
-      "pageid": 1143
+      "pageid": 1143,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "angola",
@@ -76,7 +84,9 @@
         "lon": 17.35
       },
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Angola",
-      "pageid": 1179
+      "pageid": 1179,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "antigua-barbuda",
@@ -92,7 +102,9 @@
         "lon": -61.85
       },
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Antigua_and_Barbuda",
-      "pageid": 1295
+      "pageid": 1295,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "argentina",
@@ -104,7 +116,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/PA280461.JPG/1280px-PA280461.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/a/ad/PA280461.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Argentina",
-      "pageid": 1530
+      "pageid": 1530,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "armenia",
@@ -116,7 +130,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/DziDzernagapert.jpg/1280px-DziDzernagapert.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/b/be/DziDzernagapert.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Armenia",
-      "pageid": 1583
+      "pageid": 1583,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "australia",
@@ -128,7 +144,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Australia_regions_map.png/1280px-Australia_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Australia_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Australia",
-      "pageid": 2001
+      "pageid": 2001,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "austria",
@@ -140,7 +158,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Innsbruck_Flusspromenade.jpg/1280px-Innsbruck_Flusspromenade.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Innsbruck_Flusspromenade.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Austria",
-      "pageid": 2010
+      "pageid": 2010,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "azerbaijan",
@@ -152,7 +172,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Sheki_-_Bergdorf_Kish.JPG/1280px-Sheki_-_Bergdorf_Kish.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/0/06/Sheki_-_Bergdorf_Kish.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Azerbaijan",
-      "pageid": 2139
+      "pageid": 2139,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "bahamas",
@@ -160,11 +182,17 @@
       "region": "Caribbean",
       "code": "BS",
       "flag": "🇧🇸",
-      "extract": "The Bahamas is an archipelago nation in the Atlantic Ocean off the east coast of Florida. The country is made up of about 3,000 islands and cays, of which approximately 30 are populated. The capital city of Nassau, is on the island of New Providence and is home to about half of the country's population. The Bahamas is renowned for its natural beauty and unique culture, and is a popular tropical vacation destination.",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/LocationBahamas.svg/1280px-LocationBahamas.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
-      "original": "https://upload.wikimedia.org/wikipedia/commons/b/b0/LocationBahamas.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
-      "wikivoyage_url": "https://en.wikivoyage.org/wiki/Bahamas",
-      "pageid": 2300
+      "extract": "The Bahamas, officially the Commonwealth of The Bahamas, is an archipelagic country in the Caribbean located within the Lucayan Archipelago in the Atlantic Ocean. The country comprises 700 islands, and more than 2,500 cays in the Atlantic Ocean, located north of Cuba and north-west of the island of Hispaniola and the Turks and Caicos Islands, southeast of the US state of Florida and east of the Florida Keys. The capital and largest city is Nassau on the island of New Providence. The Royal Bahamas Defence Force describes the Bahamas' territory as encompassing 470,000 km2 (180,000 sq mi) of ocean space.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Flag_of_the_Bahamas.svg/330px-Flag_of_the_Bahamas.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Flag_of_the_Bahamas.svg/1280px-Flag_of_the_Bahamas.svg.png",
+      "coordinates": {
+        "lat": 25,
+        "lon": -77.4
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/The_Bahamas",
+      "pageid": 3451,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "bahrain",
@@ -176,7 +204,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bahrain_map_WV.png/1280px-Bahrain_map_WV.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/8/88/Bahrain_map_WV.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Bahrain",
-      "pageid": 2325
+      "pageid": 2325,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "bangladesh",
@@ -188,7 +218,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/English_Wikivoyage_Bangladesh_regions_map.svg/1280px-English_Wikivoyage_Bangladesh_regions_map.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/6/62/English_Wikivoyage_Bangladesh_regions_map.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Bangladesh",
-      "pageid": 2657
+      "pageid": 2657,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "barbados",
@@ -200,7 +232,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/LocationBarbados.png/1280px-LocationBarbados.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/b/b4/LocationBarbados.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Barbados",
-      "pageid": 2741
+      "pageid": 2741,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "belarus",
@@ -212,7 +246,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Belarus_provinces.png/1280px-Belarus_provinces.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/3/33/Belarus_provinces.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Belarus",
-      "pageid": 3244
+      "pageid": 3244,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "belgium",
@@ -224,7 +260,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Begium.png/1280px-Begium.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/5/50/Begium.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Belgium",
-      "pageid": 3273
+      "pageid": 3273,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "belize",
@@ -236,7 +274,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Belize_Regions_map.png/1280px-Belize_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Belize_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Belize",
-      "pageid": 3287
+      "pageid": 3287,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "benin",
@@ -248,7 +288,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikivoyage/en/8/85/Port_de_Non_Retour_-_Ouidah_2015.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikivoyage/en/8/85/Port_de_Non_Retour_-_Ouidah_2015.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Benin",
-      "pageid": 3411
+      "pageid": 3411,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "bhutan",
@@ -260,7 +302,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Bhutan_regions_map.png/1280px-Bhutan_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/9/94/Bhutan_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Bhutan",
-      "pageid": 3704
+      "pageid": 3704,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "bolivia",
@@ -272,7 +316,27 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bolivia_regions_map1.png/1280px-Bolivia_regions_map1.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Bolivia_regions_map1.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Bolivia",
-      "pageid": 4200
+      "pageid": 4200,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "bosnia-herzegovina",
+      "title": "Bosnia & Herzegovina",
+      "region": "Balkans",
+      "code": "BA",
+      "flag": "🇧🇦",
+      "extract": "Bosnia and Herzegovina, often referred to as Bosnia-Herzegovina or simply Bosnia, is a country in Southeast Europe. Situated on the Balkan Peninsula, it borders Serbia to the east, Montenegro to the southeast, and Croatia to the north and southwest, with a 20-kilometre-long (12-mile) coast on the Adriatic Sea in the south. Bosnia has a moderate continental climate with hot summers and cold, snowy winters. Its geography is largely mountainous, particularly in the central and eastern regions, which are dominated by the Dinaric Alps. Herzegovina, the smaller, southern region, has a Mediterranean climate and is mostly mountainous. Sarajevo is the capital and the largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/330px-Flag_of_Bosnia_and_Herzegovina.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/960px-Flag_of_Bosnia_and_Herzegovina.svg.png",
+      "coordinates": {
+        "lat": 44,
+        "lon": 18
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina",
+      "pageid": 3463,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "botswana",
@@ -284,7 +348,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Botswana.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Botswana.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Botswana",
-      "pageid": 4409
+      "pageid": 4409,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "brazil",
@@ -296,7 +362,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/BrazilMap.png/1280px-BrazilMap.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/4/43/BrazilMap.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Brazil",
-      "pageid": 4583
+      "pageid": 4583,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "brunei",
@@ -308,7 +376,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Brunei_regions_map.png/1280px-Brunei_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Brunei_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Brunei",
-      "pageid": 4894
+      "pageid": 4894,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "bulgaria",
@@ -320,7 +390,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Bulgaria_Cultural_Regions_Map.png/1280px-Bulgaria_Cultural_Regions_Map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/9/94/Bulgaria_Cultural_Regions_Map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Bulgaria",
-      "pageid": 5063
+      "pageid": 5063,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "burkina-faso",
@@ -332,7 +404,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Arli_National_Park_Burkina_Faso.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Arli_National_Park_Burkina_Faso.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Burkina_Faso",
-      "pageid": 5130
+      "pageid": 5130,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "burundi",
@@ -344,7 +418,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Burundi_Regions_map.png/1280px-Burundi_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Burundi_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Burundi",
-      "pageid": 5185
+      "pageid": 5185,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "cambodia",
@@ -356,7 +432,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/PreahTineahChanchhaya.JPG/1280px-PreahTineahChanchhaya.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/8/85/PreahTineahChanchhaya.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Cambodia",
-      "pageid": 5670
+      "pageid": 5670,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "cameroon",
@@ -368,7 +446,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Cameroon_regions_map.png/1280px-Cameroon_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/4/42/Cameroon_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Cameroon",
-      "pageid": 5705
+      "pageid": 5705,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "canada",
@@ -380,7 +460,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg/1280px-Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Canada",
-      "pageid": 5755
+      "pageid": 5755,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "cape-verde",
@@ -392,7 +474,27 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Cabo_Verde_regions_map.png/1280px-Cabo_Verde_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Cabo_Verde_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Cape_Verde",
-      "pageid": 5913
+      "pageid": 5913,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "central-african-rep",
+      "title": "Central African Rep.",
+      "region": "Central Africa",
+      "code": "CF",
+      "flag": "🇨🇫",
+      "extract": "The Central African Republic (French: République centrafricaine or Centrafrique, Sangho: Ködörösêse tî Bêafrîka), also known by the acronym CAR, is located in the heart of Africa. The former French colony has borders with six countries and has had a very troubled history since the 1960s. \nPolitical instability, corruption, and recurrent rebellions and conflicts have beset the resource-rich nation and the country is one of the world's poorest and least developed countries. \nUnder less extreme circumstances, however, the Central African Republic is a hidden gem waiting to be discovered by the brave and the bold, with verdant rainforests and incredible wildlife.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Central_African_Republic_visa_policy.svg/1280px-Central_African_Republic_visa_policy.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Central_African_Republic_visa_policy.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
+      "coordinates": {
+        "lat": 6.7,
+        "lon": 20.9
+      },
+      "wikivoyage_url": "https://en.wikivoyage.org/wiki/Central_African_Republic",
+      "pageid": 6425,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "chad",
@@ -404,7 +506,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chad_Regions_map.png/1280px-Chad_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/2/22/Chad_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Chad",
-      "pageid": 6677
+      "pageid": 6677,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "chile",
@@ -416,7 +520,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Chile_Regions_map.png/1280px-Chile_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/3/38/Chile_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Chile",
-      "pageid": 7305
+      "pageid": 7305,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "china",
@@ -428,7 +534,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Gateofheavenlypeace.JPG/1280px-Gateofheavenlypeace.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/5/59/Gateofheavenlypeace.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/China",
-      "pageid": 7335
+      "pageid": 7335,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "colombia",
@@ -440,7 +548,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Nevado_del_Ruiz_Valle_de_los_muertos.JPG/1280px-Nevado_del_Ruiz_Valle_de_los_muertos.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Nevado_del_Ruiz_Valle_de_los_muertos.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Colombia",
-      "pageid": 7959
+      "pageid": 7959,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "comoros",
@@ -452,7 +562,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Comoros_map.png/1280px-Comoros_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/9/90/Comoros_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Comoros",
-      "pageid": 8054
+      "pageid": 8054,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "congo",
@@ -462,7 +574,9 @@
       "flag": "🇨🇬",
       "extract": "Congo is the name of two countries in Central Africa:\n\nRepublic of the Congo – also known as Congo-Brazzaville, the smaller one in the northwest\nDemocratic Republic of the Congo - formerly Zaire and also known as Congo-Kinshasa, the larger one in the southeast",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Congo",
-      "pageid": 8091
+      "pageid": 8091,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "costa-rica",
@@ -474,7 +588,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Costa_Rica_regions_map.png/1280px-Costa_Rica_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Costa_Rica_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Costa_Rica",
-      "pageid": 8346
+      "pageid": 8346,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "croatia",
@@ -486,7 +602,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Croatia_Regions_map.png/1280px-Croatia_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Croatia_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Croatia",
-      "pageid": 8540
+      "pageid": 8540,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "cuba",
@@ -498,7 +616,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/6/62/Statue_du_Che_%C3%A0_Santa_Clara%2C_Cuba.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/6/62/Statue_du_Che_%C3%A0_Santa_Clara%2C_Cuba.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Cuba",
-      "pageid": 8687
+      "pageid": 8687,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "cyprus",
@@ -510,7 +630,27 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Greek_Cyprus_regions_map.png/1280px-Greek_Cyprus_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Greek_Cyprus_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Cyprus",
-      "pageid": 8813
+      "pageid": 8813,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "czechia",
+      "title": "Czechia",
+      "region": "Eastern Europe",
+      "code": "CZ",
+      "flag": "🇨🇿",
+      "extract": "The Czech Republic, also known as Czechia and historically known as Bohemia, is a landlocked country in Central Europe. The country is bordered by Austria to the south, Germany to the west, Poland to the northeast, and Slovakia to the southeast. The Czech Republic has a hilly landscape that covers an area of 78,871 square kilometers (30,452 sq mi) with a mostly temperate continental and oceanic climate. The capital and largest city is Prague; other major cities and urban areas include Brno, Ostrava, Plzeň and Liberec.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/330px-Flag_of_the_Czech_Republic.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/960px-Flag_of_the_Czech_Republic.svg.png",
+      "coordinates": {
+        "lat": 49.75,
+        "lon": 15.5
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Czech_Republic",
+      "pageid": 5321,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "denmark",
@@ -522,7 +662,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/View_of_M%C3%B8ns_Klint_asv2024-07_img5.jpg/1280px-View_of_M%C3%B8ns_Klint_asv2024-07_img5.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/a/a2/View_of_M%C3%B8ns_Klint_asv2024-07_img5.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Denmark",
-      "pageid": 9318
+      "pageid": 9318,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "djibouti",
@@ -534,7 +676,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Djibouti_map.png/1280px-Djibouti_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/2/25/Djibouti_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Djibouti",
-      "pageid": 9838
+      "pageid": 9838,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "dominica",
@@ -546,7 +690,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Dominica_Map.png/1280px-Dominica_Map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Dominica_Map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Dominica",
-      "pageid": 9900
+      "pageid": 9900,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "dominican-republic",
@@ -558,7 +704,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/SantoDomingoedit.JPG/1280px-SantoDomingoedit.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/e3/SantoDomingoedit.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Dominican_Republic",
-      "pageid": 9902
+      "pageid": 9902,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "dr-congo",
@@ -570,7 +718,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/COD_orthographic.svg/1280px-COD_orthographic.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/b/b4/COD_orthographic.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Democratic_Republic_of_the_Congo",
-      "pageid": 9298
+      "pageid": 9298,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "ecuador",
@@ -582,7 +732,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ecuador_regions_map.png/1280px-Ecuador_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Ecuador_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Ecuador",
-      "pageid": 10580
+      "pageid": 10580,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "egypt",
@@ -594,7 +746,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Map_of_Egypt.png/1280px-Map_of_Egypt.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/0/06/Map_of_Egypt.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Egypt",
-      "pageid": 10675
+      "pageid": 10675,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "el-salvador",
@@ -606,7 +760,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/El_Salvador_Regions_map.png/1280px-El_Salvador_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/3/31/El_Salvador_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/El_Salvador",
-      "pageid": 10884
+      "pageid": 10884,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "equatorial-guinea",
@@ -618,7 +774,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/LocationEquatorialGuinea.svg/1280px-LocationEquatorialGuinea.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/1/15/LocationEquatorialGuinea.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Equatorial_Guinea",
-      "pageid": 11030
+      "pageid": 11030,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "eritrea",
@@ -630,7 +788,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Eritrea_regions_map.png/1280px-Eritrea_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Eritrea_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Eritrea",
-      "pageid": 11064
+      "pageid": 11064,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "estonia",
@@ -642,7 +802,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Estonia_regions_map.png/1280px-Estonia_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Estonia_regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Estonia",
-      "pageid": 11164
+      "pageid": 11164,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "eswatini",
@@ -654,7 +816,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Eswatini_Regions_map.png/1280px-Eswatini_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Eswatini_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Eswatini",
-      "pageid": 34808
+      "pageid": 34808,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "ethiopia",
@@ -666,7 +830,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Wikivoyage_Ethiopia_RegionsMap.png/1280px-Wikivoyage_Ethiopia_RegionsMap.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/6/65/Wikivoyage_Ethiopia_RegionsMap.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Ethiopia",
-      "pageid": 11174
+      "pageid": 11174,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "fiji",
@@ -678,7 +844,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Denarau_Island_in_Fiji%2C_2013.jpg/1280px-Denarau_Island_in_Fiji%2C_2013.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Denarau_Island_in_Fiji%2C_2013.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Fiji",
-      "pageid": 11591
+      "pageid": 11591,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "finland",
@@ -690,7 +858,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Finland_regions.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Finland_regions.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Finland",
-      "pageid": 11615
+      "pageid": 11615,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "france",
@@ -702,7 +872,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/France-regions-2017.svg/1280px-France-regions-2017.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/f/f7/France-regions-2017.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/France",
-      "pageid": 11954
+      "pageid": 11954,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "gabon",
@@ -714,7 +886,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gabon_Regions_map.png/1280px-Gabon_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Gabon_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Gabon",
-      "pageid": 12276
+      "pageid": 12276,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "gambia",
@@ -722,11 +896,29 @@
       "region": "West Africa",
       "code": "GM",
       "flag": "🇬🇲",
-      "extract": "The Gambia is a small, narrow country along the length of the Gambia River in West Africa, almost completely surrounded by Senegal. Besides beaches and wildlife, The Gambia is known for the town of Juffureh, made famous by Alex Haley's Roots. It is known as the Smiling Coast.",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/5/50/LocationGambia.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-      "original": "https://upload.wikimedia.org/wikipedia/commons/5/50/LocationGambia.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
-      "wikivoyage_url": "https://en.wikivoyage.org/wiki/Gambia",
-      "pageid": 12355
+      "extract": "The Gambia, officially the Republic of The Gambia, is a country in West Africa. Geographically, the Gambia is the smallest country in continental Africa; it is bounded by Senegal on all sides except for the western part, which is bordered by the Atlantic Ocean.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_The_Gambia.svg/330px-Flag_of_The_Gambia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_The_Gambia.svg/960px-Flag_of_The_Gambia.svg.png",
+      "coordinates": {
+        "lat": 13.45,
+        "lon": -16.575
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/The_Gambia",
+      "pageid": 65656,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "georgia",
+      "title": "Georgia",
+      "region": "Western Asia",
+      "code": "GE",
+      "flag": "🇬🇪",
+      "extract": "Georgia most commonly refers to:Georgia (country) or Caucasian Georgia, a country in the South Caucasus\nGeorgia, a state in the southeastern United States",
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Georgia",
+      "pageid": 17238515,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "germany",
@@ -738,7 +930,27 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Germany_Regions_02.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Germany_Regions_02.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Germany",
-      "pageid": 12645
+      "pageid": 12645,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "ghana",
+      "title": "Ghana",
+      "region": "West Africa",
+      "code": "GH",
+      "flag": "🇬🇭",
+      "extract": "Ghana, officially the Republic of Ghana, is a country in West Africa. It is situated with the Gulf of Guinea and the Atlantic Ocean to the south, and shares borders with Côte d'Ivoire to the west, Burkina Faso to the north, and Togo to the east. Ghana covers an area of 239,567 km2 (92,497 sq mi), spanning diverse ecologies, from coastal savannas to tropical rainforests. With over 35 million inhabitants, Ghana is ranked thirteenth-most populous country in Africa, and the second-most populous country in West Africa. The capital and largest city is Accra.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/330px-Flag_of_Ghana.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/960px-Flag_of_Ghana.svg.png",
+      "coordinates": {
+        "lat": 8.03,
+        "lon": -1.08
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Ghana",
+      "pageid": 12067,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "greece",
@@ -750,7 +962,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Greece_WV_regions_map_2016.svg/1280px-Greece_WV_regions_map_2016.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Greece_WV_regions_map_2016.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Greece",
-      "pageid": 13351
+      "pageid": 13351,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "grenada",
@@ -762,7 +976,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Grenada_Regions_map.png/1280px-Grenada_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/6/62/Grenada_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Grenada",
-      "pageid": 13426
+      "pageid": 13426,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "guatemala",
@@ -774,7 +990,45 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Guatemala_WV_regions_map_2016_EN.png/1280px-Guatemala_WV_regions_map_2016_EN.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/3/37/Guatemala_WV_regions_map_2016_EN.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Guatemala",
-      "pageid": 13587
+      "pageid": 13587,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "guinea",
+      "title": "Guinea",
+      "region": "West Africa",
+      "code": "GN",
+      "flag": "🇬🇳",
+      "extract": "Guinea, officially the Republic of Guinea, is a coastal country in West Africa. It borders the Atlantic Ocean to the west, Guinea-Bissau to the northwest, Senegal to the north, Mali to the northeast, Ivory Coast to the southeast, and Sierra Leone and Liberia to the south. It is sometimes referred to as Guinea-Conakry, after its capital Conakry, to distinguish it from other territories in the eponymous region, such as Guinea-Bissau and Equatorial Guinea. Guinea has a population of 14 million and an area of 245,857 square kilometres (94,926 sq mi).",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Flag_of_Guinea.svg/330px-Flag_of_Guinea.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Flag_of_Guinea.svg/960px-Flag_of_Guinea.svg.png",
+      "coordinates": {
+        "lat": 11,
+        "lon": -10
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Guinea",
+      "pageid": 12176,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "guinea-bissau",
+      "title": "Guinea-Bissau",
+      "region": "West Africa",
+      "code": "GW",
+      "flag": "🇬🇼",
+      "extract": "Guinea-Bissau, officially the Republic of Guinea-Bissau, is a country in West Africa that covers 36,125 square kilometres (13,948 sq mi) with an estimated population of 2,080,000. It borders Senegal to its north and Guinea to its southeast.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Guinea-Bissau.svg/330px-Flag_of_Guinea-Bissau.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Guinea-Bissau.svg/1280px-Flag_of_Guinea-Bissau.svg.png",
+      "coordinates": {
+        "lat": 12,
+        "lon": -15
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Guinea-Bissau",
+      "pageid": 12186,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "guyana",
@@ -786,7 +1040,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Guyana_Regions_map.png/1280px-Guyana_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Guyana_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Guyana",
-      "pageid": 13744
+      "pageid": 13744,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "haiti",
@@ -798,7 +1054,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/1/18/Statue_de_Dessalines_%281082761489%29.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/1/18/Statue_de_Dessalines_%281082761489%29.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Haiti",
-      "pageid": 13878
+      "pageid": 13878,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "honduras",
@@ -810,7 +1068,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Roatan_West_End_95_we_006.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Roatan_West_End_95_we_006.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Honduras",
-      "pageid": 14888
+      "pageid": 14888,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "hong-kong",
@@ -822,7 +1082,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/City_Boundary_1903_-_Old_Peak_Road.jpg/1280px-City_Boundary_1903_-_Old_Peak_Road.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/c/ca/City_Boundary_1903_-_Old_Peak_Road.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Hong_Kong",
-      "pageid": 14902
+      "pageid": 14902,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "hungary",
@@ -834,7 +1096,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Kurult%C3%A1j_-_V%C3%A1gta%2C_2014.08.09_%283%29.JPG/1280px-Kurult%C3%A1j_-_V%C3%A1gta%2C_2014.08.09_%283%29.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/2/24/Kurult%C3%A1j_-_V%C3%A1gta%2C_2014.08.09_%283%29.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Hungary",
-      "pageid": 15219
+      "pageid": 15219,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "iceland",
@@ -846,7 +1110,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Iceland_Mid-Atlantic_Ridge_map.svg/1280px-Iceland_Mid-Atlantic_Ridge_map.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/8/82/Iceland_Mid-Atlantic_Ridge_map.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Iceland",
-      "pageid": 15369
+      "pageid": 15369,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "india",
@@ -858,7 +1124,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/India_Wikivoyage_map.svg/1280px-India_Wikivoyage_map.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/2/2f/India_Wikivoyage_map.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/India",
-      "pageid": 15557
+      "pageid": 15557,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "indonesia",
@@ -870,7 +1138,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Komodo_Dragon_leaping.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Komodo_Dragon_leaping.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Indonesia",
-      "pageid": 15592
+      "pageid": 15592,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "iran",
@@ -882,7 +1152,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Yazd_panorama.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Yazd_panorama.jpg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Iran",
-      "pageid": 15713
+      "pageid": 15713,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "iraq",
@@ -894,7 +1166,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Ruins_of_Ur_2.JPG/1280px-Ruins_of_Ur_2.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/0/01/Ruins_of_Ur_2.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Iraq",
-      "pageid": 15717
+      "pageid": 15717,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "ireland",
@@ -906,7 +1180,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ireland_regions_map2.png/1280px-Ireland_regions_map2.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Ireland_regions_map2.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Ireland",
-      "pageid": 15723
+      "pageid": 15723,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "israel",
@@ -918,7 +1194,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/WikiAir_IL-13-06_035_-_Old_City_%28Jerusalem%29.JPG/1280px-WikiAir_IL-13-06_035_-_Old_City_%28Jerusalem%29.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/5/5b/WikiAir_IL-13-06_035_-_Old_City_%28Jerusalem%29.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Israel",
-      "pageid": 15869
+      "pageid": 15869,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "italy",
@@ -930,7 +1208,9 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Italy_regions.png/1280px-Italy_regions.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/5/56/Italy_regions.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Italy",
-      "pageid": 15920
+      "pageid": 15920,
+      "source": "wikivoyage",
+      "s3_hero": true
     },
     {
       "slug": "ivory-coast",
@@ -942,7 +1222,257 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Cote_d%27Ivoire_Regions_map.png/1280px-Cote_d%27Ivoire_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Cote_d%27Ivoire_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/C%C3%B4te_d'Ivoire",
-      "pageid": 6339
+      "pageid": 6339,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "jamaica",
+      "title": "Jamaica",
+      "region": "Caribbean",
+      "code": "JM",
+      "flag": "🇯🇲",
+      "extract": "Jamaica is an island country in the Caribbean, covering 10,990 square kilometres (4,240 sq mi). It is the third-largest island in the Greater Antilles and the Caribbean, after Cuba and the island of Hispaniola. Jamaica lies about 145 km (78 nmi) south of Cuba, 191 km (103 nmi) west of Hispaniola, and 215 km (116 nmi) southeast of the Cayman Islands. With 2.8 million people, Jamaica is the third most populous Anglophone country in the Americas and the fourth most populous country in the Caribbean. Kingston is the country's capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Jamaica.svg/330px-Flag_of_Jamaica.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Jamaica.svg/1280px-Flag_of_Jamaica.svg.png",
+      "coordinates": {
+        "lat": 18.18,
+        "lon": -77.4
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Jamaica",
+      "pageid": 15660,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "japan",
+      "title": "Japan",
+      "region": "East Asia",
+      "code": "JP",
+      "flag": "🇯🇵",
+      "extract": "Japan is an island country in East Asia. Located in the Pacific Ocean off the northeast coast of the Asian mainland, it is bordered to the west by the Sea of Japan and extends from the Sea of Okhotsk in the north to the East China Sea in the south. The Japanese archipelago consists of four major islands alongside 14,121 smaller islands. Japan is divided into 47 administrative prefectures and eight traditional regions, and around 75% of its terrain is mountainous and heavily forested, concentrating its agriculture and highly urbanized population along its eastern coastal plains. With a population of almost 123 million as of 2026, it is the world's 11th most populous country. Tokyo is the country's capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/330px-Flag_of_Japan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/960px-Flag_of_Japan.svg.png",
+      "coordinates": {
+        "lat": 36,
+        "lon": 138
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Japan",
+      "pageid": 15573,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "jordan",
+      "title": "Jordan",
+      "region": "Western Asia",
+      "code": "JO",
+      "flag": "🇯🇴",
+      "extract": "Jordan, officially the Hashemite Kingdom of Jordan, is a country in the Southern Levant region of West Asia. Jordan is bordered by Syria to the north, Iraq to the east, Saudi Arabia to the south, and both Israel and Palestine to the west. The Jordan River, flowing into the Dead Sea, is located along the country's western border within the Jordan Rift Valley. Jordan has a small coastline along the Red Sea in its southwest, separated by the Gulf of Aqaba from Egypt. Amman is the country's capital and largest city, as well as the most populous city in the Levant.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/330px-Flag_of_Jordan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/1280px-Flag_of_Jordan.svg.png",
+      "coordinates": {
+        "lat": 31,
+        "lon": 36.5
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Jordan",
+      "pageid": 7515964,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "kazakhstan",
+      "title": "Kazakhstan",
+      "region": "Central Asia",
+      "code": "KZ",
+      "flag": "🇰🇿",
+      "extract": "Kazakhstan, officially the Republic of Kazakhstan, is a landlocked country situated primarily in Central Asia, with a portion of its territory extending into Eastern Europe. It borders Russia to the north and west, China to the east, Kyrgyzstan to the southeast, Uzbekistan to the south, and Turkmenistan to the southwest, and it has a coastline along the Caspian Sea. The capital is Astana and the country's largest city and principal cultural and economic center is Almaty, which served as the capital until 1997.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/330px-Flag_of_Kazakhstan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1280px-Flag_of_Kazakhstan.svg.png",
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Kazakhstan",
+      "pageid": 16642,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "kenya",
+      "title": "Kenya",
+      "region": "East Africa",
+      "code": "KE",
+      "flag": "🇰🇪",
+      "extract": "Kenya, officially the Republic of Kenya, is a country located in East Africa. With an estimated population of more than 53.3 million as of mid-2025, it is the 27th-most populous country in the world and the seventh-most populous in Africa. Kenya's capital and largest city is Nairobi. The second-largest and oldest city is Mombasa, a port city located on Mombasa Island. Other major cities within the country include Kisumu, Nakuru and Eldoret. Going clockwise, Kenya is bordered by South Sudan to the northwest, Ethiopia to the north, Somalia to the east, the Indian Ocean to the southeast, Tanzania to the southwest, and Lake Victoria and Uganda to the west. Its geography, climate and population vary. In western Rift Valley counties, the landscape includes cold, snow-capped mountaintops with surrounding forests, wildlife, and fertile agricultural regions in temperate climates. In other areas there are dry, arid, and semi-arid climates, as well as absolute deserts.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Kenya.svg/330px-Flag_of_Kenya.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Kenya.svg/960px-Flag_of_Kenya.svg.png",
+      "coordinates": {
+        "lat": 1,
+        "lon": 38
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Kenya",
+      "pageid": 188171,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "kiribati",
+      "title": "Kiribati",
+      "region": "Oceania",
+      "code": "KI",
+      "flag": "🇰🇮",
+      "extract": "Kiribati, officially the Republic of Kiribati, is an archipelagic country in the Micronesia sub-region of Oceania in the central Pacific Ocean. The state comprises 32 atolls and other islands and one remote raised coral island, Banaba. Its total land area is 811 km2 (313 sq mi) dispersed over 3,441,810 km2 (1,328,890 sq mi) of ocean. The spread of the country's islands, from Banaba in the west to Kiritimati in the east straddles the equator and the 180th meridian. The International Date Line goes around Kiribati and swings far to the east, almost reaching 150°W. This brings Kiribati's easternmost islands, the southern Line Islands south of Hawaii, into the same day as the Gilbert Islands and places them in the most advanced time zone on Earth: UTC+14.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kiribati.svg/330px-Flag_of_Kiribati.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kiribati.svg/960px-Flag_of_Kiribati.svg.png",
+      "coordinates": {
+        "lat": 1.41666667,
+        "lon": 173
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Kiribati",
+      "pageid": 16674,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "kosovo",
+      "title": "Kosovo",
+      "region": "Balkans",
+      "code": "XK",
+      "flag": "🇽🇰",
+      "extract": "Kosovo, officially the Republic of Kosovo, is a landlocked country in Southeast Europe with partial diplomatic recognition. It is bordered by Albania to the southwest, Montenegro to the west, Serbia to the north and east, and North Macedonia to the southeast. It covers an area of 10,887 km2 (4,203 sq mi) and has a population of nearly 1.6 million, of whom the vast majority are ethnic Albanians. Kosovo has a varied terrain, with high plains along with rolling hills and mountains, some of which have an altitude over 2,500 m (8,200 ft). Its climate is mainly continental with some Mediterranean and Alpine influences. Kosovo's capital and most populous city is Pristina; other major cities and urban areas include Prizren, Ferizaj, Gjilan, and Peja.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Kosovo.svg/330px-Flag_of_Kosovo.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Kosovo.svg/960px-Flag_of_Kosovo.svg.png",
+      "coordinates": {
+        "lat": 42.58333333,
+        "lon": 21
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Kosovo",
+      "pageid": 17391,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "kuwait",
+      "title": "Kuwait",
+      "region": "Western Asia",
+      "code": "KW",
+      "flag": "🇰🇼",
+      "extract": "Kuwait, officially the State of Kuwait, is a country in West Asia. With a coastline of approximately 500 km (311 mi), it is situated at the head of the Persian Gulf in the northeastern edge of the Arabian Peninsula, bordering Iraq to the north and Saudi Arabia to the south. Kuwait is geographically the closest Gulf country to mainland Iran. The country is a small city-state; most of the population reside in the urban agglomeration of Kuwait City, the capital and largest city. As of 2024, Kuwait has a population of 4.82 million, of which 1.53 million are Kuwaiti citizens while the remaining 3.29 million are foreign nationals from over 100 countries. In 2024, Kuwait had the world's seventh largest number of foreign nationals as a percentage of the population, where its citizens make up fewer than 30% of the overall population.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Kuwait.svg/330px-Flag_of_Kuwait.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Kuwait.svg/1280px-Flag_of_Kuwait.svg.png",
+      "coordinates": {
+        "lat": 29.5,
+        "lon": 47.75
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Kuwait",
+      "pageid": 7515890,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "kyrgyzstan",
+      "title": "Kyrgyzstan",
+      "region": "Central Asia",
+      "code": "KG",
+      "flag": "🇰🇬",
+      "extract": "Kyrgyzstan, officially the Kyrgyz Republic, formerly known as Kirghizia, is a landlocked country in the eastern regions of Central Asia, lying in the Tian Shan and Pamir mountain ranges. It is bordered by Kazakhstan to the north, Uzbekistan to the west, Tajikistan to the south, and China to the east and southeast. Kyrgyzstan's capital and largest city is Bishkek which lies on the northern border with Kazakhstan. Ethnic Kyrgyz make up the majority of the country's over 7.4 million people, followed by significant minorities of Uzbeks and Russians.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Flag_of_Kyrgyzstan.svg/330px-Flag_of_Kyrgyzstan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Flag_of_Kyrgyzstan.svg/1280px-Flag_of_Kyrgyzstan.svg.png",
+      "coordinates": {
+        "lat": 41,
+        "lon": 75
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Kyrgyzstan",
+      "pageid": 170131,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "laos",
+      "title": "Laos",
+      "region": "Southeast Asia",
+      "code": "LA",
+      "flag": "🇱🇦",
+      "extract": "Laos, officially the Lao People's Democratic Republic (LPDR), is a country in Mainland Southeast Asia, and the only landlocked country in Southeast Asia. It is bordered by Myanmar and China to the northwest, Vietnam to the east, Cambodia to the southeast, and Thailand to the west and southwest. Laos has a population of more than 6 million, and its capital and most populous city is Vientiane. It has three UNESCO World Heritage Sites: the town of Luang Prabang, the temple complex of Vat Phou, and the Plain of Jars. The 2021 completion of the Boten–Vientiane railway, Laotian section of the Laos–China Railway (LCR), connects Vientiane to Kunming.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Laos.svg/330px-Flag_of_Laos.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Laos.svg/960px-Flag_of_Laos.svg.png",
+      "coordinates": {
+        "lat": 18,
+        "lon": 105
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Laos",
+      "pageid": 17752,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "latvia",
+      "title": "Latvia",
+      "region": "Northern Europe",
+      "code": "LV",
+      "flag": "🇱🇻",
+      "extract": "Latvia, officially the Republic of Latvia, is a country in the Baltic region of northern Europe. It is one of the three Baltic states, along with Estonia to the north and Lithuania to the south. It borders Russia to the east and Belarus to the southeast and shares a maritime border with Sweden to the west. Latvia covers an area of 64,573 km2 (24,932 sq mi), with a population of 1.83 million. The country has a temperate seasonal climate. Its capital and largest city is Riga. Latvians, who are the titular nation and comprise 65.5% of the country's population, belong to the ethnolinguistic group of the Balts and speak Latvian. Russians are the most prominent minority in the country, at almost a quarter of the population; 37.7% of the population speak Russian as their native tongue.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Latvia.svg/330px-Flag_of_Latvia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Latvia.svg/1280px-Flag_of_Latvia.svg.png",
+      "coordinates": {
+        "lat": 57,
+        "lon": 25
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Latvia",
+      "pageid": 17514,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "lebanon",
+      "title": "Lebanon",
+      "region": "Western Asia",
+      "code": "LB",
+      "flag": "🇱🇧",
+      "extract": "Lebanon, officially the Lebanese Republic, is a country in the Levant region of West Asia. Situated at the crossroads of the Mediterranean Basin and the Arabian Peninsula, it is bordered by Syria to the north and east, Israel to the south, and the Mediterranean Sea to the west; Cyprus lies a short distance from the coastline. Lebanon has a population of more than five million and an area of 10,452 square kilometres (4,036 sq mi). Beirut is the country's capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Flag_of_Lebanon.svg/330px-Flag_of_Lebanon.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Flag_of_Lebanon.svg/3840px-Flag_of_Lebanon.svg.png",
+      "coordinates": {
+        "lat": 33.83333333,
+        "lon": 35.83333333
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Lebanon",
+      "pageid": 17771,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "lesotho",
+      "title": "Lesotho",
+      "region": "Southern Africa",
+      "code": "LS",
+      "flag": "🇱🇸",
+      "extract": "Lesotho, officially the Kingdom of Lesotho, is a landlocked country in Southern Africa. Surrounded by South Africa, it is the largest of the only three sovereign enclaves. Lesotho is located in the Maloti Mountains, with the highest peak in southern Africa. It has an area of over 30,000 km2 (11,600 mi2), with a population of about 2.3 million. Its capital and largest city is Maseru.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Flag_of_Lesotho.svg/330px-Flag_of_Lesotho.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Flag_of_Lesotho.svg/960px-Flag_of_Lesotho.svg.png",
+      "coordinates": {
+        "lat": -29.6,
+        "lon": 28.3
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Lesotho",
+      "pageid": 17781,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "liberia",
+      "title": "Liberia",
+      "region": "West Africa",
+      "code": "LR",
+      "flag": "🇱🇷",
+      "extract": "Liberia, officially the Republic of Liberia, is a country on the West African coast. It is bordered by Sierra Leone to its northwest, Guinea to its north, Ivory Coast to its east, and the Atlantic Ocean to its south and southwest. It has a population of around 5.5 million and covers an area of 43,000 square miles (111,369 km2). The official language is English, though over 20 indigenous languages are spoken, reflecting the country's ethnic and cultural diversity. The capital and largest city is Monrovia.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_Liberia.svg/330px-Flag_of_Liberia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_Liberia.svg/1280px-Flag_of_Liberia.svg.png",
+      "coordinates": {
+        "lat": 6.5,
+        "lon": -9.5
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Liberia",
+      "pageid": 17791,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "libya",
@@ -954,7 +1484,243 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Libya_Regions_map.png/1280px-Libya_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/9/98/Libya_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Libya",
-      "pageid": 19634
+      "pageid": 19634,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "liechtenstein",
+      "title": "Liechtenstein",
+      "region": "Western Europe",
+      "code": "LI",
+      "flag": "🇱🇮",
+      "extract": "Liechtenstein, officially the Principality of Liechtenstein, is a doubly landlocked country in the Central European Alps. A microstate, It is located between Austria to the east and north-east and Switzerland to the north-west, west and south.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Flag_of_Liechtenstein.svg/330px-Flag_of_Liechtenstein.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Flag_of_Liechtenstein.svg/1280px-Flag_of_Liechtenstein.svg.png",
+      "coordinates": {
+        "lat": 47.15,
+        "lon": 9.55
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Liechtenstein",
+      "pageid": 17810,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "lithuania",
+      "title": "Lithuania",
+      "region": "Northern Europe",
+      "code": "LT",
+      "flag": "🇱🇹",
+      "extract": "Lithuania, officially the Republic of Lithuania, is a country in the Baltic region of Europe. It is one of three Baltic states and lies on the eastern shore of the Baltic Sea, bordered by Latvia to the north, Belarus to the east and south, Poland to the south, and the Russian semi-exclave of Kaliningrad Oblast to the southwest, with a maritime border with Sweden to the west. Lithuania covers an area of 65,300 km2 (25,200 sq mi), and has a population of 2.9 million. Its capital and largest city is Vilnius; other major cities include Kaunas, Klaipėda, Šiauliai and Panevėžys. Lithuanians are the titular nation, belong to the ethnolinguistic group of Balts, and speak Lithuanian.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_Lithuania.svg/330px-Flag_of_Lithuania.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_Lithuania.svg/1280px-Flag_of_Lithuania.svg.png",
+      "coordinates": {
+        "lat": 55,
+        "lon": 24
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Lithuania",
+      "pageid": 17675,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "luxembourg",
+      "title": "Luxembourg",
+      "region": "Western Europe",
+      "code": "LU",
+      "flag": "🇱🇺",
+      "extract": "Luxembourg, officially the Grand Duchy of Luxembourg, is a landlocked country in Western Europe. It is bordered by Belgium to the west and north, Germany to the east, and France to the south and west. Its capital and most populous city, Luxembourg City, is one of the four institutional seats of the European Union and hosts several EU institutions, notably the Court of Justice of the European Union, the highest judicial authority in the EU.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Luxembourg.svg/330px-Flag_of_Luxembourg.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Luxembourg.svg/960px-Flag_of_Luxembourg.svg.png",
+      "coordinates": {
+        "lat": 49.81666667,
+        "lon": 6.13333333
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Luxembourg",
+      "pageid": 17515,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "madagascar",
+      "title": "Madagascar",
+      "region": "East Africa",
+      "code": "MG",
+      "flag": "🇲🇬",
+      "extract": "Madagascar, officially the Republic of Madagascar, is an island country in the Indian Ocean that includes the island of Madagascar and numerous smaller peripheral islands. Lying off the southeastern coast of Africa, it is the world's fourth-largest island, the second-largest island country, and the 46th-largest country overall. Its capital and largest city is Antananarivo.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Madagascar_%28centered_orthographic_projection%29.svg/330px-Madagascar_%28centered_orthographic_projection%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Madagascar_%28centered_orthographic_projection%29.svg/960px-Madagascar_%28centered_orthographic_projection%29.svg.png",
+      "coordinates": {
+        "lat": -20,
+        "lon": 47
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "pageid": 18964,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "malawi",
+      "title": "Malawi",
+      "region": "Southern Africa",
+      "code": "MW",
+      "flag": "🇲🇼",
+      "extract": "Malawi, officially the Republic of Malawi, is a landlocked country in Southeast Africa. It is bordered by Zambia to the west, Tanzania to the north and northeast, and Mozambique to the east, south, and southwest. Malawi spans over 118,484 km2 (45,747 sq mi) and has a population of 22,224,282. Lilongwe is its capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/330px-Flag_of_Malawi.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/960px-Flag_of_Malawi.svg.png",
+      "coordinates": {
+        "lat": -13.5,
+        "lon": 34
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Malawi",
+      "pageid": 19088,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "malaysia",
+      "title": "Malaysia",
+      "region": "Southeast Asia",
+      "code": "MY",
+      "flag": "🇲🇾",
+      "extract": "Malaysia is a country in Southeast Asia. A federal constitutional monarchy, it consists of 13 states and three federal territories, separated by the South China Sea into two regions: Peninsular Malaysia on Mainland Southeast Asia and East Malaysia on the island of Borneo. Peninsular Malaysia shares land and maritime borders with Thailand, as well as maritime borders with Singapore, Vietnam, and Indonesia; East Malaysia shares land borders with Brunei and Indonesia, and maritime borders with the Philippines and Vietnam. Kuala Lumpur is the country's national capital, largest city, and the seat of the legislative branch of the federal government, while Putrajaya is the federal administrative capital, representing the seat of both the executive branch and the judicial branch of the federal government. With a population of over 34 million, it is the world's 43rd-most populous country.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/330px-Flag_of_Malaysia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/1280px-Flag_of_Malaysia.svg.png",
+      "coordinates": {
+        "lat": 2,
+        "lon": 112
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Malaysia",
+      "pageid": 3607937,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "maldives",
+      "title": "Maldives",
+      "region": "South Asia",
+      "code": "MV",
+      "flag": "🇲🇻",
+      "extract": "The Maldives, officially the Republic of Maldives, and historically known as the Maldive Islands, is an archipelagic country in South Asia, located in the Indian Ocean, near the southeastern boundary of the Arabian Sea. The Maldives is located southwest of India and Sri Lanka, about 750 kilometres from the Asian continent's mainland. The Maldives' chain of 26 atolls stretches across the equator from Ihavandhippolhu Atoll in the north to Addu Atoll in the south.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Maldives.svg/330px-Flag_of_Maldives.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Maldives.svg/960px-Flag_of_Maldives.svg.png",
+      "coordinates": {
+        "lat": 4.18,
+        "lon": 73.51
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Maldives",
+      "pageid": 19117,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "mali",
+      "title": "Mali",
+      "region": "West Africa",
+      "code": "ML",
+      "flag": "🇲🇱",
+      "extract": "Mali, officially the Republic of Mali, is a landlocked country in West Africa. It is the eighth-largest country in Africa and the 23rd largest country in the world, with an area of over 1,240,192 square kilometres (478,841 sq mi).",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Mali.svg/330px-Flag_of_Mali.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Mali.svg/960px-Flag_of_Mali.svg.png",
+      "coordinates": {
+        "lat": 17,
+        "lon": -4
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Mali",
+      "pageid": 19127,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "malta",
+      "title": "Malta",
+      "region": "Southern Europe",
+      "code": "MT",
+      "flag": "🇲🇹",
+      "extract": "Malta, officially the Republic of Malta, is an island country in Southern Europe located in the Mediterranean Sea, between Sicily and North Africa. It consists of an archipelago 80 km (50 mi) south of Italy, 284 km (176 mi) east of Tunisia, and 333 km (207 mi) north of Libya. The two official languages are Maltese and English but Maltese is recognised as the national language. The country's capital is Valletta, which is the smallest capital city in the European Union (EU) by both area and population.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Malta.svg/330px-Flag_of_Malta.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Malta.svg/960px-Flag_of_Malta.svg.png",
+      "coordinates": {
+        "lat": 35.9,
+        "lon": 14.51666667
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Malta",
+      "pageid": 19137,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "marshall-islands",
+      "title": "Marshall Islands",
+      "region": "Oceania",
+      "code": "MH",
+      "flag": "🇲🇭",
+      "extract": "The Marshall Islands, officially the Republic of the Marshall Islands, is an archipelagic country in Oceania. The sovereign state lies west of the International Date Line and north of the equator in the Micronesia region of the Northwestern Pacific Ocean.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flag_of_the_Marshall_Islands.svg/330px-Flag_of_the_Marshall_Islands.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flag_of_the_Marshall_Islands.svg/1280px-Flag_of_the_Marshall_Islands.svg.png",
+      "coordinates": {
+        "lat": 9.82,
+        "lon": 169.29
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Marshall_Islands",
+      "pageid": 19147,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "mauritania",
+      "title": "Mauritania",
+      "region": "West Africa",
+      "code": "MR",
+      "flag": "🇲🇷",
+      "extract": "Mauritania, officially the Islamic Republic of Mauritania, is a country in Northwest Africa. It is bordered by the Atlantic Ocean to the west, Western Sahara to the north and northwest, Algeria to the northeast, Mali to the east and southeast, and Senegal to the southwest. By land area Mauritania is the 11th-largest country in Africa and the 28th-largest in the world; 90% of its territory is in the Sahara desert. Most of its population of some 4.3 million live in the temperate south of the country; roughly a third of the population is concentrated in the capital and largest city, Nouakchott, on the Atlantic coast.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Flag_of_Mauritania.svg/330px-Flag_of_Mauritania.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Flag_of_Mauritania.svg/1280px-Flag_of_Mauritania.svg.png",
+      "coordinates": {
+        "lat": 20,
+        "lon": -12
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Mauritania",
+      "pageid": 18778516,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "mauritius",
+      "title": "Mauritius",
+      "region": "East Africa",
+      "code": "MU",
+      "flag": "🇲🇺",
+      "extract": "Mauritius, officially the Republic of Mauritius, is an island country in the Indian Ocean, located about 1,100 nautical miles off the southeastern coast of Africa, east of Madagascar. It includes the main island, as well as Rodrigues, Agaléga, and St. Brandon. The islands of Mauritius and Rodrigues, along with nearby Réunion, are part of the Mascarene Islands. The main island of Mauritius, where the population is concentrated, hosts the capital and largest city, Port Louis. The country spans 2,040 square kilometres (790 sq mi) and has an exclusive economic zone covering approximately 580,000 square nautical miles.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Mauritius.svg/330px-Flag_of_Mauritius.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Mauritius.svg/960px-Flag_of_Mauritius.svg.png",
+      "coordinates": {
+        "lat": -20.2,
+        "lon": 57.5
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Mauritius",
+      "pageid": 19201,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "mexico",
+      "title": "Mexico",
+      "region": "North America",
+      "code": "MX",
+      "flag": "🇲🇽",
+      "extract": "Mexico, officially the United Mexican States, is a country in North America. It is the northernmost country in Latin America and borders the United States of America to the north, and Guatemala and Belize to the southeast; while having maritime boundaries with the Pacific Ocean to the west, the Caribbean Sea to the southeast, and the Gulf of Mexico to the east. Mexico covers 1,972,550 km2, and is the thirteenth-largest country in the world by land area. With a population exceeding 134 million as of 2026, Mexico is the tenth-most populous country in the world and is home to the largest number of native Spanish speakers. Mexico City is the capital and largest city in Mexico, which ranks among the most populous metropolitan areas in the world.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/330px-Flag_of_Mexico.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1280px-Flag_of_Mexico.svg.png",
+      "coordinates": {
+        "lat": 23,
+        "lon": -102
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Mexico",
+      "pageid": 3966054,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "micronesia",
@@ -966,7 +1732,77 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Micronesia_on_the_globe_%28Micronesia_centered%29.svg/1280px-Micronesia_on_the_globe_%28Micronesia_centered%29.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
       "original": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Micronesia_on_the_globe_%28Micronesia_centered%29.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Federated_States_of_Micronesia",
-      "pageid": 11510
+      "pageid": 11510,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "moldova",
+      "title": "Moldova",
+      "region": "Eastern Europe",
+      "code": "MD",
+      "flag": "🇲🇩",
+      "extract": "Moldova, officially the Republic of Moldova, is a landlocked country in Eastern Europe, with an area of 33,843 km2 (13,067 sq mi) and a population of 2.38 million. Moldova is bordered by Romania to the west and Ukraine to the north, east, and south. The unrecognised breakaway state of Transnistria lies across the Dniester river on the country's eastern border with Ukraine. Moldova is a unitary parliamentary representative democratic republic with its capital in Chișinău, the country's largest city and main cultural and commercial centre.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Moldova.svg/330px-Flag_of_Moldova.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Moldova.svg/1920px-Flag_of_Moldova.svg.png",
+      "coordinates": {
+        "lat": 47,
+        "lon": 29
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Moldova",
+      "pageid": 19260,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "monaco",
+      "title": "Monaco",
+      "region": "Western Europe",
+      "code": "MC",
+      "flag": "🇲🇨",
+      "extract": "Monaco, officially the Principality of Monaco, is a sovereign city-state and microstate in Western Europe. Situated on the French Riviera, it is a semi-enclave bordered by France to the north, east, and west, with the Mediterranean Sea to the south; the Italian region of Liguria is about 15 km (9.3 mi) east. With a population of 38,423 living in an area of 2.08 km2 (0.80 sq mi), Monaco is the second smallest sovereign state in the world, after Vatican City, as well as the most densely populated. It also has the world's shortest national coastline of any non-landlocked nation, at 3.83 km (2.38 mi). Fewer than 10,000 of its residents are Monégasque nationals. Although French is the official language of Monaco, Italian and Monégasque are also widely spoken and understood.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Flag_of_Monaco.svg/330px-Flag_of_Monaco.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Flag_of_Monaco.svg/1280px-Flag_of_Monaco.svg.png",
+      "coordinates": {
+        "lat": 43.73111111,
+        "lon": 7.42
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Monaco",
+      "pageid": 19261,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "mongolia",
+      "title": "Mongolia",
+      "region": "East Asia",
+      "code": "MN",
+      "flag": "🇲🇳",
+      "extract": "Mongolia is a landlocked country in the East Asia region. It is bordered by Russia to the north and China to the south, and covers an area of 1,564,116 square kilometers, making it the 18th-largest country in the world and the second largest landlocked country after Kazakhstan, as well as the largest landlocked country that does not border an inland sea. With a population of 3.5 million, Mongolia is the world's most sparsely populated sovereign state, excluding partially unrecognized Western Sahara. The country constitutes a significant portion of the Mongolian Plateau, and its natural environment is characterized by grassy steppe, mountains to the north and west, and the Gobi Desert to the south. Ulaanbaatar, the capital and largest city, is home to roughly half of the country's population.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Mongolia.svg/330px-Flag_of_Mongolia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Mongolia.svg/1280px-Flag_of_Mongolia.svg.png",
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Mongolia",
+      "pageid": 19271,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "montenegro",
+      "title": "Montenegro",
+      "region": "Balkans",
+      "code": "ME",
+      "flag": "🇲🇪",
+      "extract": "Montenegro is a country in Southeast Europe, on the Balkan Peninsula. Its 25 municipalities have a total population of 633,158 people in an area of 13,883 km2. It is bordered by Serbia to the northeast, Bosnia and Herzegovina to the northwest, Kosovo to the east, Albania to the southeast, and Croatia to the west, and has a coastline along the Adriatic Sea to the southwest. The capital and largest city is Podgorica, while Cetinje is the Old Royal Capital and cultural centre.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Flag_of_Montenegro.svg/330px-Flag_of_Montenegro.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Flag_of_Montenegro.svg/1280px-Flag_of_Montenegro.svg.png",
+      "coordinates": {
+        "lat": 42.5,
+        "lon": 19.3
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Montenegro",
+      "pageid": 20760,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "morocco",
@@ -978,7 +1814,1121 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Map_of_Morocco.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Map_of_Morocco.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Morocco",
-      "pageid": 23033
+      "pageid": 23033,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "mozambique",
+      "title": "Mozambique",
+      "region": "Southern Africa",
+      "code": "MZ",
+      "flag": "🇲🇿",
+      "extract": "Mozambique, officially the Republic of Mozambique, is a country in Southeast Africa bordered by the Indian Ocean to the east, Tanzania to the north, Malawi and Zambia to the northwest, Zimbabwe to the west, and Eswatini and South Africa to the south and southwest. The sovereign state is separated from the Comoros, Mayotte, and Madagascar through the Mozambique Channel to the east. The capital and largest city is Maputo.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Flag_of_Mozambique.svg/330px-Flag_of_Mozambique.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Flag_of_Mozambique.svg/960px-Flag_of_Mozambique.svg.png",
+      "coordinates": {
+        "lat": -18.25,
+        "lon": 35
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Mozambique",
+      "pageid": 19301,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "myanmar",
+      "title": "Myanmar",
+      "region": "Southeast Asia",
+      "code": "MM",
+      "flag": "🇲🇲",
+      "extract": "Myanmar, officially the Republic of the Union of Myanmar and also referred to as Burma, is a country in northwest Southeast Asia. It is the largest country by area in Mainland Southeast Asia and has a population of about 55 million. It is bordered by India and Bangladesh to the northwest, China to the northeast, Laos and Thailand to the east and southeast, and the Andaman Sea and the Bay of Bengal to the south and southwest. The country's capital city is Naypyidaw, while its largest city is Yangon.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Flag_of_Myanmar.svg/330px-Flag_of_Myanmar.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Flag_of_Myanmar.svg/1280px-Flag_of_Myanmar.svg.png",
+      "coordinates": {
+        "lat": 22,
+        "lon": 96
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Myanmar",
+      "pageid": 19457,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "namibia",
+      "title": "Namibia",
+      "region": "Southern Africa",
+      "code": "NA",
+      "flag": "🇳🇦",
+      "extract": "Namibia, officially the Republic of Namibia, is a country in Southern Africa. It borders the Atlantic Ocean to the west, Angola and Zambia to the north, Botswana to the east and South Africa to the south; in the northeast, approximating a quadripoint, Zimbabwe lies less than 200 metres away along the Zambezi river near Kazungula, Zambia. Namibia's capital and largest city is Windhoek.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Namibia.svg/330px-Flag_of_Namibia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Namibia.svg/960px-Flag_of_Namibia.svg.png",
+      "coordinates": {
+        "lat": -22,
+        "lon": 17
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Namibia",
+      "pageid": 21292,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "nauru",
+      "title": "Nauru",
+      "region": "Oceania",
+      "code": "NR",
+      "flag": "🇳🇷",
+      "extract": "Nauru, officially the Republic of Nauru, formerly known as Pleasant Island, is an island country and microstate in the South Pacific Ocean. It lies within the Micronesia subregion of Oceania, with its nearest neighbour being Banaba about 300 kilometres (190 mi) to the east.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Flag_of_Nauru.svg/330px-Flag_of_Nauru.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Flag_of_Nauru.svg/960px-Flag_of_Nauru.svg.png",
+      "coordinates": {
+        "lat": -0.5275,
+        "lon": 166.935
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Nauru",
+      "pageid": 21302,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "nepal",
+      "title": "Nepal",
+      "region": "South Asia",
+      "code": "NP",
+      "flag": "🇳🇵",
+      "extract": "Nepal, officially the Federal Democratic Republic of Nepal, is a landlocked country in South Asia. It is mainly situated in the Himalayas, but also includes parts of the Indo-Gangetic Plain. It borders the Tibet Autonomous Region of China to the north, and India to the south, east, and west, while it is narrowly separated from Bangladesh by the Siliguri Corridor, and from Bhutan by the Indian state of Sikkim. Nepal has a diverse geography, including fertile plains, subalpine forested hills, and eight of the world's ten highest mountains, including Mount Everest, the highest point above mean sea level on Earth. Kathmandu is the nation's capital and its largest city. Nepal is a multi-ethnic, multi-lingual, multi-religious, and multi-cultural sovereign state, with Nepali as the official language.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Emblem_of_Nepal.svg/330px-Emblem_of_Nepal.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Emblem_of_Nepal.svg/1920px-Emblem_of_Nepal.svg.png",
+      "coordinates": {
+        "lat": 28.16666667,
+        "lon": 84.25
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Nepal",
+      "pageid": 171166,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "netherlands",
+      "title": "Netherlands",
+      "region": "Western Europe",
+      "code": "NL",
+      "flag": "🇳🇱",
+      "extract": "The Netherlands, informally Holland, is a country in Northwestern Europe, with overseas territories in the Caribbean. It is the largest of the four constituent countries of the Kingdom of the Netherlands. The Netherlands consists of twelve provinces and three overseas special municipalities. European Netherlands has land borders with Germany to the east and with Belgium to the south, and a coastline to the north and west. It shares maritime borders with the United Kingdom, Germany, and Belgium in the North Sea. The official language is Dutch, with West Frisian as a secondary official language in the province of Friesland. Dutch, English, and Papiamento are official in the Caribbean territories. People from the Netherlands are referred to as Dutch.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/330px-Flag_of_the_Netherlands.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/960px-Flag_of_the_Netherlands.svg.png",
+      "coordinates": {
+        "lat": 52,
+        "lon": 6
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Netherlands",
+      "pageid": 21148,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "new-zealand",
+      "title": "New Zealand",
+      "region": "Oceania",
+      "code": "NZ",
+      "flag": "🇳🇿",
+      "extract": "New Zealand is an island country in the southwestern Pacific Ocean. It consists of two main landmasses—the North Island and the South Island —and over 600 smaller islands. It is the sixth-largest island country by area and lies east of Australia across the Tasman Sea and south of the islands of New Caledonia, Fiji, and Tonga. The country's varied topography and sharp mountain peaks, including the Southern Alps, owe much to tectonic uplift and volcanic eruptions. New Zealand's capital city is Wellington, and its most populous city is Auckland.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/330px-Flag_of_New_Zealand.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/1280px-Flag_of_New_Zealand.svg.png",
+      "coordinates": {
+        "lat": -42,
+        "lon": 173
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/New_Zealand",
+      "pageid": 4913064,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "nicaragua",
+      "title": "Nicaragua",
+      "region": "Central America",
+      "code": "NI",
+      "flag": "🇳🇮",
+      "extract": "Nicaragua, officially the Republic of Nicaragua, is the geographically largest country in Central America, comprising 130,370 square kilometres (50,340 sq mi). With a population of 7,142,529 as of 2024, it is the third-most populous country in Central America after Guatemala and Honduras, and it is the largest by area in all of Central America.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Nicaragua.svg/330px-Flag_of_Nicaragua.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Nicaragua.svg/1280px-Flag_of_Nicaragua.svg.png",
+      "coordinates": {
+        "lat": 13,
+        "lon": -85
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Nicaragua",
+      "pageid": 21362,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "niger",
+      "title": "Niger",
+      "region": "West Africa",
+      "code": "NE",
+      "flag": "🇳🇪",
+      "extract": "Niger, officially the Republic of the Niger, is a landlocked country in West Africa. It is a unitary state bordered by Libya to the northeast, Chad to the east, Nigeria to the south, Benin and Burkina Faso to the southwest, Mali to the west, and Algeria to the northwest. It covers a land area of almost 1.27 million km2 (490,000 mi2), making it the largest landlocked country in West Africa and the second-largest landlocked nation in Africa behind Chad. Over 80% of its land area lies in the Sahara. Its predominantly Muslim population of about 25 million lives mostly in clusters in the south and west of the country. The capital, Niamey, is located in Niger's southwest corner along the namesake Niger River.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Niger_%28orthographic_projection%29.svg/330px-Niger_%28orthographic_projection%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Niger_%28orthographic_projection%29.svg/960px-Niger_%28orthographic_projection%29.svg.png",
+      "coordinates": {
+        "lat": 16,
+        "lon": 8
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Niger",
+      "pageid": 21373,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "nigeria",
+      "title": "Nigeria",
+      "region": "West Africa",
+      "code": "NG",
+      "flag": "🇳🇬",
+      "extract": "Nigeria, officially the Federal Republic of Nigeria, is a country in West Africa between the Sahel to the north and the Gulf of Guinea in the Atlantic Ocean to the south. It covers an area of 923,769 square kilometres (356,669 mi2). With a population of more than 242 million, it is the most populous country in Africa, and the world's sixth-most populous country. Nigeria borders Niger in the north, Chad in the northeast, Cameroon in the east, and Benin in the west. Nigeria is a federal republic comprising 36 states and the Federal Capital Territory, where its capital, Abuja, is located. The largest city in Nigeria by population is Lagos, one of the largest metropolitan areas in the world and the largest in Africa.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/330px-Flag_of_Nigeria.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/1280px-Flag_of_Nigeria.svg.png",
+      "coordinates": {
+        "lat": 8,
+        "lon": 10
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Nigeria",
+      "pageid": 21383,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "north-korea",
+      "title": "North Korea",
+      "region": "East Asia",
+      "code": "KP",
+      "flag": "🇰🇵",
+      "extract": "North Korea, officially the Democratic People's Republic of Korea (DPRK), is a country in East Asia. It constitutes the northern half of the Korean Peninsula and borders China and Russia to the north at the Yalu (Amnok) and Tumen rivers, and South Korea to the south at the Korean Demilitarized Zone (DMZ). The country's western border is formed by the Yellow Sea, while its eastern border is defined by the Sea of Japan. Pyongyang is the capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Flag_of_North_Korea_%28March_2026-%29.svg/330px-Flag_of_North_Korea_%28March_2026-%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Flag_of_North_Korea_%28March_2026-%29.svg/3840px-Flag_of_North_Korea_%28March_2026-%29.svg.png",
+      "coordinates": {
+        "lat": 40,
+        "lon": 127
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/North_Korea",
+      "pageid": 21255,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "north-macedonia",
+      "title": "North Macedonia",
+      "region": "Balkans",
+      "code": "MK",
+      "flag": "🇲🇰",
+      "extract": "North Macedonia, officially the Republic of North Macedonia, is a landlocked country in Southeast Europe. It shares land borders with Greece to the south, Albania to the west, Bulgaria to the east, Kosovo to the northwest and Serbia to the north. It constitutes approximately the northern third of the larger geographical region of Macedonia. Skopje, the capital and largest city, is home to a quarter of the country's population of over 1.83 million. The majority of the residents are ethnic Macedonians, a South Slavic people. Albanians form a significant minority at around 25%, followed by Turks, Roma, Serbs, Bosniaks, Aromanians and a few other minorities.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/330px-Flag_of_North_Macedonia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/1280px-Flag_of_North_Macedonia.svg.png",
+      "coordinates": {
+        "lat": 42,
+        "lon": 22
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/North_Macedonia",
+      "pageid": 23564616,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "norway",
+      "title": "Norway",
+      "region": "Northern Europe",
+      "code": "NO",
+      "flag": "🇳🇴",
+      "extract": "Norway, officially the Kingdom of Norway, is a Nordic country comprising the western and northernmost parts of the Scandinavian Peninsula in Northern Europe, the remote Arctic island Jan Mayen and the archipelago Svalbard. Bouvet Island, located in the Subantarctic, is a dependency, and not a part of the Kingdom; Norway also claims the Antarctic territories of Peter I Island and Queen Maud Land. Norway has a population of approximately 5.6 million, and a total area of 385,207 square kilometres (148,729 sq mi). Its capital and largest city is Oslo. The country shares a long eastern border with Sweden, and is bordered by Finland and Russia to the northeast. Norway has an extensive coastline facing the Skagerrak strait, the North Sea, the Norwegian Sea, and the Barents Sea.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/330px-Flag_of_Norway.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/960px-Flag_of_Norway.svg.png",
+      "coordinates": {
+        "lat": 61,
+        "lon": 8
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Norway",
+      "pageid": 21241,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "oman",
+      "title": "Oman",
+      "region": "Western Asia",
+      "code": "OM",
+      "flag": "🇴🇲",
+      "extract": "Oman, officially the Sultanate of Oman, is a country in the southeastern Arabian Peninsula in West Asia. It shares land borders with Saudi Arabia, the United Arab Emirates, and Yemen. Oman's coastline faces the Arabian Sea to the southeast and the Gulf of Oman on the northeast. The exclaves of Madha and Musandam are surrounded by the United Arab Emirates on their land borders, while Musandam's coastal boundaries are formed by the Strait of Hormuz and the Gulf of Oman. It has a population of approximately 5.46 million and an area of 315,331 km2. Muscat is the capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Oman.svg/330px-Flag_of_Oman.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Oman.svg/960px-Flag_of_Oman.svg.png",
+      "coordinates": {
+        "lat": 21,
+        "lon": 57
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Oman",
+      "pageid": 22316,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "pakistan",
+      "title": "Pakistan",
+      "region": "South Asia",
+      "code": "PK",
+      "flag": "🇵🇰",
+      "extract": "Pakistan, officially the Islamic Republic of Pakistan, is a country in South Asia. It is the fifth-most populous country, with a population of over 241.5 million, having the second-largest Muslim population as of 2023. Islamabad is the nation's capital, while Karachi is its largest city and financial centre. Pakistan is the 33rd-largest country by area. Bounded by the Arabian Sea on the south, the Gulf of Oman on the southwest, and the Sir Creek on the southeast, it shares land borders with India to the east; Afghanistan to the west; Iran to the southwest; and China to the northeast. It shares a maritime border with Oman in the Gulf of Oman, and is separated from Tajikistan in the northwest by Afghanistan's narrow Wakhan Corridor.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/330px-Flag_of_Pakistan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/960px-Flag_of_Pakistan.svg.png",
+      "coordinates": {
+        "lat": 30,
+        "lon": 70
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Pakistan",
+      "pageid": 23235,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "palau",
+      "title": "Palau",
+      "region": "Oceania",
+      "code": "PW",
+      "flag": "🇵🇼",
+      "extract": "Palau, officially the Republic of Palau, is an island country located in the Micronesia subregion of Oceania in the western Pacific Ocean. The Republic of Palau consists of approximately 340 islands and is the western part of the Caroline Islands, while the eastern and central parts make up the Federated States of Micronesia.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Palau.svg/330px-Flag_of_Palau.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Palau.svg/960px-Flag_of_Palau.svg.png",
+      "coordinates": {
+        "lat": 7.5,
+        "lon": 134.5
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Palau",
+      "pageid": 23372,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "palestine",
+      "title": "Palestine",
+      "region": "Western Asia",
+      "code": "PS",
+      "flag": "🇵🇸",
+      "extract": "Palestine, officially the State of Palestine, is a country in the Southern Levant region of West Asia. It encompasses the West Bank, including East Jerusalem, and the Gaza Strip, both of which are occupied by Israel. These territories are collectively known as the Palestinian territories, or occupied Palestinian territory. They share the vast majority of their borders with Israel, with the West Bank bordering Jordan to the east and the Gaza Strip bordering Egypt to the southwest. It has a total land area of 6,020 square kilometers (2,320 sq mi) while its population exceeds five million. Its proclaimed capital is Jerusalem, while Ramallah serves as its de facto administrative center. Gaza was its largest city prior to Israel's forced evacuations in 2023.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Palestine.svg/330px-Flag_of_Palestine.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Palestine.svg/1280px-Flag_of_Palestine.svg.png",
+      "coordinates": {
+        "lat": 32,
+        "lon": 35.25
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Palestine",
+      "pageid": 241405,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "panama",
+      "title": "Panama",
+      "region": "Central America",
+      "code": "PA",
+      "flag": "🇵🇦",
+      "extract": "Panama, officially the Republic of Panama, is a country located at the southern end of Central America in North America, bordering South America. It is bordered by Costa Rica to the west, Colombia to the southeast, the Caribbean Sea to the north, and the Pacific Ocean to the south. Its capital and largest city is Panama City, whose metropolitan area is home to nearly half of the country's over 4 million inhabitants.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flag_of_Panama.svg/330px-Flag_of_Panama.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flag_of_Panama.svg/960px-Flag_of_Panama.svg.png",
+      "coordinates": {
+        "lat": 9,
+        "lon": -80
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Panama",
+      "pageid": 22997,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "papua-new-guinea",
+      "title": "Papua New Guinea",
+      "region": "Oceania",
+      "code": "PG",
+      "flag": "🇵🇬",
+      "extract": "Papua New Guinea (PNG), officially the Independent State of Papua New Guinea, is an island country in Oceania that comprises the eastern half of the island of New Guinea and offshore islands in Melanesia, a region of the southwestern Pacific Ocean north of Australia. It has a land border with Indonesia to the west and maritime borders with Australia to the south and the Solomon Islands to the east. Its capital is Port Moresby. The country's 462,840 km2 (178,700 mi2) includes a large mainland and hundreds of islands.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Flag_of_Papua_New_Guinea.svg/330px-Flag_of_Papua_New_Guinea.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Flag_of_Papua_New_Guinea.svg/960px-Flag_of_Papua_New_Guinea.svg.png",
+      "coordinates": {
+        "lat": -6,
+        "lon": 147
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Papua_New_Guinea",
+      "pageid": 22943,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "paraguay",
+      "title": "Paraguay",
+      "region": "South America",
+      "code": "PY",
+      "flag": "🇵🇾",
+      "extract": "Paraguay, officially the Republic of Paraguay, is a landlocked country located in the central region of South America. It borders Bolivia to the northwest and north, Brazil to the northeast and east, and Argentina to the southeast, south, and west. Paraguay has access to the Atlantic Ocean via the Paraná–Paraguay Waterway. The country is governed as a unitary presidential republic composed of a capital district and seventeen departments. Its capital and largest city is Asunción.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/330px-Flag_of_Paraguay.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/1280px-Flag_of_Paraguay.svg.png",
+      "coordinates": {
+        "lat": -23,
+        "lon": -58
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Paraguay",
+      "pageid": 23420,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "peru",
+      "title": "Peru",
+      "region": "South America",
+      "code": "PE",
+      "flag": "🇵🇪",
+      "extract": "Peru, officially the Republic of Peru, is a country in western South America. It is bordered to the north by Ecuador and Colombia, to the east by Brazil, to the southeast by Bolivia, to the south by Chile, and to the south and west by the Pacific Ocean. Peru is a megadiverse country, with habitats ranging from the arid plains of the Pacific coastal region in the west, to the peaks of the Andes mountains extending from the north to the southeast of the country, to the tropical Amazon basin rainforest in the east with the Amazon River. Peru has a population of over 32 million, and its capital and largest city is Lima. At 1,285,216 km2 (496,225 sq mi), Peru is the 19th largest country in the world, and the third largest in South America.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Peru.svg/330px-Flag_of_Peru.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Peru.svg/960px-Flag_of_Peru.svg.png",
+      "coordinates": {
+        "lat": -10,
+        "lon": -76
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Peru",
+      "pageid": 170691,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "philippines",
+      "title": "Philippines",
+      "region": "Southeast Asia",
+      "code": "PH",
+      "flag": "🇵🇭",
+      "extract": "The Philippines, officially the Republic of the Philippines, is an archipelagic country in Southeast Asia. Located in the western Pacific Ocean, it consists of about 7,641 islands, with a total area of about 300,000 square kilometers, which are broadly categorized in three main geographical divisions from north to south: Luzon, Visayas, and Mindanao. With a population of over 114 million, it is the world's twelfth-most-populous country.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/330px-Flag_of_the_Philippines.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/1280px-Flag_of_the_Philippines.svg.png",
+      "coordinates": {
+        "lat": 13,
+        "lon": 122
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Philippines",
+      "pageid": 23440,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "poland",
+      "title": "Poland",
+      "region": "Eastern Europe",
+      "code": "PL",
+      "flag": "🇵🇱",
+      "extract": "Poland, officially the Republic of Poland, is a country in Central Europe. It extends from the Baltic Sea in the north to the Sudetes and Carpathian Mountains in the south, and borders Lithuania and Russia to the northeast; Belarus and Ukraine to the east; Slovakia and the Czech Republic to the south; and Germany to the west. The territory has a varied landscape, diverse ecosystems, and a temperate climate. Poland is composed of sixteen voivodeships and is the fifth most populous member state of the European Union (EU), with over 38 million people, and the fifth largest EU country by land area, covering 312,696 km2 (120,733 sq mi). The capital and largest city is Warsaw; other major cities include Kraków, Wrocław, Łódź, Poznań, and Gdańsk.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/330px-Flag_of_Poland.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/1280px-Flag_of_Poland.svg.png",
+      "coordinates": {
+        "lat": 52,
+        "lon": 20
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Poland",
+      "pageid": 22936,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "portugal",
+      "title": "Portugal",
+      "region": "Western Europe",
+      "code": "PT",
+      "flag": "🇵🇹",
+      "extract": "Portugal, officially the Portuguese Republic, is a country in Southwestern Europe. It is a unitary republic comprising mainland Portugal, located on the southwestern of the Iberian Peninsula and bordered by Spain to the north and east, and the archipelagos of Madeira and the Azores in the Atlantic Ocean. The country has a population of over 10.7 million, and Lisbon, its capital, is the largest city. Portugal's internal waters and territorial sea together account for two-fifths of its territory, and its exclusive economic zone is Europe's largest, while its terrain contains a diverse range of landscapes and regional climates.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Flag_of_Portugal_%28official%29.svg/330px-Flag_of_Portugal_%28official%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Flag_of_Portugal_%28official%29.svg/960px-Flag_of_Portugal_%28official%29.svg.png",
+      "coordinates": {
+        "lat": 39,
+        "lon": -8
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Portugal",
+      "pageid": 23033,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "qatar",
+      "title": "Qatar",
+      "region": "Western Asia",
+      "code": "QA",
+      "flag": "🇶🇦",
+      "extract": "Qatar, officially the State of Qatar, is a country in West Asia. It occupies the Qatar Peninsula on the northeastern coast of the Arabian Peninsula in the Middle East; it shares its sole land border with Saudi Arabia to the south, with the rest of its territory surrounded by the Persian Gulf. The Gulf of Bahrain, an inlet of the Persian Gulf, separates Qatar from nearby Bahrain. The capital is Doha, home to over 80% of the country's inhabitants. Most of the land area is made up of flat, low-lying desert.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/330px-Flag_of_Qatar.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/1920px-Flag_of_Qatar.svg.png",
+      "coordinates": {
+        "lat": 25.5,
+        "lon": 51.25
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Qatar",
+      "pageid": 8238258,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "romania",
+      "title": "Romania",
+      "region": "Eastern Europe",
+      "code": "RO",
+      "flag": "🇷🇴",
+      "extract": "Romania is a country in Southeast and Central Europe. It lies on the lower course of the Danube, north of the Balkan Peninsula, and on the northwestern shore of the Black Sea. It borders Ukraine to the north and east, Hungary to the west, Serbia to the southwest, Bulgaria to the south, Moldova to the east, and the Black Sea to the southeast. It is the twelfth-largest country in Europe by area, covering 238,397 km2 (92,046 mi2), and the sixth-most populous member state of the European Union, with 19 million inhabitants. The capital, largest city and economic centre is Bucharest. Other major cities include Cluj-Napoca, Iași, Constanța, Timișoara and Brașov.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/330px-Flag_of_Romania.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/960px-Flag_of_Romania.svg.png",
+      "coordinates": {
+        "lat": 46,
+        "lon": 25
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Romania",
+      "pageid": 25445,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "russia",
+      "title": "Russia",
+      "region": "Eastern Europe",
+      "code": "RU",
+      "flag": "🇷🇺",
+      "extract": "Russia, or the Russian Federation, is a country in Eastern Europe and North Asia. It is the largest country in the world, spanning eleven time zones and sharing land borders with fourteen countries. With a population of over 140 million, Russia is the most populous country in Europe and the ninth-most populous in the world. It is a highly urbanised country, with sixteen of its urban areas having more than 1 million inhabitants. Moscow, the most populous metropolitan area in Europe, is the capital and largest city of Russia, while Saint Petersburg is its second-largest city and a major cultural centre.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Flag_of_Russia_%28GOST_R_51130%E2%80%932023%29.svg/330px-Flag_of_Russia_%28GOST_R_51130%E2%80%932023%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Flag_of_Russia_%28GOST_R_51130%E2%80%932023%29.svg/960px-Flag_of_Russia_%28GOST_R_51130%E2%80%932023%29.svg.png",
+      "coordinates": {
+        "lat": 66,
+        "lon": 94
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Russia",
+      "pageid": 25391,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "rwanda",
+      "title": "Rwanda",
+      "region": "East Africa",
+      "code": "RW",
+      "flag": "🇷🇼",
+      "extract": "Rwanda, officially the Republic of Rwanda, is a landlocked country in East Africa. Known as the \"Land of a Thousand Hills\" for its high elevation and rolling terrain, its geography is dominated by mountains in the west and savanna in the southeast. The largest and most notable lakes are mainly in the western and northern regions of the country, and several volcanoes that form part of the Virunga volcanic chain are primarily in the northwest. The climate is considered tropical highland, with two rainy seasons and two dry seasons each year. Its capital and largest city is Kigali, located at the centre of the country, at 1,567 metres above sea level.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Flag_of_Rwanda.svg/330px-Flag_of_Rwanda.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Flag_of_Rwanda.svg/960px-Flag_of_Rwanda.svg.png",
+      "coordinates": {
+        "lat": -2,
+        "lon": 30
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Rwanda",
+      "pageid": 25645,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "saint-lucia",
+      "title": "Saint Lucia",
+      "region": "Caribbean",
+      "code": "LC",
+      "flag": "🇱🇨",
+      "extract": "Saint Lucia is an island country in the eastern Caribbean. Part of the Windward Islands of the Lesser Antilles, it is located north/northeast of the island of Saint Vincent, northwest of Barbados and south of Martinique. It covers a land area of 617 km2 (238 sq mi) with an officially estimated population of over 184,100 people as of mid 2023. The nation's capital and largest city is Castries.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Saint_Lucia.svg/330px-Flag_of_Saint_Lucia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Saint_Lucia.svg/1280px-Flag_of_Saint_Lucia.svg.png",
+      "coordinates": {
+        "lat": 13.88333333,
+        "lon": -60.96666667
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Saint_Lucia",
+      "pageid": 27208,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "samoa",
+      "title": "Samoa",
+      "region": "Oceania",
+      "code": "WS",
+      "flag": "🇼🇸",
+      "extract": "Samoa, officially the Independent State of Samoa, is an island country in Polynesia, part of Oceania, in the South Pacific Ocean. It consists of two main islands, two smaller, inhabited islands, and several smaller, uninhabited islands, including the Aleipata Islands. Samoa is located 64 km west of American Samoa, 889 km northeast of Tonga, 1,152 km northeast of Fiji, 483 km east of Wallis and Futuna, 1,151 km southeast of Tuvalu, 519 km south of Tokelau, 4,190 km southwest of Hawaii, and 610 km northwest of Niue. The capital and largest city is Apia.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Samoa.svg/330px-Flag_of_Samoa.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Samoa.svg/1280px-Flag_of_Samoa.svg.png",
+      "coordinates": {
+        "lat": -13.745,
+        "lon": -172.2175
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Samoa",
+      "pageid": 27238,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "san-marino",
+      "title": "San Marino",
+      "region": "Southern Europe",
+      "code": "SM",
+      "flag": "🇸🇲",
+      "extract": "San Marino, officially the Republic of San Marino (RSM), is a landlocked country in Southern Europe, completely surrounded by Italy. Located on the northeastern slopes of the Apennine Mountains, it is the larger of two microstates within the Italian Peninsula, the other being Vatican City. San Marino is the fifth-smallest country in the world, with a land area of just over 61 square kilometres (24 sq mi) and a population of 34,042 as of 2025. Its capital, the City of San Marino, sits atop Monte Titano, while its largest settlement is Dogana, in the municipality of Serravalle.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Flag_of_San_Marino.svg/330px-Flag_of_San_Marino.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Flag_of_San_Marino.svg/960px-Flag_of_San_Marino.svg.png",
+      "coordinates": {
+        "lat": 43.93333333,
+        "lon": 12.43333333
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/San_Marino",
+      "pageid": 27248,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "s-o-tom-pr-ncipe",
+      "title": "São Tomé & Príncipe",
+      "region": "Central Africa",
+      "code": "ST",
+      "flag": "🇸🇹",
+      "extract": "São Tomé and Príncipe (STP for short) consists of two main islands straddling the Equator off the Atlantic coast of Central Africa.\nThe Portuguese were the first settlers of these previously uninhabited islands in the late 15th century. Attracting settlers proved difficult, however, and most of the earliest inhabitants were \"undesirables\" sent from Portugal, mostly Jews. The Portuguese brought in slaves from Africa to cultivate sugar, coffee and cocoa. Nearly all of its current residents are descended from people from different countries taken to the islands by the Portuguese from 1470 onwards.\nIn 1990, STP was one of the first African nations to undertake democratic reforms, and it has maintained democratic government since then with only a one-week interruption. The country's culture, customs, and music fuse European and African influences.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sao_Tome_and_Principe_Regions_map.png/1280px-Sao_Tome_and_Principe_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Sao_Tome_and_Principe_Regions_map.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
+      "wikivoyage_url": "https://en.wikivoyage.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+      "pageid": 31807,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "saudi-arabia",
+      "title": "Saudi Arabia",
+      "region": "Western Asia",
+      "code": "SA",
+      "flag": "🇸🇦",
+      "extract": "Saudi Arabia, officially the Kingdom of Saudi Arabia (KSA), is a country in West Asia. Located in the centre of the Middle East, it covers the bulk of the Arabian Peninsula and has a land area of about 2,150,000 km2 (830,000 sq mi), making it the fifth-largest country in Asia, the largest in the Middle East, and the twelfth-largest in the world. It is bordered by the Red Sea to the west; Jordan, Iraq, and Kuwait to the north; the Persian Gulf, Bahrain, Qatar and the United Arab Emirates to the east; Oman to the southeast; and Yemen to the south. The Gulf of Aqaba in the northwest separates Saudi Arabia from Egypt and Israel. Saudi Arabia is the only country with a coastline along both the Red Sea and the Arabian Gulf, and most of its terrain consists of arid desert, lowland, steppe, and mountains. The capital and largest city is Riyadh; other major cities include Jeddah and the two holiest cities in Islam, Mecca and Medina. With a population of 33.7 million, Saudi Arabia is the sixth most populous country in the Arab world.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/330px-Flag_of_Saudi_Arabia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/960px-Flag_of_Saudi_Arabia.svg.png",
+      "coordinates": {
+        "lat": 24,
+        "lon": 45
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Saudi_Arabia",
+      "pageid": 349303,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "senegal",
+      "title": "Senegal",
+      "region": "West Africa",
+      "code": "SN",
+      "flag": "🇸🇳",
+      "extract": "Senegal, officially the Republic of Senegal, is the westernmost country in West Africa, situated along the Atlantic Ocean coast. It borders Mauritania to the north, Mali to the east, Guinea to the southeast and Guinea-Bissau to the southwest. Senegal nearly surrounds the Gambia, a country occupying a narrow strip of land along the banks of the Gambia River, which separates Senegal's southern region of Casamance from the rest of the country. It also shares a maritime border with Cape Verde. The capital and largest city of Senegal is Dakar.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/330px-Flag_of_Senegal.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/960px-Flag_of_Senegal.svg.png",
+      "coordinates": {
+        "lat": 14,
+        "lon": -14
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Senegal",
+      "pageid": 27278,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "serbia",
+      "title": "Serbia",
+      "region": "Balkans",
+      "code": "RS",
+      "flag": "🇷🇸",
+      "extract": "Serbia, officially the Republic of Serbia, is a landlocked country in Southeast and Central Europe. Located in the Balkans, it is bordered by Hungary in the north, Romania in the northeast, Bulgaria in the southeast, North Macedonia in the south, Croatia in the northwest, Bosnia and Herzegovina in the west, and Montenegro in the southwest. Serbia also claims to share a border with Albania through the disputed territory of Kosovo. Serbia has about 6.6 million inhabitants, excluding Kosovo. Belgrade, Serbia's capital, is also its largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/330px-Flag_of_Serbia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/1920px-Flag_of_Serbia.svg.png",
+      "coordinates": {
+        "lat": 44,
+        "lon": 21
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Serbia",
+      "pageid": 29265,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "seychelles",
+      "title": "Seychelles",
+      "region": "East Africa",
+      "code": "SC",
+      "flag": "🇸🇨",
+      "extract": "Seychelles, officially the Republic of Seychelles, is an archipelagic country consisting of 115 islands in the Indian Ocean. Its capital and largest city, Victoria, is 1,500 kilometres east of mainland Africa. Nearby island countries and territories include the Maldives, Comoros, Madagascar, Mauritius, and the French overseas departments of Mayotte and Réunion to the south; and the Chagos Archipelago to the east.\nSeychelles is the smallest country in Africa as well as the least populated sovereign African country, with an estimated population of 100,600 in 2022.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Seychelles.svg/330px-Flag_of_Seychelles.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Seychelles.svg/1280px-Flag_of_Seychelles.svg.png",
+      "coordinates": {
+        "lat": -4.58333333,
+        "lon": 55.66666667
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Seychelles",
+      "pageid": 27288,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "sierra-leone",
+      "title": "Sierra Leone",
+      "region": "West Africa",
+      "code": "SL",
+      "flag": "🇸🇱",
+      "extract": "Sierra Leone, officially the Republic of Sierra Leone, is a country on the west coast of West Africa. It is bordered to the southeast by Liberia and by Guinea to the north. Sierra Leone's land area is 73,252 km2 (28,283 sq mi). It has a tropical climate and environments ranging from savannas to rainforests. As of the 2023 census, Sierra Leone has a population of 8,460,512. Freetown is its capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Flag_of_Sierra_Leone.svg/330px-Flag_of_Sierra_Leone.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Flag_of_Sierra_Leone.svg/960px-Flag_of_Sierra_Leone.svg.png",
+      "coordinates": {
+        "lat": 8.5,
+        "lon": -12.1
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Sierra_Leone",
+      "pageid": 27308,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "singapore",
+      "title": "Singapore",
+      "region": "Southeast Asia",
+      "code": "SG",
+      "flag": "🇸🇬",
+      "extract": "Singapore, officially the Republic of Singapore, is an island country and city-state in Southeast Asia. Its territory comprises a main island, over 60 satellite islands and islets, and one outlying islet. The country is about one degree of latitude north of the equator, off the southern tip of the Malay Peninsula, bordering the Strait of Malacca to the west, the Singapore Strait to the south along with the Riau Islands in Indonesia, the South China Sea to the east and the Straits of Johor along with the State of Johor in Malaysia to the north.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/330px-Flag_of_Singapore.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/960px-Flag_of_Singapore.svg.png",
+      "coordinates": {
+        "lat": 1.28333333,
+        "lon": 103.83333333
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Singapore",
+      "pageid": 27318,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "slovakia",
+      "title": "Slovakia",
+      "region": "Eastern Europe",
+      "code": "SK",
+      "flag": "🇸🇰",
+      "extract": "Slovakia, officially the Slovak Republic, is a landlocked country in Central Europe. It is bordered by Poland to the north, Ukraine to the east, Hungary to the south, Austria to the west, and the Czech Republic to the northwest. Slovakia's mostly mountainous territory spans about 49,000 km2 (19,000 sq mi), hosting a population exceeding 5.4 million. The capital and largest city is Bratislava, while the second largest city is Košice.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/330px-Flag_of_Slovakia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/960px-Flag_of_Slovakia.svg.png",
+      "coordinates": {
+        "lat": 48.7,
+        "lon": 19.7
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Slovakia",
+      "pageid": 26830,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "slovenia",
+      "title": "Slovenia",
+      "region": "Balkans",
+      "code": "SI",
+      "flag": "🇸🇮",
+      "extract": "Slovenia, officially the Republic of Slovenia, is a country in Central Europe. It borders Italy to the west, Austria to the north, Hungary to the northeast, and Croatia to the south and southeast; its southwestern boundary consists of a 46.6-kilometre (29.0 mi) coastline on the Adriatic Sea. Slovenia is mostly mountainous and forested, covers 20,271 square kilometres (7,827 sq mi), and has a population of approximately 2.1 million people. Slovene is the official language. Slovenia has a predominantly temperate continental climate, with the exception of the Slovene Littoral and the Julian Alps. Ljubljana, the capital and largest city of Slovenia, is geographically situated near the centre of the country. Other larger urban centers include Maribor, Ptuj, Kranj, Celje, and Koper.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Flag_of_Slovenia.svg/330px-Flag_of_Slovenia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Flag_of_Slovenia.svg/1280px-Flag_of_Slovenia.svg.png",
+      "coordinates": {
+        "lat": 46.1,
+        "lon": 14.8
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Slovenia",
+      "pageid": 27338,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "solomon-islands",
+      "title": "Solomon Islands",
+      "region": "Oceania",
+      "code": "SB",
+      "flag": "🇸🇧",
+      "extract": "Solomon Islands, also known simply as the Solomons, is an archipelagic country consisting of six major islands and over 1,000 smaller islands in Melanesia, Oceania, to the north-east of Australia. It is adjacent to Bougainville to the west, New Caledonia and Vanuatu to the south-east, Fiji, Tuvalu, and Wallis and Futuna to the east, and the Federated States of Micronesia and Nauru to the north. It has a total area of 28,896 square kilometres, and a population of 828,857 according to official estimates from 2025. Its capital and largest city, Honiara, is located on the largest island, Guadalcanal. The country takes its name from the wider area of the Solomon Islands archipelago, which is a collection of Melanesian islands that also includes the Autonomous Region of Bougainville, but excludes the Santa Cruz Islands.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Flag_of_the_Solomon_Islands.svg/330px-Flag_of_the_Solomon_Islands.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Flag_of_the_Solomon_Islands.svg/1280px-Flag_of_the_Solomon_Islands.svg.png",
+      "coordinates": {
+        "lat": -8,
+        "lon": 159
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Solomon_Islands",
+      "pageid": 265083,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "somalia",
+      "title": "Somalia",
+      "region": "East Africa",
+      "code": "SO",
+      "flag": "🇸🇴",
+      "extract": "Somalia, officially the Federal Republic of Somalia, is the easternmost country in continental Africa. Stretching across the Horn of Africa, it borders Ethiopia to the west, Djibouti to the northwest, Kenya to the southwest, the Gulf of Aden to the north, and the Indian Ocean to the east. Somalia has the longest coastline on Africa's mainland. Somalia has an estimated population of more than 18 million, of which 2.7 million live in the capital and largest city, Mogadishu. As one of Africa's most ethnically homogenous countries, around 85% of its residents are ethnic Somalis. The official and national language of the country is Somali while Arabic is recognised as a second language. The overwhelming majority of the population are Sunni Muslims.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flag_of_Somalia.svg/330px-Flag_of_Somalia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flag_of_Somalia.svg/960px-Flag_of_Somalia.svg.png",
+      "coordinates": {
+        "lat": 10,
+        "lon": 49
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Somalia",
+      "pageid": 27358,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "south-africa",
+      "title": "South Africa",
+      "region": "Southern Africa",
+      "code": "ZA",
+      "flag": "🇿🇦",
+      "extract": "South Africa, officially the Republic of South Africa (RSA), is the southernmost country in Africa. Its nine provinces are bounded to the south by 2,798 kilometres of coastline that stretches along the South Atlantic and Indian Ocean; to the north by the neighbouring countries of Namibia, Botswana, and Zimbabwe; to the east and northeast by Mozambique and Eswatini; and it encloses Lesotho. Covering an area of 1,221,037 square kilometres, the country has a population of over 63 million people, making it the sixth-most populated country in Africa. Pretoria is the administrative capital, while Cape Town, as the seat of Parliament, is the legislative capital, and Bloemfontein is regarded as the judicial capital. The largest and most populous city is Johannesburg, followed by Cape Town and Durban.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/330px-Flag_of_South_Africa.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/960px-Flag_of_South_Africa.svg.png",
+      "coordinates": {
+        "lat": -30,
+        "lon": 25
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/South_Africa",
+      "pageid": 17416221,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "south-korea",
+      "title": "South Korea",
+      "region": "East Asia",
+      "code": "KR",
+      "flag": "🇰🇷",
+      "extract": "South Korea, officially the Republic of Korea (ROK), is a country in East Asia. It constitutes the southern half of the Korean Peninsula and borders North Korea along the Korean Demilitarized Zone, with the Yellow Sea to the west and the Sea of Japan to the east. South Korea claims to be the sole legitimate government of the entire peninsula and adjacent islands. It has a population of about 52 million, of which half live in the Seoul metropolitan area, the ninth most populous metropolitan area in the world, with other major cities being Busan, Daegu, and Incheon.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/960px-Flag_of_South_Korea.svg.png",
+      "coordinates": {
+        "lat": 36,
+        "lon": 128
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/South_Korea",
+      "pageid": 27019,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "south-sudan",
+      "title": "South Sudan",
+      "region": "East Africa",
+      "code": "SS",
+      "flag": "🇸🇸",
+      "extract": "South Sudan, officially the Republic of South Sudan, is a landlocked country in East Africa. It is bordered by Sudan to the north, Ethiopia to the east, Kenya to the southeast, Uganda to the south, the Democratic Republic of the Congo to the southwest, and the Central African Republic to the west. South Sudan's diverse landscape includes vast plains and plateaus, dry and tropical savannahs, inland floodplains, and forested mountains. The Nile River system is the defining physical feature of the country, running south to north across its center, which is dominated by a large swamp known as the Sudd. South Sudan has an estimated population of just over 12.7 million in 2024. Juba is the capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Flag_of_South_Sudan.svg/330px-Flag_of_South_Sudan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Flag_of_South_Sudan.svg/1280px-Flag_of_South_Sudan.svg.png",
+      "coordinates": {
+        "lat": 8,
+        "lon": 30
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/South_Sudan",
+      "pageid": 32350676,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "spain",
+      "title": "Spain",
+      "region": "Western Europe",
+      "code": "ES",
+      "flag": "🇪🇸",
+      "extract": "Spain, officially the Kingdom of Spain, is a country in Southern and Western Europe with territories in North Africa. Featuring the southernmost point of continental Europe, it is the largest country in Southern Europe and the fourth-most populous European Union (EU) member state. Spanning the majority of the Iberian Peninsula, its territory also includes the Canary Islands, in the Eastern Atlantic Ocean; the Balearic Islands, in the Western Mediterranean Sea; and the autonomous cities of Ceuta and Melilla, in mainland Africa. Peninsular Spain is bordered to the north by France, Andorra, and the Bay of Biscay; to the east and south by the Mediterranean Sea and Gibraltar and Morocco, through its exclaves in North Africa; and to the west by Portugal and the Atlantic Ocean. Spain's capital and largest city is Madrid; other major urban areas include Barcelona, Valencia, Seville, Zaragoza, Málaga, Murcia, and Palma de Mallorca.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/330px-Bandera_de_Espa%C3%B1a.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/960px-Bandera_de_Espa%C3%B1a.svg.png",
+      "coordinates": {
+        "lat": 40,
+        "lon": -4
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Spain",
+      "pageid": 26667,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "sri-lanka",
+      "title": "Sri Lanka",
+      "region": "South Asia",
+      "code": "LK",
+      "flag": "🇱🇰",
+      "extract": "Sri Lanka, officially the Democratic Socialist Republic of Sri Lanka, formerly known as Ceylon, is an island country in South Asia. It is located in the Indian Ocean, southwest of the Bay of Bengal, and is separated from India by the Gulf of Mannar and the Palk Strait. Sri Lanka shares a maritime border with the Maldives to the southwest and India to the northwest, and lies across the Bay of Bengal from Bangladesh and Myanmar to the northeast and the Andaman and Nicobar Islands of India to the east. Its capital is Sri Jayawardenepura Kotte, while Colombo is its largest city and the political, financial and cultural centre. Sri Lanka's population is 22 million; with the Sinhalese people, who speak the Sinhala language, forming the vast majority—while Tamil is spoken by the large Tamil minority. Other long-established ethnic groups include the Moors, Indian Tamils, Burghers, Malays, Chinese, and Vedda.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_Sri_Lanka.svg/330px-Flag_of_Sri_Lanka.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_Sri_Lanka.svg/1280px-Flag_of_Sri_Lanka.svg.png",
+      "coordinates": {
+        "lat": 7,
+        "lon": 81
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Sri_Lanka",
+      "pageid": 26750,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "st-kitts-nevis",
+      "title": "St. Kitts & Nevis",
+      "region": "Caribbean",
+      "code": "KN",
+      "flag": "🇰🇳",
+      "extract": "Saint Kitts and Nevis (SKN), officially the Federation of Saint Christopher and Nevis, is an island country located in the Caribbean consisting of the two islands of Saint Kitts and Nevis, in the Leeward Islands chain of the Lesser Antilles. With 261 square kilometres (101 sq mi) of territory, and roughly 48,000 inhabitants, it is the smallest sovereign state in the Western Hemisphere, in both area and population, as well as the world's smallest sovereign federation. The country is a Commonwealth realm, with Charles III as king and head of state.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Saint_Kitts_and_Nevis.svg/330px-Flag_of_Saint_Kitts_and_Nevis.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Saint_Kitts_and_Nevis.svg/960px-Flag_of_Saint_Kitts_and_Nevis.svg.png",
+      "coordinates": {
+        "lat": 17.33333333,
+        "lon": -62.75
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis",
+      "pageid": 27198,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "st-vincent-gr",
+      "title": "St. Vincent & Gr.",
+      "region": "Caribbean",
+      "code": "VC",
+      "flag": "🇻🇨",
+      "extract": "Saint Vincent and the Grenadines, sometimes known simply as Saint Vincent or SVG, is an archipelagic country in the eastern Caribbean. It is located in the southeast Windward Islands of the Lesser Antilles, which lie in the West Indies, at the southern end of the eastern border between the Caribbean Sea and the Atlantic Ocean. To the north lies Saint Lucia, to the east is Barbados and Grenada lies to the south.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Flag_of_Saint_Vincent_and_the_Grenadines.svg/330px-Flag_of_Saint_Vincent_and_the_Grenadines.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Flag_of_Saint_Vincent_and_the_Grenadines.svg/960px-Flag_of_Saint_Vincent_and_the_Grenadines.svg.png",
+      "coordinates": {
+        "lat": 13.25,
+        "lon": -61.2
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Saint_Vincent_and_the_Grenadines",
+      "pageid": 27228,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "sudan",
+      "title": "Sudan",
+      "region": "North Africa",
+      "code": "SD",
+      "flag": "🇸🇩",
+      "extract": "Sudan, officially the Republic of the Sudan, is a country in Northeast Africa. It borders the Central African Republic to the southwest, Chad to the west, Libya to the northwest, Egypt to the north, the Red Sea to the east, Eritrea and Ethiopia to the southeast, and South Sudan to the south. Sudan has a population of 51.8 million people as of 2025 and occupies 1,886,068 square kilometres, making it Africa's third-largest country by area. Sudan's capital and most populous city is Khartoum.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Sudan.svg/330px-Flag_of_Sudan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Sudan.svg/1280px-Flag_of_Sudan.svg.png",
+      "coordinates": {
+        "lat": 15,
+        "lon": 32
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Sudan",
+      "pageid": 27421,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "suriname",
+      "title": "Suriname",
+      "region": "South America",
+      "code": "SR",
+      "flag": "🇸🇷",
+      "extract": "Suriname, officially the Republic of Suriname, is a country in northern South America, also considered as part of the Caribbean and the West Indies. Situated slightly north of the equator, over 90% of its territory is covered by rainforest, the second-highest proportion of forest cover in the world. Suriname is bordered by the Atlantic Ocean to the north, French Guiana to the east, Brazil to the south, and Guyana to the west. It is the smallest country in South America by both population and territory, with around 612,985 inhabitants in 2021 in an area of approximately 165,940 square kilometers. The capital and largest city is Paramaribo, which is home to roughly half the population.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Flag_of_Suriname.svg/330px-Flag_of_Suriname.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Flag_of_Suriname.svg/960px-Flag_of_Suriname.svg.png",
+      "coordinates": {
+        "lat": 4,
+        "lon": -56
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Suriname",
+      "pageid": 26828,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "sweden",
+      "title": "Sweden",
+      "region": "Northern Europe",
+      "code": "SE",
+      "flag": "🇸🇪",
+      "extract": "Sweden, formally the Kingdom of Sweden, is a Nordic country located on the Scandinavian Peninsula in Northern Europe. It borders Norway to the west and north, and Finland to the east, and shares a maritime border with Denmark to the south. At 450,295 square kilometres (173,860 sq mi) and with a population of 10.6 million, Sweden is the largest and most populous Nordic country, and is the fifth-largest country in Europe. Its capital and largest city is Stockholm. The population density is 25.5 inhabitants per square kilometre (66/sq mi), and 88% of Swedes reside in urban areas, mostly in the southern and central portions of the country. Sweden's urban areas together cover 1.5% of its land area. Sweden has a diverse climate owing to the length of the country, which ranges from 55°N to 69°N.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/330px-Flag_of_Sweden.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1920px-Flag_of_Sweden.svg.png",
+      "coordinates": {
+        "lat": 63,
+        "lon": 16
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Sweden",
+      "pageid": 5058739,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "switzerland",
+      "title": "Switzerland",
+      "region": "Western Europe",
+      "code": "CH",
+      "flag": "🇨🇭",
+      "extract": "Switzerland, officially the Swiss Confederation, is a landlocked country located at the intersection of Central, Western, and Southern Europe. It is bordered by Germany to the north, France to the west, Austria and Liechtenstein to the east, and Italy to the south. Switzerland is geographically divided among the Swiss Alps, the Swiss Plateau, and the Jura Mountains; the Alps cover most of the country's territory, whereas the majority of its 9 million people are concentrated on the plateau, which hosts many of the largest cities and economic centres, including Zurich, Geneva, Basel, Bern, Lausanne, Winterthur, and Lucerne.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Switzerland_%28Pantone%29.svg/330px-Flag_of_Switzerland_%28Pantone%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Switzerland_%28Pantone%29.svg/960px-Flag_of_Switzerland_%28Pantone%29.svg.png",
+      "coordinates": {
+        "lat": 46.83333333,
+        "lon": 8.33333333
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Switzerland",
+      "pageid": 26748,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "syria",
+      "title": "Syria",
+      "region": "Western Asia",
+      "code": "SY",
+      "flag": "🇸🇾",
+      "extract": "Syria, officially the Syrian Arab Republic (SAR), is a country in West Asia located in the Eastern Mediterranean and the Levant. It borders the Mediterranean Sea to the west, Turkey to the north and northwest, Iraq to the east and southeast, Jordan to the south, and Israel and Lebanon to the southwest. It is a republic under a provisional government and comprises 14 governorates. Damascus is the capital and largest city. With a population of 26 million across an area of 185,180 square kilometres (71,500 sq mi), it is the 56th-most populous and 87th-largest country.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flag_of_Syria_%282025-%29.svg/330px-Flag_of_Syria_%282025-%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flag_of_Syria_%282025-%29.svg/960px-Flag_of_Syria_%282025-%29.svg.png",
+      "coordinates": {
+        "lat": 35,
+        "lon": 38
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Syria",
+      "pageid": 7515849,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "taiwan",
+      "title": "Taiwan",
+      "region": "East Asia",
+      "code": "TW",
+      "flag": "🇹🇼",
+      "extract": "Taiwan, officially the Republic of China (ROC), is a country in East Asia. The main island of Taiwan, also known as Formosa, lies between the East and South China Seas in the northwestern Pacific Ocean, with the People's Republic of China (PRC) to the northwest, Japan to the northeast, and the Philippines to the south. It has an area of 35,808 square kilometers, with mountain ranges dominating the eastern two-thirds and plains in the western third, where its highly urbanized population is concentrated. The combined territories under ROC control consist of 168 islands in total covering 36,193 square kilometers. The largest metropolitan area is formed by Taipei, New Taipei City, and Keelung. With around 23.9 million inhabitants, Taiwan is among the most densely populated countries.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/330px-Flag_of_the_Republic_of_China.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/960px-Flag_of_the_Republic_of_China.svg.png",
+      "coordinates": {
+        "lat": 24,
+        "lon": 121
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Taiwan",
+      "pageid": 25734,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "tajikistan",
+      "title": "Tajikistan",
+      "region": "Central Asia",
+      "code": "TJ",
+      "flag": "🇹🇯",
+      "extract": "Tajikistan, officially the Republic of Tajikistan, is a landlocked country in Central Asia. Dushanbe is its capital and most populous city with a population of 1.24 million people. Tajikistan borders Afghanistan to the south, Uzbekistan to the west, Kyrgyzstan to the north, and China to the east and is narrowly separated from Pakistan by Afghanistan's Wakhan Corridor. It has a population of more than 10.9 million people.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Flag_of_Tajikistan.svg/330px-Flag_of_Tajikistan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Flag_of_Tajikistan.svg/960px-Flag_of_Tajikistan.svg.png",
+      "coordinates": {
+        "lat": 39,
+        "lon": 71
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Tajikistan",
+      "pageid": 30108,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "tanzania",
+      "title": "Tanzania",
+      "region": "East Africa",
+      "code": "TZ",
+      "flag": "🇹🇿",
+      "extract": "Tanzania, officially the United Republic of Tanzania, is a country in East Africa within the African Great Lakes region. It is bordered by Uganda to the northwest, Kenya to the northeast, the Indian Ocean to the east, Mozambique and Malawi to the south, Zambia to the southwest, and Rwanda, Burundi, and the Democratic Republic of the Congo to the west. According to a 2024 estimate, Tanzania has a population of around 67.5 million, making it the most populous country located entirely south of the equator.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tanzania.svg/330px-Flag_of_Tanzania.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tanzania.svg/960px-Flag_of_Tanzania.svg.png",
+      "coordinates": {
+        "lat": -6,
+        "lon": 35
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Tanzania",
+      "pageid": 30118,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "thailand",
+      "title": "Thailand",
+      "region": "Southeast Asia",
+      "code": "TH",
+      "flag": "🇹🇭",
+      "extract": "Thailand, officially the Kingdom of Thailand, and formerly known as Siam until 1939, is a country located in Mainland Southeast Asia. It shares land borders with Myanmar to the west and northwest, Laos to the east and northeast, Cambodia to the southeast, and Malaysia to the south. Its maritime boundaries include the Gulf of Thailand and the Andaman Sea, as well as maritime borders with Vietnam, Indonesia, and India. Thailand has a population of nearly 66 million people and covers an area of approximately 513,115 km2. The country's capital and largest city is Bangkok.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/330px-Flag_of_Thailand.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/960px-Flag_of_Thailand.svg.png",
+      "coordinates": {
+        "lat": 15,
+        "lon": 101
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Thailand",
+      "pageid": 30128,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "timor-leste",
+      "title": "Timor-Leste",
+      "region": "Southeast Asia",
+      "code": "TL",
+      "flag": "🇹🇱",
+      "extract": "Timor-Leste, also known as East Timor, officially the Democratic Republic of Timor-Leste, is a country in Southeast Asia. It comprises the eastern half of the island of Timor, the coastal exclave of Oecusse in the island's northwest, and the islands of Atauro and Jaco, for a total land area of 15,007 square kilometres (5,794 sq mi). Timor-Leste shares a land border with Indonesia to the west; Australia is the country's southern neighbour, across the Timor Sea. Dili, on the north coast of Timor, is its capital and largest city.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Flag_of_East_Timor.svg/330px-Flag_of_East_Timor.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Flag_of_East_Timor.svg/1280px-Flag_of_East_Timor.svg.png",
+      "coordinates": {
+        "lat": -8.55,
+        "lon": 125.56
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Timor-Leste",
+      "pageid": 19159399,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "togo",
+      "title": "Togo",
+      "region": "West Africa",
+      "code": "TG",
+      "flag": "🇹🇬",
+      "extract": "Togo, officially the Togolese Republic, is a country in West Africa. It is bordered by Ghana to the west, Benin to the east and Burkina Faso to the north. It is one of the least developed countries in the world. It extends north from the Gulf of Guinea to the Burkina Faso-Togo border. It is a small, tropical country, spanning 57,000 square kilometres with a population of approximately 8 million. It has a width of less than 115 km (71 mi) between Ghana and its eastern neighbour Benin.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Flag_of_Togo.svg/330px-Flag_of_Togo.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Flag_of_Togo.svg/960px-Flag_of_Togo.svg.png",
+      "coordinates": {
+        "lat": 8,
+        "lon": 1
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Togo",
+      "pageid": 30138,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "tonga",
+      "title": "Tonga",
+      "region": "Oceania",
+      "code": "TO",
+      "flag": "🇹🇴",
+      "extract": "Tonga, officially the Kingdom of Tonga, is an island country in Polynesia, part of Oceania. The country has 171 islands, of which 45 are inhabited. Its total surface area is about 750 km2 (290 sq mi), scattered over 700,000 km2 (270,000 sq mi) in the southern Pacific Ocean. As of 2021, according to Johnson's Tribune, Tonga has a population of 104,494, 70% of whom reside on the main island, Tongatapu. The country stretches approximately 800 km north-south. It is surrounded by Fiji and Wallis and Futuna (France) to the northwest, Samoa to the northeast, New Caledonia (France) and Vanuatu to the west, Niue to the east and Kermadec to the southwest. Tonga is about 1,800 km from New Zealand's North Island.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Tonga.svg/330px-Flag_of_Tonga.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Tonga.svg/960px-Flag_of_Tonga.svg.png",
+      "coordinates": {
+        "lat": -20,
+        "lon": -175
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Tonga",
+      "pageid": 30158,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "trinidad-tobago",
+      "title": "Trinidad & Tobago",
+      "region": "Caribbean",
+      "code": "TT",
+      "flag": "🇹🇹",
+      "extract": "Trinidad and Tobago, officially the Republic of Trinidad and Tobago, is the southernmost archipelagic country in the Caribbean, comprising the main islands of Trinidad and Tobago, along with several smaller islets. The capital city is Port of Spain, while its largest and most populous municipality is Chaguanas. Trinidad and Tobago comprises the southernmost islands of the Caribbean eastern islands chain, and it is close to the continent of South America, being north to northeast of Venezuela and northwest of Guyana.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Flag_of_Trinidad_and_Tobago.svg/330px-Flag_of_Trinidad_and_Tobago.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Flag_of_Trinidad_and_Tobago.svg/960px-Flag_of_Trinidad_and_Tobago.svg.png",
+      "coordinates": {
+        "lat": 10.6,
+        "lon": -61.1
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Trinidad_and_Tobago",
+      "pageid": 3565457,
+      "source": "wikipedia",
+      "s3_hero": true
     },
     {
       "slug": "tunisia",
@@ -990,7 +2940,311 @@
       "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Ribat%2C_Sousse%2C_Tunisia.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail_unscaled",
       "original": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Ribat%2C_Sousse%2C_Tunisia.JPG?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
       "wikivoyage_url": "https://en.wikivoyage.org/wiki/Tunisia",
-      "pageid": 36920
+      "pageid": 36920,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "turkey",
+      "title": "Turkey",
+      "region": "Western Asia",
+      "code": "TR",
+      "flag": "🇹🇷",
+      "extract": "Turkey, officially the Republic of Türkiye, is a country mainly located in Anatolia in West Asia, with a smaller part called East Thrace in Southeast Europe. It borders the Black Sea to the north; Georgia, Armenia, Azerbaijan, and Iran to the east; Iraq, Syria, and the Mediterranean Sea to the south; and the Aegean Sea, Greece, and Bulgaria to the west. Turkey is home to over 86 million people; most are ethnic Turks, while Kurds are the largest ethnic minority. Officially a secular state, Turkey has a Muslim-majority population. Ankara is Turkey's capital and second-largest city. Istanbul is its largest city and economic center. Other major cities include İzmir, Bursa, and Antalya.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/330px-Flag_of_Turkey.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/1280px-Flag_of_Turkey.svg.png",
+      "coordinates": {
+        "lat": 39.91666667,
+        "lon": 32.85
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Turkey",
+      "pageid": 11125639,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "turkmenistan",
+      "title": "Turkmenistan",
+      "region": "Central Asia",
+      "code": "TM",
+      "flag": "🇹🇲",
+      "extract": "Turkmenistan is a landlocked country in Central Asia, bordered by Kazakhstan and Uzbekistan to the north, Afghanistan to the southeast, Iran to the south and southwest, and the Caspian Sea to the west. It is one of six independent Turkic states. Ashgabat is the capital and largest city. With over 7 million people, Turkmenistan is the 35th most-populous country in Asia and has the lowest population of the Central Asian republics while being one of the most sparsely populated nations located on the Asian continent.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Turkmenistan.svg/330px-Flag_of_Turkmenistan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Turkmenistan.svg/960px-Flag_of_Turkmenistan.svg.png",
+      "coordinates": {
+        "lat": 39,
+        "lon": 60
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Turkmenistan",
+      "pageid": 198149,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "tuvalu",
+      "title": "Tuvalu",
+      "region": "Oceania",
+      "code": "TV",
+      "flag": "🇹🇻",
+      "extract": "Tuvalu is an archipelagic country in the Polynesian sub-region of Oceania in the Pacific Ocean, about midway between Hawaii and Australia. It lies east-northeast of the Santa Cruz Islands, northeast of Vanuatu, southeast of Nauru, south of Kiribati, west of Tokelau, northwest of Samoa and Wallis and Futuna, and north of Fiji.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tuvalu.svg/330px-Flag_of_Tuvalu.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tuvalu.svg/1280px-Flag_of_Tuvalu.svg.png",
+      "coordinates": {
+        "lat": -8.52083333,
+        "lon": 179.19861111
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Tuvalu",
+      "pageid": 30227,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "uae",
+      "title": "UAE",
+      "region": "Western Asia",
+      "code": "AE",
+      "flag": "🇦🇪",
+      "extract": "The United Arab Emirates (Arabic: الإمارات العربية المتحدة al-ʾImārāt al-ʿArabīyah al-Muttaḥidah) or simply the Emirates (الإمارات al-ʾImārāt) is a country rich in history and culture at the entrance to the Persian Gulf. Boasting attractions ranging from the glittering and cosmopolitan cities of Dubai and Abu Dhabi, to the vast and unforgiving desert landscapes of the Empty Quarter, it makes an easy starting point for travels in the Middle East.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/United_Arab_Emirates_%28orthographic_projection%29.svg/1280px-United_Arab_Emirates_%28orthographic_projection%29.svg.png?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=thumbnail",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/c/cd/United_Arab_Emirates_%28orthographic_projection%29.svg?utm_source=en.wikivoyage.org&utm_campaign=api&utm_content=original",
+      "wikivoyage_url": "https://en.wikivoyage.org/wiki/United_Arab_Emirates",
+      "pageid": 37263,
+      "source": "wikivoyage",
+      "s3_hero": true
+    },
+    {
+      "slug": "uganda",
+      "title": "Uganda",
+      "region": "East Africa",
+      "code": "UG",
+      "flag": "🇺🇬",
+      "extract": "Uganda, officially the Republic of Uganda, is a landlocked country in East Africa. It is bordered to the east by Kenya, to the north by South Sudan, to the west by the Democratic Republic of the Congo, to the south-west by Rwanda, and to the south by Tanzania. The southern part includes a substantial portion of Lake Victoria, shared with Kenya and Tanzania. Uganda is in the African Great Lakes region, lies within the Nile basin, and has a varied equatorial climate. As of 2024, it had a population of 45.9 million, of whom 1.8 million live in the capital and largest city, Kampala.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flag_of_Uganda.svg/330px-Flag_of_Uganda.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flag_of_Uganda.svg/960px-Flag_of_Uganda.svg.png",
+      "coordinates": {
+        "lat": 1,
+        "lon": 32
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Uganda",
+      "pageid": 31816,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "ukraine",
+      "title": "Ukraine",
+      "region": "Eastern Europe",
+      "code": "UA",
+      "flag": "🇺🇦",
+      "extract": "Ukraine is a country in Eastern Europe. It is the second-largest country in Europe after Russia, which borders it to the east and northeast. Ukraine also borders Belarus to the north; Poland and Slovakia to the west; Hungary, Romania and Moldova to the southwest; and the Black Sea and the Sea of Azov to the south and southeast. Kyiv is Ukraine's capital and largest city, followed by Kharkiv, Odesa, and Dnipro. The official language of the country is Ukrainian. Ukraine covers an area of 603,628 km2 (233,062 sq mi) with an estimated total population of 32.3 million in 2026.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/330px-Flag_of_Ukraine.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1280px-Flag_of_Ukraine.svg.png",
+      "coordinates": {
+        "lat": 50.45,
+        "lon": 30.51666667
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Ukraine",
+      "pageid": 31750,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "united-kingdom",
+      "title": "United Kingdom",
+      "region": "Western Europe",
+      "code": "GB",
+      "flag": "🇬🇧",
+      "extract": "The United Kingdom of Great Britain and Northern Ireland, commonly known as the United Kingdom (UK) or Britain, is a country in northwestern Europe, off the coast of the continental mainland. It comprises England, Scotland, Wales and Northern Ireland, with a population of over 69 million in 2024. The UK includes the island of Great Britain, the north-eastern part of the island of Ireland, and most of the smaller islands within the British Isles, covering 94,354 square miles (244,376 km2). It shares a land border with the Republic of Ireland and is surrounded by the Atlantic Ocean, the North Sea, the English Channel, the Celtic Sea and the Irish Sea, while maintaining sovereignty over the Crown Dependencies and the British Overseas Territories. The capital and largest city of England and the UK is London; Edinburgh, Cardiff and Belfast are the national capitals of Scotland, Wales and Northern Ireland, respectively.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/330px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1280px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
+      "coordinates": {
+        "lat": 55,
+        "lon": -3
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/United_Kingdom",
+      "pageid": 31717,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "united-states",
+      "title": "United States",
+      "region": "North America",
+      "code": "US",
+      "flag": "🇺🇸",
+      "extract": "The United States of America (USA), also known as the United States (U.S.) or America, is a country primarily located in North America. It is a federal republic consisting of 50 states and a federal capital district, Washington, D.C. The 48 contiguous states border Canada to the north and Mexico to the south, with the semi-exclave of Alaska in the northwest and the archipelago of Hawaii in the Pacific Ocean. The United States also asserts sovereignty over five major island territories and various uninhabited islands in Oceania and the Caribbean. It is a megadiverse country, with the world's third-largest land area and third-largest population, exceeding 341 million.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg/330px-Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg/1280px-Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg.png",
+      "coordinates": {
+        "lat": 40,
+        "lon": -100
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/United_States",
+      "pageid": 3434750,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "uruguay",
+      "title": "Uruguay",
+      "region": "South America",
+      "code": "UY",
+      "flag": "🇺🇾",
+      "extract": "Uruguay, officially the Oriental Republic of Uruguay, is a country in South America. It shares borders with Argentina to its west and southwest and Brazil to its north and northeast, while bordering the Río de la Plata to the south and the Atlantic Ocean to the southeast. It is part of the Southern Cone region of South America. Uruguay covers an area of approximately 176,215 square kilometers (68,037 sq mi). It has a population of almost 3.5 million people, of whom nearly 2 million live in the metropolitan area of its capital and largest city, Montevideo.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/330px-Flag_of_Uruguay.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/960px-Flag_of_Uruguay.svg.png",
+      "coordinates": {
+        "lat": -33,
+        "lon": -57
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Uruguay",
+      "pageid": 31843,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "uzbekistan",
+      "title": "Uzbekistan",
+      "region": "Central Asia",
+      "code": "UZ",
+      "flag": "🇺🇿",
+      "extract": "Uzbekistan, officially the Republic of Uzbekistan, is a doubly landlocked country located in Central Asia. It is bordered by Kazakhstan to the north, Kyrgyzstan to the northeast, Tajikistan to the southeast, Afghanistan to the south, and Turkmenistan to the southwest. As all of its neighbors are themselves landlocked, this makes it one of the only two doubly landlocked countries in the world, the other being Liechtenstein. The country has a population of more than 38.2 million, making it the most populous Central Asian Republic. Uzbekistan is a member of the Organization of Turkic States. Uzbek, spoken by the Uzbek people who form nearly 85% of the population, is the official language while Russian and Tajik are significant minority languages.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/330px-Flag_of_Uzbekistan.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/1280px-Flag_of_Uzbekistan.svg.png",
+      "coordinates": {
+        "lat": 42,
+        "lon": 64
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Uzbekistan",
+      "pageid": 31853,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "vanuatu",
+      "title": "Vanuatu",
+      "region": "Oceania",
+      "code": "VU",
+      "flag": "🇻🇺",
+      "extract": "Vanuatu, officially the Republic of Vanuatu, is an archipelagic country in Melanesia located in the South Pacific Ocean. The archipelago, which is of volcanic origin, is 1,750 km (1,090 mi) east of northern Australia, 540 km (340 mi) northeast of New Caledonia, east of New Guinea, southeast of Solomon Islands, and west of Fiji.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Flag_of_Vanuatu_%28official%29.svg/330px-Flag_of_Vanuatu_%28official%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Flag_of_Vanuatu_%28official%29.svg/960px-Flag_of_Vanuatu_%28official%29.svg.png",
+      "coordinates": {
+        "lat": -17,
+        "lon": 168
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Vanuatu",
+      "pageid": 32443,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "vatican-city",
+      "title": "Vatican City",
+      "region": "Southern Europe",
+      "code": "VA",
+      "flag": "🇻🇦",
+      "extract": "Vatican City, officially the Vatican City State, often shortened as the Vatican, is a landlocked sovereign city-state. Ruled by the pope, it is an enclave within the city of Rome, Italy, and serves as the administrative centre of the Catholic Church. Vatican City is governed by the See of Rome, commonly known as the Holy See, itself a sovereign entity under international law, which maintains its temporal power, governance, diplomacy, and spiritual independence. Vatican is also used as a metonym for the Holy See, which is the central governing body of the Catholic Church and Vatican City, comprising the pope and the Roman Curia. The independent state of Vatican City came into existence in 1929 via the Lateran Treaty between the Holy See and the Kingdom of Italy, which spoke of it as a creation, not as a vestige of the much larger Papal States (756–1870), which had previously encompassed much of Central Italy.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Flag_of_Vatican_City_%282023%E2%80%93present%29.svg/330px-Flag_of_Vatican_City_%282023%E2%80%93present%29.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Flag_of_Vatican_City_%282023%E2%80%93present%29.svg/1280px-Flag_of_Vatican_City_%282023%E2%80%93present%29.svg.png",
+      "coordinates": {
+        "lat": 41.9025,
+        "lon": 12.4525
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Vatican_City",
+      "pageid": 32408,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "venezuela",
+      "title": "Venezuela",
+      "region": "South America",
+      "code": "VE",
+      "flag": "🇻🇪",
+      "extract": "Venezuela, officially the Bolivarian Republic of Venezuela, is a country on the northern coast of South America, consisting of a continental landmass and various islands and islets in the Caribbean Sea. It comprises an area of 912,050 km2 (352,140 sq mi), with a population estimated at 31.8 million in 2025. The capital and largest urban agglomeration is Caracas. The continental territory is bordered on the north by the Caribbean Sea and the Atlantic Ocean, on the west by Colombia, Brazil on the south, Trinidad and Tobago to the north-east, and on the east by Guyana. Venezuela consists of 23 states, the Capital District, and federal dependencies covering Venezuela's offshore islands. Venezuela is among the most urbanized countries in Latin America; the vast majority of Venezuelans live in the cities of the north, including in the capital.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Venezuela.svg/330px-Flag_of_Venezuela.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Venezuela.svg/960px-Flag_of_Venezuela.svg.png",
+      "coordinates": {
+        "lat": 7,
+        "lon": -65
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Venezuela",
+      "pageid": 32374,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "vietnam",
+      "title": "Vietnam",
+      "region": "Southeast Asia",
+      "code": "VN",
+      "flag": "🇻🇳",
+      "extract": "Vietnam, officially the Socialist Republic of Viet Nam (SRV), is a country at the eastern edge of Mainland Southeast Asia. With an area of about 331,000 square kilometres and a population of over 102 million, it is the world's 16th-most populous country. One of two communist states in Southeast Asia, Vietnam is bordered by China to the north, and Laos and Cambodia to the west; it lies along the Gulf of Thailand to the southwest and the South China Sea to the east, where it has shared and disputed maritime borders with other countries. Its capital is Hanoi, while its largest city is Ho Chi Minh City.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/330px-Flag_of_Vietnam.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/960px-Flag_of_Vietnam.svg.png",
+      "coordinates": {
+        "lat": 16,
+        "lon": 108
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Vietnam",
+      "pageid": 202354,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "yemen",
+      "title": "Yemen",
+      "region": "Western Asia",
+      "code": "YE",
+      "flag": "🇾🇪",
+      "extract": "Yemen, officially the Republic of Yemen, is a country in West Asia. Including the Socotra Archipelago, mainland Yemen is located in southern Arabia; bordering Saudi Arabia to the north, Oman to the northeast, the south-eastern part of the Arabian Sea to the east, the Gulf of Aden to the south, and the Red Sea to the west, sharing maritime borders with Djibouti, Eritrea, Somaliland and Somalia across the Horn of Africa. Covering roughly 455,503 square kilometres, with a coastline of approximately 2,000 kilometres, Yemen is the second largest country on the Arabian Peninsula by area, and the largest by population.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Flag_of_Yemen.svg/330px-Flag_of_Yemen.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Flag_of_Yemen.svg/960px-Flag_of_Yemen.svg.png",
+      "coordinates": {
+        "lat": 15.34833333,
+        "lon": 44.20638889
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Yemen",
+      "pageid": 350939,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "zambia",
+      "title": "Zambia",
+      "region": "Southern Africa",
+      "code": "ZM",
+      "flag": "🇿🇲",
+      "extract": "Zambia, officially the Republic of Zambia, is a landlocked country in Southern Africa. It is bordered to the north by the Democratic Republic of the Congo, Tanzania to the northeast, Malawi to the east, Mozambique to the southeast, Zimbabwe and Botswana to the south, Namibia to the southwest, and Angola to the west. The capital city of Zambia is Lusaka, located in the south-central part of Zambia. The population is concentrated mainly around Lusaka in the south and the Copperbelt Province to the north, the core economic hubs of Zambia.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Zambia.svg/330px-Flag_of_Zambia.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Zambia.svg/960px-Flag_of_Zambia.svg.png",
+      "coordinates": {
+        "lat": -15,
+        "lon": 30
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Zambia",
+      "pageid": 34415,
+      "source": "wikipedia",
+      "s3_hero": true
+    },
+    {
+      "slug": "zimbabwe",
+      "title": "Zimbabwe",
+      "region": "Southern Africa",
+      "code": "ZW",
+      "flag": "🇿🇼",
+      "extract": "Zimbabwe, officially the Republic of Zimbabwe, is a landlocked country in Southeast Africa, between the Zambezi and Limpopo River, bordered by South Africa to the south, Botswana to the southwest, Zambia to the north, and Mozambique to the east. The capital and largest city is Harare, and the second largest is Bulawayo.",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Flag_of_Zimbabwe.svg/330px-Flag_of_Zimbabwe.svg.png",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Flag_of_Zimbabwe.svg/1280px-Flag_of_Zimbabwe.svg.png",
+      "coordinates": {
+        "lat": -19,
+        "lon": 30
+      },
+      "wikivoyage_url": "https://en.wikipedia.org/wiki/Zimbabwe",
+      "pageid": 34399,
+      "source": "wikipedia",
+      "s3_hero": true
     }
   ]
 }

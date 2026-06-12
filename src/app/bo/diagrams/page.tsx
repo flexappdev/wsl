@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, GitBranch, Network, Workflow, FileCode, Database, ListTree } from "lucide-react";
+import { ArrowUpRight, GitBranch, Network, Workflow, FileCode, Database, ListTree, Globe, Grid3x3, Layers } from "lucide-react";
 
 export const metadata = {
   title: "Diagrams",
@@ -56,6 +56,27 @@ const DIAGRAMS: Diagram[] = [
     kind: "WORKFLOW",
     summary: "PBI → Build → Preview → Push → Deploy. Stage 5 (Vercel link + env sync) is the one owed step.",
     Icon: FileCode,
+  },
+  {
+    slug: "wikivoyage-pipeline",
+    title: "Wikivoyage pipeline",
+    kind: "INGEST PIPELINE",
+    summary: "SEED.allCountries → Wikivoyage bulk → Wikipedia fallback → FLUX heroes → snapshot JSON → 198 SSG pages.",
+    Icon: Globe,
+  },
+  {
+    slug: "wikivoyage-coverage",
+    title: "Wikivoyage coverage",
+    kind: "COVERAGE MAP",
+    summary: "Per-region tile grid showing 82 Wikivoyage hits vs 116 Wikipedia fallback hits across all 198 countries.",
+    Icon: Grid3x3,
+  },
+  {
+    slug: "wikivoyage-data-sources",
+    title: "Wikivoyage data hierarchy",
+    kind: "DATA HIERARCHY",
+    summary: "How SEED + Wikivoyage + Wikipedia + Runware FLUX merge into a single WikivoyageEntry shape.",
+    Icon: Layers,
   },
 ];
 

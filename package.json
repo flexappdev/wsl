@@ -10,7 +10,9 @@
     "seed:mongo": "npx -y tsx scripts/seed-mongo.ts",
     "seed:mongo:dry": "npx -y tsx scripts/seed-mongo.ts --dry",
     "ingest:wikivoyage": "npx -y tsx scripts/ingest-wikivoyage.ts",
-    "ingest:wikivoyage:refresh": "npx -y tsx scripts/ingest-wikivoyage.ts --refresh"
+    "ingest:wikivoyage:refresh": "npx -y tsx scripts/ingest-wikivoyage.ts --refresh",
+    "gen:heroes": "node scripts/generate-wikivoyage-heroes.mjs",
+    "gen:region-loops": "node scripts/generate-wikivoyage-region-loops.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
