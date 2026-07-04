@@ -16,18 +16,9 @@ export const metadata: Metadata = {
   },
 };
 
-const TICKER_IDS = ["tourism", "hotels", "flights"];
+import { TOP_AIRPORTS } from "@/lib/wsl-v2/rankings";
 
-const TOP_AIRPORTS = [
-  { rank: 1, name: "Atlanta · ATL",     flag: "🇺🇸", v: 100, raw: "104.7M pax" },
-  { rank: 2, name: "Dubai · DXB",       flag: "🇦🇪", v: 88,  raw: "92.3M pax" },
-  { rank: 3, name: "Dallas · DFW",      flag: "🇺🇸", v: 80,  raw: "83.6M pax" },
-  { rank: 4, name: "Tokyo · HND",       flag: "🇯🇵", v: 75,  raw: "78.7M pax" },
-  { rank: 5, name: "London · LHR",      flag: "🇬🇧", v: 74,  raw: "77.8M pax" },
-  { rank: 6, name: "Denver · DEN",      flag: "🇺🇸", v: 73,  raw: "77.1M pax" },
-  { rank: 7, name: "Istanbul · IST",    flag: "🇹🇷", v: 71,  raw: "75.0M pax" },
-  { rank: 8, name: "Los Angeles · LAX", flag: "🇺🇸", v: 70,  raw: "74.0M pax" },
-];
+const TICKER_IDS = ["tourism", "hotels", "flights"];
 
 export default async function TourismPage() {
   const payload = await getWslPayload();

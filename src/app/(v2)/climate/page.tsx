@@ -16,29 +16,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { TOP_EMITTERS, RENEWABLES_SHARE } from "@/lib/wsl-v2/rankings";
+
 const TICKER_IDS = ["co2", "energy", "forest", "species"];
-
-const TOP_EMITTERS = [
-  { rank: 1, name: "China",          flag: "🇨🇳", v: 100, raw: "11.4 Gt" },
-  { rank: 2, name: "United States",  flag: "🇺🇸", v: 44,  raw: "5.0 Gt" },
-  { rank: 3, name: "India",          flag: "🇮🇳", v: 26,  raw: "3.0 Gt" },
-  { rank: 4, name: "Russia",         flag: "🇷🇺", v: 17,  raw: "1.9 Gt" },
-  { rank: 5, name: "Japan",          flag: "🇯🇵", v: 10,  raw: "1.1 Gt" },
-  { rank: 6, name: "Iran",           flag: "🇮🇷", v: 7,   raw: "0.8 Gt" },
-  { rank: 7, name: "Germany",        flag: "🇩🇪", v: 6,   raw: "0.7 Gt" },
-  { rank: 8, name: "Indonesia",      flag: "🇮🇩", v: 6,   raw: "0.7 Gt" },
-];
-
-const RENEWABLES_SHARE = [
-  { rank: 1, name: "Iceland",        flag: "🇮🇸", v: 100, raw: "~100%" },
-  { rank: 2, name: "Paraguay",       flag: "🇵🇾", v: 100, raw: "~100%" },
-  { rank: 3, name: "Norway",         flag: "🇳🇴", v: 98,  raw: "98%" },
-  { rank: 4, name: "Costa Rica",     flag: "🇨🇷", v: 95,  raw: "95%" },
-  { rank: 5, name: "Brazil",         flag: "🇧🇷", v: 84,  raw: "84%" },
-  { rank: 6, name: "Denmark",        flag: "🇩🇰", v: 81,  raw: "81%" },
-  { rank: 7, name: "New Zealand",    flag: "🇳🇿", v: 81,  raw: "81%" },
-  { rank: 8, name: "Portugal",       flag: "🇵🇹", v: 61,  raw: "61%" },
-];
 
 const MILESTONES = [
   { year: "1750",   value: "280 ppm", note: "Pre-industrial baseline CO₂" },

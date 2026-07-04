@@ -13,60 +13,55 @@ export type Country = {
   currencies: string[];
 };
 
+// Source: mledoze/countries — same dataset restcountries.com was originally built from,
+// bundled at build time. restcountries.com v3.1 was deprecated 2026-Q2; the response now
+// returns a JSON error object instead of an array. mledoze is a stable community mirror.
+const MLEDOZE_URL =
+  "https://raw.githubusercontent.com/mledoze/countries/master/dist/countries.json";
+
+type MledozeCountry = {
+  name: { common: string; official: string };
+  cca2: string;
+  cca3: string;
+  capital?: string[];
+  region: string;
+  subregion?: string;
+  population: number;
+  area: number;
+  flag: string;
+  flags?: { png?: string; svg?: string };
+  languages?: Record<string, string>;
+  currencies?: Record<string, { name: string; symbol?: string }>;
+};
+
+function mapMledoze(c: MledozeCountry): Country {
+  return {
+    cca3: c.cca3 ?? "",
+    name: c.name?.common ?? "",
+    official: c.name?.official ?? "",
+    capital: c.capital?.[0] ?? "—",
+    region: c.region ?? "",
+    subregion: c.subregion ?? "",
+    population: Number(c.population ?? 0),
+    area: Number(c.area ?? 0),
+    flag: c.flag ?? "",
+    flagPng: c.flags?.png ?? "",
+    languages: Object.values(c.languages ?? {}),
+    currencies: Object.values(c.currencies ?? {}).map((cur) => cur.name),
+  };
+}
+
 export async function getCountries(): Promise<{ countries: Country[] }> {
-  const url = "https://restcountries.com/v3.1/all?fields=name,cca3,capital,region,subregion,population,area,flag,flags,languages,currencies";
-  const res = await fetch(url, { next: { revalidate: 86400 } });
+  const res = await fetch(MLEDOZE_URL, { next: { revalidate: 86400 } });
   if (!res.ok) return { countries: [] };
   const parsed = await res.json();
-  const raw = Array.isArray(parsed) ? (parsed as Array<Record<string, unknown>>) : [];
-  const countries: Country[] = raw
-    .map((c) => {
-      const nameObj = c.name as { common?: string; official?: string } | undefined;
-      const flagsObj = c.flags as { png?: string } | undefined;
-      const languagesObj = (c.languages as Record<string, string> | undefined) ?? {};
-      const currenciesObj = (c.currencies as Record<string, { name: string }> | undefined) ?? {};
-      return {
-        cca3: String(c.cca3 ?? ""),
-        name: String(nameObj?.common ?? ""),
-        official: String(nameObj?.official ?? ""),
-        capital: ((c.capital as string[] | undefined) ?? [])[0] ?? "—",
-        region: String(c.region ?? ""),
-        subregion: String(c.subregion ?? ""),
-        population: Number(c.population ?? 0),
-        area: Number(c.area ?? 0),
-        flag: String(c.flag ?? ""),
-        flagPng: String(flagsObj?.png ?? ""),
-        languages: Object.values(languagesObj),
-        currencies: Object.values(currenciesObj).map((c) => c.name),
-      };
-    })
-    .sort((a, b) => b.population - a.population);
+  const raw = Array.isArray(parsed) ? (parsed as MledozeCountry[]) : [];
+  const countries = raw.map(mapMledoze).sort((a, b) => b.population - a.population);
   return { countries };
 }
 
 export async function getCountry(cca3: string): Promise<Country | null> {
-  const url = `https://restcountries.com/v3.1/alpha/${encodeURIComponent(cca3)}`;
-  const res = await fetch(url, { next: { revalidate: 86400 } });
-  if (!res.ok) return null;
-  const arr = (await res.json()) as Array<Record<string, unknown>>;
-  const c = arr[0];
-  if (!c) return null;
-  const nameObj = c.name as { common?: string; official?: string } | undefined;
-  const flagsObj = c.flags as { png?: string } | undefined;
-  const languagesObj = (c.languages as Record<string, string> | undefined) ?? {};
-  const currenciesObj = (c.currencies as Record<string, { name: string }> | undefined) ?? {};
-  return {
-    cca3: String(c.cca3 ?? ""),
-    name: String(nameObj?.common ?? ""),
-    official: String(nameObj?.official ?? ""),
-    capital: ((c.capital as string[] | undefined) ?? [])[0] ?? "—",
-    region: String(c.region ?? ""),
-    subregion: String(c.subregion ?? ""),
-    population: Number(c.population ?? 0),
-    area: Number(c.area ?? 0),
-    flag: String(c.flag ?? ""),
-    flagPng: String(flagsObj?.png ?? ""),
-    languages: Object.values(languagesObj),
-    currencies: Object.values(currenciesObj).map((c) => c.name),
-  };
+  const { countries } = await getCountries();
+  const match = countries.find((c) => c.cca3.toUpperCase() === cca3.toUpperCase());
+  return match ?? null;
 }

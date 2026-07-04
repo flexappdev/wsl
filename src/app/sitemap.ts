@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getWikivoyageDataset } from "@/lib/wikivoyage/data";
+import { getAllCountries } from "@/lib/wsl-v2/country-stats";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://worldstats.live";
 
@@ -9,8 +10,20 @@ const PUBLIC_ROUTES: { path: string; changeFrequency: MetadataRoute.Sitemap[numb
   { path: "/gdp",          changeFrequency: "hourly",  priority: 0.9 },
   { path: "/climate",      changeFrequency: "hourly",  priority: 0.9 },
   { path: "/tourism",      changeFrequency: "hourly",  priority: 0.9 },
+  { path: "/energy",       changeFrequency: "daily",   priority: 0.8 },
+  { path: "/health",       changeFrequency: "daily",   priority: 0.8 },
+  { path: "/education",    changeFrequency: "daily",   priority: 0.8 },
+  { path: "/migration",    changeFrequency: "daily",   priority: 0.8 },
+  { path: "/technology",   changeFrequency: "daily",   priority: 0.8 },
+  { path: "/hunger",       changeFrequency: "daily",   priority: 0.8 },
+  { path: "/conflict",     changeFrequency: "daily",   priority: 0.8 },
+  { path: "/biodiversity", changeFrequency: "daily",   priority: 0.8 },
   { path: "/destinations", changeFrequency: "daily",   priority: 0.8 },
+  { path: "/compare",      changeFrequency: "monthly", priority: 0.7 },
+  { path: "/map",          changeFrequency: "weekly",  priority: 0.7 },
+  { path: "/data",         changeFrequency: "weekly",  priority: 0.6 },
   { path: "/wikivoyage",   changeFrequency: "weekly",  priority: 0.8 },
+  { path: "/countries",    changeFrequency: "weekly",  priority: 0.7 },
   { path: "/story",        changeFrequency: "weekly",  priority: 0.7 },
   { path: "/about",        changeFrequency: "monthly", priority: 0.5 },
 ];
@@ -25,12 +38,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const ds = await getWikivoyageDataset();
-  const countryPages = ds.entries.map((e) => ({
+  const wikivoyagePages = ds.entries.map((e) => ({
     url: `${SITE_URL}/wikivoyage/${e.slug}`,
     lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
 
-  return [...base, ...countryPages];
+  const allCountries = await getAllCountries();
+  const countryPages = allCountries.map((c) => ({
+    url: `${SITE_URL}/countries/${c.cca3.toUpperCase()}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
+  return [...base, ...wikivoyagePages, ...countryPages];
 }

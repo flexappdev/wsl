@@ -4,20 +4,51 @@ Next.js 15 app · v2 "World Stats Live" dashboard · port **19011** · accent #1
 
 Repo: https://github.com/flexappdev/wsl · Vercel deploy at root path.
 
-## v2 routes
+## Routes — **481 prerendered pages**
+
+### Dashboard + narrative
 
 - `/` — Dashboard (live tickers, world map, top-country lists, currency strip)
-- `/population` — country rankings + UN curve 1700→2100
-- `/gdp` — live GDP pulse, top economies, regional shares, currency table, news
-- `/climate` — emissions tickers, top emitters, renewables leaders, CO₂ milestones
-- `/tourism` — tourism spend, top-visited + fastest-growing, busiest airports
-- `/destinations` — featured country card + 11-country grid + trending searches
 - `/story` — long-form scroller (5 chapters on the population curve)
 - `/about` — 12 cited sources, stack, methodology, FAQ
 - `/random` — random fact / globe spin
-- `/wikivoyage` — country travel guide index — **198 countries grouped by 5 continents** with Seedance video loops per continent, region sub-headers, newsletter signup
-- `/wikivoyage/[slug]` — individual country travel guide — FLUX hero image (1792×1024), JSON-LD `TouristDestination` schema, per-country OG card, GA4 `wikivoyage_country_view` event (198 SSG pages + 198 per-slug OG images)
-- `/bo` — Supabase-gated admin (Mongo health, collection browser, site-data viewer, wikivoyage stats, 9 codebase diagrams)
+
+### Topic hubs (13)
+
+- `/population` — country rankings + UN curve 1700→2100
+- `/gdp` — live GDP pulse, top economies, regional shares
+- `/climate` — emissions tickers, top emitters, renewables, CO₂ milestones
+- `/tourism` — tourism spend, top-visited, fastest-growing, busiest airports
+- `/destinations` — featured country + 195-country grid + trending searches
+- `/energy` — top producers, per-capita use, energy transition (EIA / BP / IEA)
+- `/health` — life expectancy, healthcare spending per capita (WHO / OECD)
+- `/education` — literacy, tertiary enrollment (UNESCO / OECD)
+- `/migration` — refugee hosts, remittances (UNHCR / World Bank)
+- `/technology` — internet penetration, mobile speed (ITU / Ookla)
+- `/hunger` — undernourishment, food-security leaders (FAO / GFSI)
+- `/conflict` — Global Peace Index, military spending (IEP / SIPRI)
+- `/biodiversity` — species richness, endemic diversity (IUCN / WWF)
+
+### Country drill-down (445 SSG pages)
+
+- `/countries` — 250-country register (mledoze/countries dataset)
+- `/countries/[cca3]` — **250 SSG country profiles** with JSON-LD `Country` schema, S3 hero image (when Wikivoyage cross-links), per-country rank against the population/GDP/emitter/tourism/renewables/airport tables, links to full travel guide
+- `/wikivoyage` — country travel guide index (198 countries, 5 continent video loops, newsletter)
+- `/wikivoyage/[slug]` — **198 SSG travel guides** with FLUX hero (1792×1024), JSON-LD `TouristDestination` schema, per-slug OG card, GA4 event
+
+### Cross-cut
+
+- `/compare?ids=USA,CHN,IND` — side-by-side comparison of up to 4 countries × 12 metrics
+- `/map` — SVG world map with 198 Wikivoyage country dots (equirectangular projection) + 20 seed cities
+- `/data` — 16 machine-readable datasets, CSV or JSON
+
+### Machine-readable
+
+- `/api/export?topic=<id>&format=csv|json` — 16 topics: countries, wikivoyage, top-populous, top-gdp, top-emitters, top-visited, top-fastest-growing, top-life-expectancy, top-renewables, top-military-spending, top-refugee-hosts, top-remittances, top-internet, top-literacy, top-species-richness, top-airports
+
+### Admin
+
+- `/bo` — Supabase-gated admin (Mongo health, collection browser, site-data, wikivoyage stats, 9 codebase diagrams)
 - `/login`, `/auth/callback`, `/auth/error` — auth flow
 
 ## SEO / discoverability
