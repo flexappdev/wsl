@@ -1,8 +1,14 @@
 import { NextResponse } from "next/server";
-import { getMongoDb, isMongoConfigured } from "@/lib/mongo";
+import { getMongoDb, isMongoConfigured, APP, APP_FILTER } from "@/lib/mongo";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+// FLEET migration (2026-07-09): live ingest writes now target FLEET.lists
+// with `{app:'wsl', kind: <currency|ticker|flights|climate>}`. Currency and
+// ticker rows are keyed by their existing identifier (currency `code`, ticker
+// `id`); flights and climate are time-series so they get one row per fetch
+// keyed by `fetchedAt`. No writes go to AIDB.wsl_* anymore.
 
 async function retryFetch(url: string, tries = 3): Promise<Response | null> {
   for (let i = 0; i < tries; i++) {
@@ -62,6 +68,10 @@ async function ingestCo2() {
   return null;
 }
 
+function slug(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
 export async function GET(request: Request) {
   const secret = process.env.CRON_SECRET;
   if (secret) {
@@ -85,6 +95,7 @@ export async function GET(request: Request) {
   }
 
   const now = Date.now();
+  const lists = db.collection("lists");
 
   const [fx, coins, flights, co2] = await Promise.allSettled([
     ingestFx(),
@@ -97,13 +108,22 @@ export async function GET(request: Request) {
     const rows = fx.value;
     const bulk = rows.map((r) => ({
       updateOne: {
-        filter: { code: r.code },
-        update: { $set: { code: r.code, rate: r.rate, fetchedAt: now } },
+        filter: { ...APP_FILTER, kind: "currency", slug: `currency-${slug(r.code)}` },
+        update: {
+          $set: {
+            app: APP,
+            kind: "currency",
+            slug: `currency-${slug(r.code)}`,
+            code: r.code,
+            rate: r.rate,
+            fetchedAt: now,
+          },
+        },
         upsert: true,
       },
     }));
     if (bulk.length) {
-      const r = await db.collection("wsl_currencies").bulkWrite(bulk);
+      const r = await lists.bulkWrite(bulk);
       report.writes.currencies = (r.upsertedCount || 0) + (r.modifiedCount || 0);
     }
   } else if (fx.status === "rejected") report.errors.push("fx:" + String(fx.reason));
@@ -116,22 +136,42 @@ export async function GET(request: Request) {
     ];
     const bulk = tickers.map((t) => ({
       updateOne: {
-        filter: { id: t.id },
-        update: { $set: t },
+        filter: { ...APP_FILTER, kind: "ticker", slug: `ticker-${slug(t.id)}` },
+        update: {
+          $set: {
+            app: APP,
+            kind: "ticker",
+            slug: `ticker-${slug(t.id)}`,
+            ...t,
+          },
+        },
         upsert: true,
       },
     }));
-    const r = await db.collection("wsl_tickers").bulkWrite(bulk);
+    const r = await lists.bulkWrite(bulk);
     report.writes.tickers = (r.upsertedCount || 0) + (r.modifiedCount || 0);
   } else if (coins.status === "rejected") report.errors.push("btc:" + String(coins.reason));
 
   if (flights.status === "fulfilled" && typeof flights.value === "number") {
-    await db.collection("wsl_flights").insertOne({ inAir: flights.value, fetchedAt: now });
+    // Time-series: one row per fetch keyed by fetchedAt.
+    await lists.insertOne({
+      app: APP,
+      kind: "flights",
+      slug: `flights-${now}`,
+      inAir: flights.value,
+      fetchedAt: now,
+    });
     report.writes.flights = 1;
   } else if (flights.status === "rejected") report.errors.push("flights:" + String(flights.reason));
 
   if (co2.status === "fulfilled" && co2.value) {
-    await db.collection("wsl_climate").insertOne({ co2Ppm: co2.value, fetchedAt: now });
+    await lists.insertOne({
+      app: APP,
+      kind: "climate",
+      slug: `climate-${now}`,
+      co2Ppm: co2.value,
+      fetchedAt: now,
+    });
     report.writes.climate = 1;
   } else if (co2.status === "rejected") report.errors.push("co2:" + String(co2.reason));
 

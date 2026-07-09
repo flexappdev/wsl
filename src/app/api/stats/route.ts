@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
-import { getMongoDb, isMongoConfigured } from "@/lib/mongo";
+import { getMongoDb, isMongoConfigured, APP_FILTER } from "@/lib/mongo";
 import { SEED } from "@/lib/wsl-v2/seed";
 
 export const runtime = "nodejs";
 export const revalidate = 60;
+
+// FLEET migration (2026-07-09): reads shifted from AIDB.{wsl_tickers,
+// wsl_currencies, wsl_climate, wsl_flights} to FLEET.lists filtered by
+// `{app:'wsl', kind}`. Climate + flights are time-series (one row per fetch);
+// tickers + currencies are keyed on their identifier.
 
 type Mode = "live" | "stale" | "seed";
 
@@ -34,11 +39,12 @@ export async function GET() {
   }
 
   try {
+    const lists = db.collection("lists");
     const [tickers, currencies, climate, flights] = await Promise.all([
-      db.collection("wsl_tickers").find({}).limit(50).toArray(),
-      db.collection("wsl_currencies").find({}).limit(50).toArray(),
-      db.collection("wsl_climate").find({}).sort({ fetchedAt: -1 }).limit(1).toArray(),
-      db.collection("wsl_flights").find({}).sort({ fetchedAt: -1 }).limit(1).toArray(),
+      lists.find({ ...APP_FILTER, kind: "ticker" }).limit(50).toArray(),
+      lists.find({ ...APP_FILTER, kind: "currency" }).limit(50).toArray(),
+      lists.find({ ...APP_FILTER, kind: "climate" }).sort({ fetchedAt: -1 }).limit(1).toArray(),
+      lists.find({ ...APP_FILTER, kind: "flights" }).sort({ fetchedAt: -1 }).limit(1).toArray(),
     ]);
 
     let anyLive = false;

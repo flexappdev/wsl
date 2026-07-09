@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
-import { getMongoDb, isMongoConfigured } from "@/lib/mongo";
+import { getMongoDb, isMongoConfigured, APP, APP_FILTER } from "@/lib/mongo";
 
 export const runtime = "nodejs";
 export const revalidate = 1800;
+
+// FLEET migration (2026-07-09): news cache moved from AIDB.wsl_news to
+// FLEET.lists with `{app:'wsl', kind:'news'}`. Each item is upserted by
+// `slug = news-<pubDate>-<title-hash>` so the same headline from two feeds
+// doesn't duplicate.
 
 type NewsItem = {
   title: string;
@@ -19,6 +24,14 @@ const FEEDS: Array<{ url: string; src: string; tag: NewsItem["tag"] }> = [
 ];
 
 const FRESH_MS = 30 * 60 * 1000;
+
+function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
+}
 
 function extractItems(xml: string, src: string, tag: NewsItem["tag"]): NewsItem[] {
   const out: NewsItem[] = [];
@@ -64,14 +77,14 @@ export async function GET() {
     if (db) {
       try {
         const cached = await db
-          .collection<NewsItem & { fetchedAt: number }>("wsl_news")
-          .find({ fetchedAt: { $gt: now - FRESH_MS } })
+          .collection<NewsItem & { fetchedAt: number }>("lists")
+          .find({ ...APP_FILTER, kind: "news", fetchedAt: { $gt: now - FRESH_MS } })
           .sort({ pubDate: -1 })
           .limit(6)
           .toArray();
         if (cached.length) {
           return NextResponse.json(
-            { items: cached.map(stripId), mode: "cache", updatedAt: now },
+            { items: cached.map(strip), mode: "cache", updatedAt: now },
             { headers: { "Cache-Control": "public, max-age=1800, s-maxage=1800" } },
           );
         }
@@ -94,9 +107,33 @@ export async function GET() {
     const db = await getMongoDb();
     if (db) {
       try {
-        const coll = db.collection("wsl_news");
-        await coll.deleteMany({ fetchedAt: { $lt: now - FRESH_MS * 4 } });
-        await coll.insertMany(items.map((it) => ({ ...it, fetchedAt: now })));
+        const coll = db.collection("lists");
+        // Prune stale wsl news rows only — never touch other apps' data.
+        await coll.deleteMany({
+          ...APP_FILTER,
+          kind: "news",
+          fetchedAt: { $lt: now - FRESH_MS * 4 },
+        });
+        // Upsert by slug so re-runs don't duplicate.
+        const bulk = items.map((it) => {
+          const slug = `news-${it.pubDate}-${slugify(it.title)}`;
+          return {
+            updateOne: {
+              filter: { ...APP_FILTER, kind: "news", slug },
+              update: {
+                $set: {
+                  app: APP,
+                  kind: "news",
+                  slug,
+                  ...it,
+                  fetchedAt: now,
+                },
+              },
+              upsert: true,
+            },
+          };
+        });
+        if (bulk.length) await coll.bulkWrite(bulk);
       } catch {
         // ignore
       }
@@ -109,8 +146,12 @@ export async function GET() {
   );
 }
 
-function stripId<T extends { _id?: unknown }>(doc: T): Omit<T, "_id"> {
-  const { _id, ...rest } = doc;
+// Strip Mongo `_id` + FLEET-synthetic keys before returning to the client.
+function strip<T extends Record<string, unknown>>(doc: T): Omit<T, "_id" | "app" | "kind" | "slug"> {
+  const { _id, app, kind, slug, ...rest } = doc as Record<string, unknown>;
   void _id;
-  return rest;
+  void app;
+  void kind;
+  void slug;
+  return rest as Omit<T, "_id" | "app" | "kind" | "slug">;
 }

@@ -74,9 +74,82 @@ New env vars (optional — all degrade gracefully):
 
 ## Data
 
-- MongoDB read-only via `MONGO_URI` + `MONGO_DB` (defaults to `AIDB`) — see `src/lib/mongo.ts`
+- MongoDB read/write via `MONGO_URI` + `MONGO_DB` (defaults to **`FLEET`** post-migration) — see `src/lib/mongo.ts`
 - Static seed at `src/lib/wsl-v2/seed.ts` (ported from `ux/wsl-v2/src/data.js`) — keeps the site green when Mongo is unset
-- Seed → Mongo: `npm run seed:mongo` (writes 14 `wsl_*` collections; `seed:mongo:dry` previews)
+- Seed → FLEET: `npm run seed:mongo` (writes ~130 wsl-scoped docs into shared FLEET collections; `seed:mongo:dry` previews)
+
+### Mongo (FLEET)
+
+Post-2026-07-09 migration: the 14 legacy `wsl_*` collections in `AIDB` (plus 2 time-series
+tables `wsl_flights` / `wsl_climate` written by `/api/cron/ingest`) have been consolidated
+into shared FLEET collections with an `{app:'wsl', kind}` discriminator. See
+`~/APPS/appai/docs/MONGO-FLEET-SCHEMA.md` for the canonical schema.
+
+**Collection remap:**
+
+| Legacy (AIDB)          | FLEET collection | kind              |
+|------------------------|------------------|-------------------|
+| `wsl_cities`           | `items`          | `city`            |
+| `wsl_countries`        | `items`          | `country`         |
+| `wsl_hotels`           | `items`          | `hotel`           |
+| `wsl_top_visited`      | `lists`          | `top-visited`     |
+| `wsl_fastest_growing`  | `lists`          | `fastest-growing` |
+| `wsl_largest_gdp`      | `lists`          | `largest-gdp`     |
+| `wsl_currencies`       | `lists`          | `currency`        |
+| `wsl_gear`             | `lists`          | `gear`            |
+| `wsl_facts`            | `lists`          | `fact`            |
+| `wsl_tickers`          | `lists`          | `ticker`          |
+| `wsl_news`             | `lists`          | `news`            |
+| `wsl_trending`         | `lists`          | `trending`        |
+| `wsl_videos`           | `videos`         | *(none)*          |
+| `wsl_scroller`         | `media`          | `scroller`        |
+| `wsl_flights`          | `lists`          | `flights`         |
+| `wsl_climate`          | `lists`          | `climate`         |
+
+**Every wsl read on a FLEET collection MUST include `{app:'wsl'}`** — see the `APP_FILTER`
+export and `readSection()` helper in `src/lib/wsl-v2/dataSource.ts`. Live ingest writes
+(`/api/cron/ingest`) target `FLEET.lists` with `{app:'wsl', kind}` so nothing drifts
+back into `AIDB`.
+
+**Slug namespacing.** `FLEET.items` and `FLEET.lists` both enforce `{app, slug}` unique.
+wsl folds 3 kinds into `items` (city / country / hotel) and 10 kinds into `lists`, so
+slugs are prefixed with the kind at seed/fold time to avoid cross-kind collisions:
+
+- items: `city-london`, `country-morocco`, `hotel-<countryId>-<city>-<name>`
+- lists: `top-visited-france`, `fastest-growing-saudi-arabia`, `ticker-population`, `currency-eur-usd`, `fact-001`, `news-<pubDate>-<title>`, `trending-<query>`, `gear-<name>`
+- videos: `video-<title-slug>`
+- media (scroller): `s3_key = scroller-<eye-slug>` (synthetic — chapters aren't S3 media)
+
+Rationale: safer than a pre-fold collision audit (both wsl_cities.london and a
+hypothetical hotel named "London" would clash otherwise; namespacing sidesteps the
+issue and stays readable).
+
+**Fold script** (dry-run wrapper for `~/APPS/appai/scripts/mongo-fold.mjs` — see the file
+header for the full 16-fold command list, slug rewrite recipe, and drop-legacy playbook):
+
+```
+node scripts/fold-wsl-to-fleet.mjs              # print all 16 fold commands
+node scripts/fold-wsl-to-fleet.mjs --confirm    # print with --confirm on each (still dry — pipe to sh to run)
+```
+
+Static-seed kinds (everything except the ingest time-series) are populated directly by
+`scripts/seed-mongo.ts` with the correct namespaced slugs — `mongo-fold.mjs` is only
+needed to preserve *historical* AIDB.wsl_news / wsl_tickers / wsl_currencies /
+wsl_flights / wsl_climate rows.
+
+**7-day soak flow:**
+
+1. Deploy the FLEET-aware code (this commit) and run `npm run seed:mongo` once to
+   populate `FLEET.{items,lists,videos,media}` with the ~130 wsl-scoped seed docs.
+2. Verify reads: home / `/countries/*` / `/tourism` / `/gdp` should all render live
+   data (footer shows `data · live`). Cron ingest keeps `FLEET.lists` fresh for
+   currency / ticker / flights / climate every 15 min.
+3. Optional: run `node scripts/fold-wsl-to-fleet.mjs --confirm | sh` to backfill
+   historical ingest rows from `AIDB.wsl_*`.
+4. Watch `~/APPS/appai/scripts/mongo-drift.mjs` for 7 days — zero writes should hit
+   `AIDB.wsl_*`.
+5. User drops the 16 legacy `AIDB.wsl_*` collections manually in Atlas (or via the
+   drop-loop in `scripts/fold-wsl-to-fleet.mjs` — commented, must be run explicitly).
 
 ## Wikivoyage atlas pipeline
 

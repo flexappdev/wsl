@@ -40,7 +40,7 @@ const DIAGRAMS: Diagram[] = [
     slug: "collections-er",
     title: "Collections",
     kind: "DATA MODEL",
-    summary: "Fourteen wsl_* collections, which pages they feed, and where the Atlas cap forced a seed fallback.",
+    summary: "Fourteen wsl kinds folded into shared FLEET collections, which pages they feed, and where the seed still backs the render.",
     Icon: Database,
   },
   {

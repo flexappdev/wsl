@@ -19,6 +19,25 @@ const SECTION_LABELS: Record<string, string> = {
   scroller: "Scroller chapters",
 };
 
+// FLEET post-migration: each section maps to a shared FLEET collection + kind.
+// Mirrors SECTIONS in ~/APPS/wsl/src/lib/wsl-v2/dataSource.ts.
+const FLEET_MAP: Record<string, string> = {
+  tickers: "FLEET.lists · kind=ticker",
+  currencies: "FLEET.lists · kind=currency",
+  cities: "FLEET.items · kind=city",
+  topVisited: "FLEET.lists · kind=top-visited",
+  fastestGrowing: "FLEET.lists · kind=fastest-growing",
+  largestGdp: "FLEET.lists · kind=largest-gdp",
+  countries: "FLEET.items · kind=country",
+  hotels: "FLEET.items · kind=hotel",
+  gear: "FLEET.lists · kind=gear",
+  news: "FLEET.lists · kind=news",
+  trending: "FLEET.lists · kind=trending",
+  facts: "FLEET.lists · kind=fact",
+  videos: "FLEET.videos",
+  scroller: "FLEET.media · kind=scroller",
+};
+
 export default async function SiteDataPage() {
   const p = await getWslPayload();
   const entries = Object.entries(SECTION_LABELS) as [keyof typeof p.source.sections, string][];
@@ -30,8 +49,9 @@ export default async function SiteDataPage() {
           <div className="crumb">ADMIN · SITE DATA</div>
           <h1>Site data shape</h1>
           <div className="sub">
-            What the dashboard renders today. Each section either reads from Mongo (when a matching <code>wsl_*</code> collection
-            exists and has rows) or falls back to the static seed. Use this view to verify your collection shapes.
+            What the dashboard renders today. Each section reads a slice of the shared FLEET database
+            filtered by <code>{"{app:'wsl', kind}"}</code>, or falls back to the static seed when the slice is empty.
+            Use this view to verify your collection shapes.
           </div>
         </div>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
@@ -50,7 +70,7 @@ export default async function SiteDataPage() {
               <span className="rank mono">{(key as string).slice(0, 3).toUpperCase()}</span>
               <div>
                 <span className="name">{label}</span>
-                <span className="mono" style={{ marginLeft: 8, fontSize: 11, color: "var(--foreground-muted)" }}>wsl_{String(key).toLowerCase()}</span>
+                <span className="mono" style={{ marginLeft: 8, fontSize: 11, color: "var(--foreground-muted)" }}>{FLEET_MAP[key as string] ?? "FLEET"}</span>
               </div>
               <span
                 className={"feed-tag " + (src === "mongo" ? "tech" : "pop")}

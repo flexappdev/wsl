@@ -2,9 +2,14 @@
 // Tries Mongo first; falls back to the static seed when Mongo is unset or empty.
 // Each section is independent — partial Mongo data layers on top of the seed.
 // React.cache memoizes per-request so layout + page fetches share one Mongo round-trip.
+//
+// FLEET migration (2026-07-09): the 14 bespoke `wsl_*` collections in AIDB have
+// been consolidated into shared FLEET collections with an `{app:'wsl', kind}`
+// discriminator. Reads now target FLEET.items / FLEET.lists / FLEET.videos /
+// FLEET.media with the kind filter that matches each section.
 
 import { cache } from "react";
-import { getMongoDb } from "@/lib/mongo";
+import { getMongoDb, APP_FILTER } from "@/lib/mongo";
 import { SEED } from "./seed";
 import type {
   WslPayload,
@@ -22,23 +27,24 @@ import type {
   ScrollerChapter,
 } from "./types";
 
-// Collection names in AIDB (or whichever DB). All lookups are best-effort — if a
-// collection doesn't exist or has zero docs, we return the seed slice instead.
-const C = {
-  tickers: "wsl_tickers",
-  currencies: "wsl_currencies",
-  cities: "wsl_cities",
-  topVisited: "wsl_top_visited",
-  fastestGrowing: "wsl_fastest_growing",
-  largestGdp: "wsl_largest_gdp",
-  countries: "wsl_countries",
-  hotels: "wsl_hotels",
-  gear: "wsl_gear",
-  news: "wsl_news",
-  trending: "wsl_trending",
-  facts: "wsl_facts",
-  videos: "wsl_videos",
-  scroller: "wsl_scroller",
+// FLEET collection + kind pairs for each dashboard section. Reads filter on
+// `{app:'wsl', kind}`. Slugs were namespaced at fold time (see
+// scripts/fold-wsl-to-fleet.mjs) so `{app, slug}` stays unique across kinds.
+const SECTIONS = {
+  tickers:        { coll: "lists",  kind: "ticker"          },
+  currencies:     { coll: "lists",  kind: "currency"        },
+  cities:         { coll: "items",  kind: "city"            },
+  topVisited:     { coll: "lists",  kind: "top-visited"     },
+  fastestGrowing: { coll: "lists",  kind: "fastest-growing" },
+  largestGdp:     { coll: "lists",  kind: "largest-gdp"     },
+  countries:      { coll: "items",  kind: "country"         },
+  hotels:         { coll: "items",  kind: "hotel"           },
+  gear:           { coll: "lists",  kind: "gear"            },
+  news:           { coll: "lists",  kind: "news"            },
+  trending:       { coll: "lists",  kind: "trending"        },
+  facts:          { coll: "lists",  kind: "fact"            },
+  videos:         { coll: "videos", kind: null              },
+  scroller:       { coll: "media",  kind: "scroller"        },
 } as const;
 
 type Source = "mongo" | "seed";
@@ -46,26 +52,40 @@ type Source = "mongo" | "seed";
 export type WslPayloadWithMeta = WslPayload & {
   source: {
     overall: Source;
-    sections: Partial<Record<keyof typeof C, Source>>;
+    sections: Partial<Record<keyof typeof SECTIONS, Source>>;
     dbName: string | null;
   };
 };
 
-async function readArray<T>(name: string): Promise<T[] | null> {
+// Fields we synthesise at fold time and don't want leaking to serialised
+// client payloads (they're index-side scaffolding, not view data).
+const STRIP_KEYS = ["_id", "app", "kind", "slug", "s3_key"] as const;
+
+function stripSynthetic<T>(doc: Record<string, unknown>): T {
+  const out = { ...doc };
+  for (const k of STRIP_KEYS) delete out[k as string];
+  return out as T;
+}
+
+async function readSection<T>(
+  key: keyof typeof SECTIONS,
+): Promise<T[] | null> {
   const db = await getMongoDb();
   if (!db) return null;
+  const { coll, kind } = SECTIONS[key];
   try {
-    const docs = await db.collection(name).find({}).limit(500).toArray();
+    const filter: Record<string, unknown> = { ...APP_FILTER };
+    if (kind) filter.kind = kind;
+    const docs = await db.collection(coll).find(filter).limit(500).toArray();
     if (!docs.length) return null;
-    // Strip _id so it doesn't leak into client serializations.
-    return docs.map(({ _id, ...rest }) => rest as T);
+    return docs.map((d) => stripSynthetic<T>(d as Record<string, unknown>));
   } catch {
     return null;
   }
 }
 
 export const getWslPayload = cache(async (): Promise<WslPayloadWithMeta> => {
-  const sections: Partial<Record<keyof typeof C, Source>> = {};
+  const sections: Partial<Record<keyof typeof SECTIONS, Source>> = {};
   const db = await getMongoDb();
   const dbName = db ? db.databaseName : null;
 
@@ -84,22 +104,26 @@ export const getWslPayload = cache(async (): Promise<WslPayloadWithMeta> => {
     videos,
     scroller,
   ] = await Promise.all([
-    readArray<Ticker>(C.tickers),
-    readArray<Currency>(C.currencies),
-    readArray<City>(C.cities),
-    readArray<RankedCountry>(C.topVisited),
-    readArray<RankedCountry>(C.fastestGrowing),
-    readArray<RankedCountry>(C.largestGdp),
-    readArray<Country>(C.countries),
-    readArray<GearItem>(C.gear),
-    readArray<News>(C.news),
-    readArray<Trending>(C.trending),
-    readArray<Fact>(C.facts),
-    readArray<Video>(C.videos),
-    readArray<ScrollerChapter>(C.scroller),
+    readSection<Ticker>("tickers"),
+    readSection<Currency>("currencies"),
+    readSection<City>("cities"),
+    readSection<RankedCountry>("topVisited"),
+    readSection<RankedCountry>("fastestGrowing"),
+    readSection<RankedCountry>("largestGdp"),
+    readSection<Country>("countries"),
+    readSection<GearItem>("gear"),
+    readSection<News>("news"),
+    readSection<Trending>("trending"),
+    readSection<Fact>("facts"),
+    readSection<Video>("videos"),
+    readSection<ScrollerChapter>("scroller"),
   ]);
 
-  const pick = <T, K extends keyof typeof C>(key: K, mongo: T[] | null, fallback: T[]): T[] => {
+  const pick = <T, K extends keyof typeof SECTIONS>(
+    key: K,
+    mongo: T[] | null,
+    fallback: T[],
+  ): T[] => {
     if (mongo && mongo.length) {
       sections[key] = "mongo";
       return mongo;
@@ -108,21 +132,26 @@ export const getWslPayload = cache(async (): Promise<WslPayloadWithMeta> => {
     return fallback;
   };
 
-  // Hotels are a map keyed by country id — different shape, separate handling.
+  // Hotels are exposed to the UI as a map keyed by country id — different
+  // shape, separate handling. Docs are stored flat in FLEET.items with a
+  // `countryId` field carried through the fold.
   let hotels: Record<string, Hotel[]> = SEED.hotels;
   if (db) {
     try {
       const raw = await db
-        .collection(C.hotels)
-        .find({})
+        .collection("items")
+        .find({ ...APP_FILTER, kind: "hotel" })
         .limit(500)
         .toArray();
       if (raw.length) {
         const grouped: Record<string, Hotel[]> = {};
         for (const doc of raw) {
-          const { _id, countryId, ...rest } = doc as unknown as Hotel & { countryId?: string; _id: unknown };
+          const stripped = stripSynthetic<Hotel & { countryId?: string }>(
+            doc as Record<string, unknown>,
+          );
+          const { countryId, ...rest } = stripped;
           const key = countryId ?? "default";
-          (grouped[key] ??= []).push(rest);
+          (grouped[key] ??= []).push(rest as Hotel);
         }
         if (Object.keys(grouped).length) {
           hotels = grouped;

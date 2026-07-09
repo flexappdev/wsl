@@ -1,8 +1,36 @@
 // Shared shape definitions for the WSL v2 dashboard.
+//
+// FLEET migration (2026-07-09): optional `kind` field on each type mirrors
+// the FLEET.items / FLEET.lists / FLEET.videos / FLEET.media discriminator
+// applied at fold time (scripts/fold-wsl-to-fleet.mjs). Reads strip the
+// synthetic fields before returning to the UI (see dataSource.ts).
 
 import type { FmtKey } from "./fmt";
 
 export type AccentName = "core" | "lists" | "travel" | "bo" | "context";
+
+/**
+ * Kind discriminator carried by every folded FLEET doc. Not present on the
+ * static seed shapes — only appears on Mongo-sourced rows and is stripped
+ * before serialisation to the client.
+ */
+export type WslKind =
+  | "ticker"
+  | "currency"
+  | "city"
+  | "top-visited"
+  | "fastest-growing"
+  | "largest-gdp"
+  | "country"
+  | "hotel"
+  | "gear"
+  | "news"
+  | "trending"
+  | "fact"
+  | "video"
+  | "scroller"
+  | "flights"
+  | "climate";
 
 export type Ticker = {
   id: string;
@@ -16,6 +44,7 @@ export type Ticker = {
   sub: string;
   delta: string;
   deltaDown?: boolean;
+  kind?: WslKind;
 };
 
 export type Currency = {
@@ -23,6 +52,7 @@ export type Currency = {
   val: number;
   ch: number;
   pct: number;
+  kind?: WslKind;
 };
 
 export type City = {
@@ -34,6 +64,7 @@ export type City = {
   pop: number;
   accent: AccentName;
   metric: string;
+  kind?: WslKind;
 };
 
 export type RankedCountry = {
@@ -43,6 +74,7 @@ export type RankedCountry = {
   v: number;
   raw: string;
   highlight?: boolean;
+  kind?: WslKind;
 };
 
 export type Country = {
@@ -63,6 +95,7 @@ export type Country = {
   featured?: boolean;
   accent: AccentName;
   cities?: string[];
+  kind?: WslKind;
 };
 
 export type Hotel = {
@@ -73,6 +106,7 @@ export type Hotel = {
   reviews: number;
   price: number;
   art: string;
+  kind?: WslKind;
 };
 
 export type GearItem = {
@@ -80,6 +114,7 @@ export type GearItem = {
   price: string;
   art: string;
   tag?: string;
+  kind?: WslKind;
 };
 
 export type FeedTemplate = {
@@ -90,6 +125,7 @@ export type FeedTemplate = {
 export type Fact = {
   text: string;
   src: string;
+  kind?: WslKind;
 };
 
 export type Video = {
@@ -99,6 +135,7 @@ export type Video = {
   when: string;
   art: string;
   big?: boolean;
+  kind?: WslKind;
 };
 
 export type News = {
@@ -106,11 +143,13 @@ export type News = {
   src: string;
   when: string;
   tag: string;
+  kind?: WslKind;
 };
 
 export type Trending = {
   q: string;
   v: string;
+  kind?: WslKind;
 };
 
 export type ScrollerChapter = {
@@ -119,6 +158,7 @@ export type ScrollerChapter = {
   body: string;
   bigVal: string;
   cap: string;
+  kind?: WslKind;
 };
 
 export type SimpleCountry = {
