@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getPickerCountries, getCompareRows } from "@/lib/wsl-v2/compare-server";
+import { getEntitlement } from "@/lib/entitlements";
+import { ExportCSV } from "@/components/wsl-v2/ExportCSV";
 
 export const revalidate = 300;
 
@@ -33,12 +35,25 @@ function parseIds(raw: string | string[] | undefined): string[] {
 export default async function ComparePage({ searchParams }: Props) {
   const params = await searchParams;
   const ids = parseIds(params.ids);
-  const [rows, picker] = await Promise.all([getCompareRows(ids), getPickerCountries()]);
+  const [rows, picker, ent] = await Promise.all([
+    getCompareRows(ids),
+    getPickerCountries(),
+    getEntitlement(),
+  ]);
 
-  // Union of all stat labels across rows, preserving order from the first row.
   const labels = new Set<string>();
   for (const r of rows) for (const s of r.stats) labels.add(s.label);
   const labelList = Array.from(labels);
+
+  const csvRows = rows.flatMap((r) =>
+    r.stats.map((s) => ({
+      country: r.name,
+      cca3: r.cca3,
+      metric: s.label,
+      value: s.value,
+      raw: s.raw ?? "",
+    })),
+  );
 
   return (
     <div>
@@ -49,6 +64,9 @@ export default async function ComparePage({ searchParams }: Props) {
           <div className="sub">
             Pick up to {MAX_COUNTRIES} countries. Add or remove by editing the URL — <code>?ids=USA,CHN,IND</code> — or use the quick presets below.
           </div>
+        </div>
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <ExportCSV pro={ent.pro} filename={`wsl-compare-${ids.join("-").toLowerCase()}.csv`} rows={csvRows} />
         </div>
       </div>
 

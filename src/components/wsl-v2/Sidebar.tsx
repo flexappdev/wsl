@@ -7,6 +7,7 @@ import { useNow } from "./useNow";
 import { computeTicker } from "@/lib/wsl-v2/computeTicker";
 import { FMT } from "@/lib/wsl-v2/fmt";
 import type { Country, Ticker } from "@/lib/wsl-v2/types";
+import { WSL_VERSION } from "@/lib/version";
 
 type Item = { href: string; label: string; Icon: LucideIcon };
 
@@ -39,7 +40,7 @@ export function Sidebar({ tickers, countries, epoch }: Props) {
     <aside className="sb">
       <div className="sb-brand">
         <div className="sb-mark"><Globe size={18} /></div>
-        <div className="sb-name">World Stats <span>Live · v2.0</span></div>
+        <div className="sb-name">World Stats <span>Live · {WSL_VERSION}</span></div>
       </div>
 
       <div className="sb-group">

@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { computeTicker } from "@/lib/wsl-v2/computeTicker";
-import { FMT } from "@/lib/wsl-v2/fmt";
+import { makeFeedItem, makeInitialFeed, type FeedItem } from "@/lib/feedEngine";
 import type { FeedTemplate, Ticker } from "@/lib/wsl-v2/types";
 
 type Props = {
@@ -12,49 +11,19 @@ type Props = {
   epoch: number;
 };
 
-type FeedItem = {
-  k: string;
-  html: string;
-  tag: string;
-  time: string;
-};
-
-function makeFeedItem(ts: number, templates: FeedTemplate[], cityPool: string[], popTicker: Ticker | undefined, epoch: number): FeedItem {
-  const tpl = templates[Math.floor(Math.random() * templates.length)];
-  const city = cityPool[Math.floor(Math.random() * cityPool.length)];
-  const n = Math.floor(Math.random() * 9000 + 1000);
-  const popVal = popTicker ? FMT.int(computeTicker(popTicker, ts, epoch)) : "—";
-  const html = tpl.tpl
-    .replace("{city}", city)
-    .replace("{n}", n.toLocaleString())
-    .replace("{pop}", popVal);
-  const d = new Date(ts);
-  const time = `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}:${String(d.getUTCSeconds()).padStart(2, "0")}`;
-  return { k: `${ts}_${Math.random().toFixed(4)}`, html, tag: tpl.tag, time };
-}
-
 export function RightNowFeed({ templates, cities, popTicker, epoch }: Props) {
-  const [items, setItems] = useState<FeedItem[]>([]);
+  const [items, setItems] = useState<FeedItem[]>(() => {
+    // Deterministic 6-item batch derived from the current minute — same on
+    // server render + first client render so there's no flash of empty state.
+    return makeInitialFeed(templates, cities, popTicker, epoch, Date.now(), 6);
+  });
 
   useEffect(() => {
-    // Seed initial items client-side so SSR markup is identical for everyone.
-    const start = Date.now();
-    setItems(Array.from({ length: 6 }, (_, i) => makeFeedItem(start - i * 5000, templates, cities, popTicker, epoch)));
     const id = window.setInterval(() => {
-      setItems((cur) => [makeFeedItem(Date.now(), templates, cities, popTicker, epoch), ...cur].slice(0, 8));
-    }, 3200);
+      setItems((cur) => [makeFeedItem(Date.now(), templates, cities, popTicker, epoch), ...cur].slice(0, 30));
+    }, 4000 + Math.random() * 4000);
     return () => window.clearInterval(id);
   }, [templates, cities, popTicker, epoch]);
-
-  if (!items.length) {
-    return (
-      <div className="feed">
-        <div className="feed-row" style={{ gridTemplateColumns: "1fr", padding: "16px" }}>
-          <div className="feed-text" style={{ color: "var(--foreground-muted)" }}>Loading live feed…</div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="feed">
@@ -62,9 +31,20 @@ export function RightNowFeed({ templates, cities, popTicker, epoch }: Props) {
         <div key={it.k} className="feed-row">
           <div className="feed-time">{it.time}</div>
           <div className="feed-text" dangerouslySetInnerHTML={{ __html: it.html }} />
-          <span className={"feed-tag " + it.tag}>{it.tag}</span>
+          <span
+            className={"feed-tag " + it.tag}
+            title="Projected from live rates — not a real-time event"
+          >
+            {it.tag}
+          </span>
         </div>
       ))}
+      <div
+        className="feed-row"
+        style={{ padding: "6px 12px", opacity: 0.55, fontSize: 11, gridTemplateColumns: "1fr" }}
+      >
+        <div className="feed-text">Projected from live rates — not real-time events.</div>
+      </div>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { TopList } from "@/components/wsl-v2/TopList";
 import { RightNowFeed } from "@/components/wsl-v2/RightNowFeed";
 import { RandomFact } from "@/components/wsl-v2/RandomFact";
 import { AboutStrip } from "@/components/wsl-v2/AboutStrip";
+import { LatestNews } from "@/components/wsl-v2/LatestNews";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 
 export const revalidate = 300;
@@ -188,24 +189,7 @@ export default async function DashboardPage() {
             </a>
           </div>
         </div>
-        <div className="news-list">
-          {payload.news.slice(0, 6).map((n, i) => (
-            <div key={i} className="news-row">
-              <div>
-                <div className="news-title">{n.title}</div>
-                <div className="news-meta">
-                  <span className="src">{n.src}</span>
-                  <span>·</span>
-                  <span>{n.when} ago</span>
-                  <span style={{ marginLeft: 4 }}>
-                    <span className={"feed-tag " + n.tag}>{n.tag}</span>
-                  </span>
-                </div>
-              </div>
-              <ArrowUpRight size={14} style={{ color: "var(--foreground-muted)" }} />
-            </div>
-          ))}
-        </div>
+        <LatestNews />
       </div>
 
       <AboutStrip />

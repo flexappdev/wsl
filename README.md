@@ -1,8 +1,23 @@
 # WSL — World Stats Live
 
-Next.js 15 app · v2 "World Stats Live" dashboard · port **19011** · accent #10b981.
+Next.js 15 app · **v3.0** "World Stats Live" dashboard · port **19011** · accent #10b981.
 
 Repo: https://github.com/flexappdev/wsl · Vercel deploy at root path.
+
+## V3 changelog (2026-07-08)
+
+Ships V3.0–V3.4 in one pass — credibility fixes, live data layer, share/embed, and ArtefaiPass gate. Goal doc: [`docs/goal-2026-07-08.md`](docs/goal-2026-07-08.md).
+
+- **V3.0 — kill seed mode.** Single `WSL_VERSION` in `src/lib/version.ts` drives header + footer (no more v2.0/v2.1 mismatch). Footer no longer leaks `(no MONGO_URI)` — just `data · live` / `data · seed`. New `/api/stats` (60s edge cache) + `/api/cron/ingest` (15-min Vercel cron via `vercel.json`) for FX (exchangerate.host), BTC/ETH (coingecko), CO₂ (NOAA Mauna Loa), and flights (OpenSky). Retries + stale-fallback baked in.
+- **V3.1 — honest feeds.** `RightNowFeed` renders 6 deterministic items server-side (no more "Loading live feed…" flash) and continues client-side from `src/lib/feedEngine.ts`. Every event tagged `projection` in the UI. New `/api/news` route pulls Reuters/NOAA/UNWTO RSS with 30-min Mongo cache — real `pubDate` timestamps only, entire block hides on empty (no fake `Reuters · 2m ago`).
+- **V3.2 — country pages.** `/countries/[cca3]` was already SSG for all 250 restcountries entries — kept as-is; sitemap already includes them.
+- **V3.3 — share + embed.** Parameterised `/api/og?type=…&slug=…` (edge, next/og), copy-paste `/embed/population` widget, `ShareButton` component (Web Share API + clipboard fallback + embed-code copy). `X-Frame-Options: DENY` site-wide; `ALLOWALL` on `/embed/*` only.
+- **V3.4 — ArtefaiPass hook.** `src/lib/entitlements.ts` reads the shared network `entitlements` table via existing Supabase client. `PassGate` (blur + upsell), `ExportCSV` (Pro-only, falls back to checkout URL for anons) wired into `/compare`.
+
+New env vars (optional — all degrade gracefully):
+- `MONGO_URI` / `MONGO_DB` — enables live ingest + news cache
+- `CRON_SECRET` — bearer auth for `/api/cron/ingest`
+- `NEXT_PUBLIC_PASS_CHECKOUT_URL` — override the ArtefaiPass checkout link (default `https://artefai.com/pass`)
 
 ## Routes — **481 prerendered pages**
 
