@@ -4,7 +4,7 @@ import { ClientShell } from "@/components/wsl-v2/ClientShell";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
 import { WSL_VERSION } from "@/lib/version";
 
-export const revalidate = 300;
+export const revalidate = false;
 
 export default async function V2Layout({ children }: { children: React.ReactNode }) {
   const payload = await getWslPayload();
