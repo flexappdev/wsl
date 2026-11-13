@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Shuffle } from "lucide-react";
 import { ClientShell } from "@/components/wsl-v2/ClientShell";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
+import { LegalFooter } from "@/components/LegalFooter";
 import { WSL_VERSION } from "@/lib/version";
 
 export const revalidate = false;
@@ -11,6 +12,7 @@ export default async function V2Layout({ children }: { children: React.ReactNode
   const mode: "live" | "seed" = payload.source.overall === "mongo" ? "live" : "seed";
 
   const footer = (
+    <>
     <footer className="ft">
       <div className="ft-brand">
         <span className="badge badge-version">{WSL_VERSION}</span>
@@ -23,6 +25,8 @@ export default async function V2Layout({ children }: { children: React.ReactNode
         <Shuffle size={13} /> Random
       </Link>
     </footer>
+    <LegalFooter />
+    </>
   );
 
   return (
