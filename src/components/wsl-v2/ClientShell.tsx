@@ -4,7 +4,9 @@ import { useCallback, useEffect, useState } from "react";
 import { Header } from "./Header";
 import { SearchPalette } from "./SearchPalette";
 import { TweaksPanel } from "./TweaksPanel";
-import { Sidebar } from "./Sidebar";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Sidebar, ITEMS } from "./Sidebar";
 import type { WslPayload } from "@/lib/wsl-v2/types";
 import type { WslPayloadWithMeta } from "@/lib/wsl-v2/dataSource";
 
@@ -17,6 +19,7 @@ type Props = {
 export function ClientShell({ payload, children, footer }: Props) {
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [tweakOpen, setTweakOpen] = useState(false);
+  const path = usePathname();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -43,7 +46,19 @@ export function ClientShell({ payload, children, footer }: Props) {
       <Sidebar tickers={payload.tickers} countries={payload.countries} epoch={payload.epoch} />
       <Header onSearch={handleSearch} onCustomize={handleCustomize} />
       <main className="main">
-        <div className="main-inner">{children}</div>
+        <div className="main-inner">
+          <nav className="mnav" aria-label="Sections">
+            {ITEMS.map(({ href, label }) => {
+              const active = href === "/" ? path === "/" : path === href || path.startsWith(href + "/");
+              return (
+                <Link key={href} href={href} className={active ? "active" : ""}>
+                  {label}
+                </Link>
+              );
+            })}
+          </nav>
+          {children}
+        </div>
       </main>
       {footer}
       <SearchPalette

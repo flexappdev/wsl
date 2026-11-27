@@ -1,8 +1,11 @@
 import type { MetadataRoute } from "next";
 import { getWikivoyageDataset } from "@/lib/wikivoyage/data";
 import { getAllCountries } from "@/lib/wsl-v2/country-stats";
+import { getTravelVideos } from "@/lib/travel-videos";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://worldstats.live";
+
+export const revalidate = 900;
 
 const PUBLIC_ROUTES: { path: string; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }[] = [
   { path: "",              changeFrequency: "hourly",  priority: 1.0 },
@@ -24,6 +27,7 @@ const PUBLIC_ROUTES: { path: string; changeFrequency: MetadataRoute.Sitemap[numb
   { path: "/data",         changeFrequency: "weekly",  priority: 0.6 },
   { path: "/wikivoyage",   changeFrequency: "weekly",  priority: 0.8 },
   { path: "/countries",    changeFrequency: "weekly",  priority: 0.7 },
+  { path: "/videos",       changeFrequency: "daily",   priority: 0.8 },
   { path: "/story",        changeFrequency: "weekly",  priority: 0.7 },
   { path: "/about",        changeFrequency: "monthly", priority: 0.5 },
 ];
@@ -53,5 +57,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...base, ...wikivoyagePages, ...countryPages];
+  const videos = await getTravelVideos();
+  const videoPages = videos.map((v) => ({
+    url: `${SITE_URL}/videos/${v.id}`,
+    lastModified: v.published_at ? new Date(v.published_at) : lastModified,
+    changeFrequency: "weekly" as const,
+    priority: v.kind === "long" ? 0.7 : 0.6,
+  }));
+
+  return [...base, ...wikivoyagePages, ...countryPages, ...videoPages];
 }

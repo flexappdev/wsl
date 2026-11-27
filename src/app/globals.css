@@ -4,6 +4,7 @@
 
 @import url("../styles/tokens.css");
 @import url("../styles/wsl.css");
+@import url("../styles/travel.css");
 
 :root {
   --app-accent: #10b981;
