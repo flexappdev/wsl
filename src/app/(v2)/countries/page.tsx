@@ -1,14 +1,18 @@
 import Link from "next/link";
 import { getCountries } from "@/lib/wsl-data";
+import { getTravelVideos, groupByCountry } from "@/lib/travel-videos";
+import { CountriesOnVideo } from "@/components/travel/CountriesOnVideo";
 
-export const revalidate = 86400;
+export const revalidate = 900;
 
 export default async function CountriesPage() {
-  const { countries } = await getCountries();
+  const [{ countries }, videos] = await Promise.all([getCountries(), getTravelVideos()]);
+  const onVideo = await groupByCountry(videos);
+  const videoCount = new Map(onVideo.filter((c) => c.cca3).map((c) => [c.cca3 as string, c.videos.length]));
   const regions = Array.from(new Set(countries.map((c) => c.region).filter(Boolean)));
 
   return (
-    <div className="space-y-8 p-8">
+    <div className="space-y-8">
       <header className="rounded-lg border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 p-8">
         <div className="flex items-center gap-2 text-[11px] uppercase tracking-wider text-zinc-500">
           <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: "var(--app-accent)" }} />
@@ -20,6 +24,25 @@ export default async function CountriesPage() {
           <a className="underline" href="https://restcountries.com" target="_blank" rel="noreferrer">restcountries.com</a>
         </p>
       </header>
+
+      {onVideo.length > 0 && (
+        <section className="space-y-3">
+          <div className="section-head" style={{ marginBottom: 0 }}>
+            <div>
+              <h2>Countries on video</h2>
+              <div className="sub">
+                {onVideo.length} countries · {videos.length} travel videos — ranked by video count.
+              </div>
+            </div>
+            <div className="right">
+              <Link href="/videos" className="btn btn-ghost btn-sm">
+                All videos →
+              </Link>
+            </div>
+          </div>
+          <CountriesOnVideo countries={onVideo} limit={12} />
+        </section>
+      )}
 
       {regions.map((region) => {
         const items = countries.filter((c) => c.region === region);
@@ -33,7 +56,12 @@ export default async function CountriesPage() {
                     <span className="text-2xl">{c.flag}</span>
                     <div>
                       <h3 className="text-sm font-semibold text-zinc-100">{c.name}</h3>
-                      <p className="mt-0.5 text-[11px] text-zinc-500">{c.capital} · {c.population.toLocaleString()}</p>
+                      <p className="mt-0.5 text-[11px] text-zinc-500">
+                        {c.capital} · {c.population.toLocaleString()}
+                        {videoCount.get(c.cca3.toUpperCase()) ? (
+                          <span className="ml-1.5 text-red-400">▶ {videoCount.get(c.cca3.toUpperCase())}</span>
+                        ) : null}
+                      </p>
                     </div>
                   </div>
                 </Link>

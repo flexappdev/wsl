@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Activity, Cloud, DollarSign, FileText, Globe, MapPin, Plane, Settings, Shuffle, Users, type LucideIcon } from "lucide-react";
+import { Activity, Clapperboard, Cloud, DollarSign, FileText, Flag, Globe, MapPin, Plane, Settings, Shuffle, Users, type LucideIcon } from "lucide-react";
 import { useNow } from "./useNow";
 import { computeTicker } from "@/lib/wsl-v2/computeTicker";
 import { FMT } from "@/lib/wsl-v2/fmt";
@@ -11,8 +11,10 @@ import { WSL_VERSION } from "@/lib/version";
 
 type Item = { href: string; label: string; Icon: LucideIcon };
 
-const ITEMS: Item[] = [
+export const ITEMS: Item[] = [
   { href: "/", label: "Dashboard", Icon: Activity },
+  { href: "/videos", label: "Videos", Icon: Clapperboard },
+  { href: "/countries", label: "Countries", Icon: Flag },
   { href: "/population", label: "Population", Icon: Users },
   { href: "/gdp", label: "GDP & economy", Icon: DollarSign },
   { href: "/climate", label: "Climate & energy", Icon: Cloud },

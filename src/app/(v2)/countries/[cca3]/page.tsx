@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllCountries, getCountryStatsRollup } from "@/lib/wsl-v2/country-stats";
+import { getCatalog, getVideosForCountry, toCard, CHANNEL_FALLBACK } from "@/lib/travel-videos";
+import { VideoPlayer } from "@/components/travel/VideoPlayer";
+import { VideoCard } from "@/components/travel/VideoCard";
+import { SubscribeCTA } from "@/components/travel/SubscribeCTA";
 
-export const revalidate = 86400;
+export const revalidate = 900;
 
 type Props = { params: Promise<{ cca3: string }> };
 
@@ -45,6 +49,10 @@ export default async function CountryPage({ params }: Props) {
   const rollup = await getCountryStatsRollup(cca3.toUpperCase());
   if (!rollup) notFound();
   const { rest, wikivoyage, stats } = rollup;
+  const [videos, catalog] = await Promise.all([getVideosForCountry(rest.cca3), getCatalog()]);
+  const leadFilm = videos.find((v) => v.kind === "long");
+  const shorts = videos.filter((v) => v.kind === "short");
+  const films = videos.filter((v) => v.kind === "long" && v !== leadFilm);
 
   const heroUrl = wikivoyage?.s3_hero
     ? `https://com27.s3.eu-west-2.amazonaws.com/wsl/heroes/${wikivoyage.slug}.jpg`
@@ -67,7 +75,7 @@ export default async function CountryPage({ params }: Props) {
   };
 
   return (
-    <div className="space-y-8 p-8">
+    <div className="space-y-8">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
@@ -103,6 +111,11 @@ export default async function CountryPage({ params }: Props) {
                 {rest.official}
                 {rest.region && ` · ${rest.region}`}
               </p>
+              {videos.length > 0 && (
+                <a href="#videos" className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-red-600/90 px-3 py-1 text-xs font-semibold text-white hover:bg-red-600">
+                  ▶ {videos.length} video{videos.length === 1 ? "" : "s"} from {rest.name}
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -139,6 +152,62 @@ export default async function CountryPage({ params }: Props) {
         </dl>
       </section>
 
+      {videos.length > 0 && (
+        <section id="videos" className="space-y-4" style={{ scrollMarginTop: 16 }}>
+          <div className="section-head" style={{ marginBottom: 0 }}>
+            <div>
+              <h2>{rest.name} on video</h2>
+              <div className="sub">
+                {shorts.length} short{shorts.length === 1 ? "" : "s"}
+                {leadFilm || films.length ? ` · ${films.length + (leadFilm ? 1 : 0)} film${films.length + (leadFilm ? 1 : 0) === 1 ? "" : "s"}` : ""} from{" "}
+                {(catalog?.channel ?? CHANNEL_FALLBACK).handle}
+              </div>
+            </div>
+            <div className="right">
+              <Link href={`/videos?country=${encodeURIComponent(videos[0].country)}`} className="btn btn-ghost btn-sm">
+                Browse all →
+              </Link>
+            </div>
+          </div>
+          {leadFilm && (
+            <div className="tv-hero">
+              <VideoPlayer
+                youtubeId={leadFilm.youtube_id}
+                videoUrl={leadFilm.video_url}
+                posterUrl={leadFilm.poster_url}
+                title={leadFilm.title}
+                kind="long"
+              />
+              <div className="tv-hero-body">
+                <div className="type-eyebrow">FEATURED FILM · {leadFilm.place.toUpperCase()}</div>
+                <h2>{leadFilm.title}</h2>
+                {leadFilm.description && <p>{leadFilm.description}</p>}
+                <div className="row">
+                  <Link href={`/videos/${leadFilm.id}`} className="btn btn-primary btn-sm">
+                    Chapters &amp; credits →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+          {films.length > 0 && (
+            <div className="tv-grid films">
+              {films.map((v) => (
+                <VideoCard key={v.id} card={toCard(v)} />
+              ))}
+            </div>
+          )}
+          {shorts.length > 0 && (
+            <div className="tv-grid shorts">
+              {shorts.map((v) => (
+                <VideoCard key={v.id} card={toCard(v)} showCountry={false} />
+              ))}
+            </div>
+          )}
+          <SubscribeCTA channel={catalog?.channel ?? CHANNEL_FALLBACK} />
+        </section>
+      )}
+
       {wikivoyage?.extract && (
         <section className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-6">
           <div className="flex items-baseline justify-between mb-3">
@@ -160,6 +229,9 @@ export default async function CountryPage({ params }: Props) {
       <nav className="flex flex-wrap gap-2 text-xs">
         <Link href="/countries" className="rounded border border-zinc-700 px-3 py-1.5 text-zinc-300 hover:border-zinc-500">
           All countries
+        </Link>
+        <Link href="/videos" className="rounded border border-zinc-700 px-3 py-1.5 text-zinc-300 hover:border-zinc-500">
+          Videos
         </Link>
         <Link href="/destinations" className="rounded border border-zinc-700 px-3 py-1.5 text-zinc-300 hover:border-zinc-500">
           Destinations

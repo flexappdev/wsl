@@ -10,6 +10,21 @@ import { RandomFact } from "@/components/wsl-v2/RandomFact";
 import { AboutStrip } from "@/components/wsl-v2/AboutStrip";
 import { LatestNews } from "@/components/wsl-v2/LatestNews";
 import { getWslPayload } from "@/lib/wsl-v2/dataSource";
+import { VideoPlayer } from "@/components/travel/VideoPlayer";
+import { VideoRail } from "@/components/travel/ShortsRail";
+import { CountriesOnVideo } from "@/components/travel/CountriesOnVideo";
+import { SubscribeCTA } from "@/components/travel/SubscribeCTA";
+import {
+  getCatalog,
+  getTravelVideos,
+  groupByCountry,
+  pickFeatured,
+  shortsOf,
+  filmsOf,
+  toCard,
+  countryHref,
+  CHANNEL_FALLBACK,
+} from "@/lib/travel-videos";
 
 export const revalidate = 300;
 
@@ -26,7 +41,14 @@ export const metadata: Metadata = {
 const DASHBOARD_TICKER_IDS = ["flights", "co2", "tourism", "hotels"] as const;
 
 export default async function DashboardPage() {
-  const payload = await getWslPayload();
+  const [payload, catalog, videos] = await Promise.all([getWslPayload(), getCatalog(), getTravelVideos()]);
+  const channel = catalog?.channel ?? CHANNEL_FALLBACK;
+  const onVideo = await groupByCountry(videos);
+  const featuredVideo = pickFeatured(videos);
+  const featuredCountry = featuredVideo ? onVideo.find((c) => c.country === featuredVideo.country) : undefined;
+  const shortsRail = shortsOf(videos).slice(0, 18).map(toCard);
+  const filmCards = filmsOf(videos).filter((v) => v.id !== featuredVideo?.id).map(toCard);
+  const countryRails = onVideo.slice(0, 3);
   const tickers = DASHBOARD_TICKER_IDS.map((id) => payload.tickers.find((t) => t.id === id)).filter(
     (t): t is NonNullable<typeof t> => Boolean(t)
   );
@@ -52,6 +74,84 @@ export default async function DashboardPage() {
         </div>
       </div>
 
+      {featuredVideo && (
+        <>
+          <div className="tv-hero" style={{ marginBottom: 18 }}>
+            <VideoPlayer
+              youtubeId={featuredVideo.youtube_id}
+              videoUrl={featuredVideo.video_url}
+              posterUrl={featuredVideo.poster_url}
+              title={featuredVideo.title}
+              kind={featuredVideo.kind === "long" ? "long" : "short"}
+            />
+            <div className="tv-hero-body">
+              <div className="type-eyebrow">
+                {featuredVideo.kind === "long" ? "FEATURED FILM" : "LATEST VIDEO"} · {featuredVideo.country.toUpperCase()}
+              </div>
+              <h2>{featuredVideo.title}</h2>
+              {featuredVideo.description && <p>{featuredVideo.description}</p>}
+              <div className="tv-stats">
+                <div>
+                  <b>{videos.length}</b>videos
+                </div>
+                <div>
+                  <b>{onVideo.length}</b>countries
+                </div>
+                <div>
+                  <b>{filmsOf(videos).length}</b>films
+                </div>
+              </div>
+              <div className="row">
+                <Link href={`/videos/${featuredVideo.id}`} className="btn btn-primary btn-sm">
+                  Watch with chapters <ArrowRight size={12} />
+                </Link>
+                {featuredCountry && (
+                  <Link href={countryHref(featuredCountry)} className="btn btn-secondary btn-sm">
+                    {featuredCountry.flag} {featuredCountry.country} stats
+                  </Link>
+                )}
+                <Link href="/videos" className="btn btn-ghost btn-sm">
+                  Watch all {videos.length} <ChevronRight size={12} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="section" style={{ marginTop: 0 }}>
+            <div className="section-head">
+              <div>
+                <h2>Shorts from around the world</h2>
+                <div className="sub">50-second destination portraits. Tap one to watch.</div>
+              </div>
+              <div className="right">
+                <Link href="/videos?kind=short" className="btn btn-ghost btn-sm">
+                  All shorts <ChevronRight size={12} />
+                </Link>
+              </div>
+            </div>
+            <VideoRail cards={shortsRail} />
+          </div>
+
+          <div className="section">
+            <div className="section-head">
+              <div>
+                <h2>Countries on video</h2>
+                <div className="sub">
+                  {onVideo.length} countries, ranked by how many videos they have. Each one opens its stats page with the videos.
+                </div>
+              </div>
+              <div className="right">
+                <Link href="/countries" className="btn btn-ghost btn-sm">
+                  All countries <ChevronRight size={12} />
+                </Link>
+              </div>
+            </div>
+            <CountriesOnVideo countries={onVideo} limit={12} />
+          </div>
+        </>
+      )}
+
+      <div className={featuredVideo ? "section" : undefined}>
       <Hero tickers={payload.tickers} cities={payload.cities} epoch={payload.epoch} />
 
       <div className="ticker-grid" style={{ marginTop: 18 }}>
@@ -62,6 +162,7 @@ export default async function DashboardPage() {
 
       <div style={{ marginTop: 14 }}>
         <CurrencyStrip currencies={payload.currencies} />
+      </div>
       </div>
 
       <div className="section">
@@ -102,6 +203,45 @@ export default async function DashboardPage() {
         </div>
       </div>
 
+      {filmCards.length > 0 && (
+        <div className="section">
+          <div className="section-head">
+            <div>
+              <h2>Long films</h2>
+              <div className="sub">Eight-minute destination guides with chapters.</div>
+            </div>
+            <div className="right">
+              <Link href="/videos?kind=long" className="btn btn-ghost btn-sm">
+                All films <ChevronRight size={12} />
+              </Link>
+            </div>
+          </div>
+          <VideoRail cards={filmCards} />
+        </div>
+      )}
+
+      {countryRails.map((c) => (
+        <div className="section" key={c.country}>
+          <div className="section-head">
+            <div>
+              <h2>
+                {c.flag} {c.country} on video
+              </h2>
+              <div className="sub">
+                {c.videos.length} videos · {c.films ? `${c.films} film${c.films === 1 ? "" : "s"} · ` : ""}
+                {c.shorts} shorts
+              </div>
+            </div>
+            <div className="right">
+              <Link href={countryHref(c)} className="btn btn-ghost btn-sm">
+                {c.country} stats &amp; videos <ChevronRight size={12} />
+              </Link>
+            </div>
+          </div>
+          <VideoRail cards={c.videos.slice(0, 14).map(toCard)} showCountry={false} />
+        </div>
+      ))}
+
       {featured && (
         <div className="section">
           <div className="section-head">
@@ -116,6 +256,7 @@ export default async function DashboardPage() {
             </div>
           </div>
           <div
+            className="feat-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1.2fr 1fr",
@@ -190,6 +331,10 @@ export default async function DashboardPage() {
           </div>
         </div>
         <LatestNews />
+      </div>
+
+      <div className="section">
+        <SubscribeCTA channel={channel} count={videos.length || undefined} />
       </div>
 
       <AboutStrip />
